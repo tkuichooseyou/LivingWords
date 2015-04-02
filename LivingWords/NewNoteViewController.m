@@ -1,18 +1,10 @@
-//
-//  ViewController.m
-//  LivingWords
-//
-//  Created by Teddy Ku on 4/2/15.
-//  Copyright (c) 2015 Teddy Ku. All rights reserved.
-//
+#import "NewNoteViewController.h"
 
-#import "ViewController.h"
-
-@interface ViewController ()
+@interface NewNoteViewController ()
 
 @end
 
-@implementation ViewController
+@implementation NewNoteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

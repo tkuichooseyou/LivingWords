@@ -11,11 +11,10 @@
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
-		8E888E7A1ACD934C00DFC8ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E791ACD934C00DFC8ED /* ViewController.m */; };
+		8E888E7A1ACD934C00DFC8ED /* NewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */; };
 		8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7B1ACD934C00DFC8ED /* Main.storyboard */; };
 		8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7E1ACD934C00DFC8ED /* Images.xcassets */; };
 		8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E801ACD934C00DFC8ED /* LaunchScreen.xib */; };
-		8E888E8E1ACD934C00DFC8ED /* LivingWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E8D1ACD934C00DFC8ED /* LivingWordsTests.m */; };
 		944E88AE4E73AF1D92FBCF02 /* libPods-LivingWordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -40,14 +39,13 @@
 		8E888E721ACD934C00DFC8ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E888E731ACD934C00DFC8ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8E888E761ACD934C00DFC8ED /* LivingWords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LivingWords.xcdatamodel; sourceTree = "<group>"; };
-		8E888E781ACD934C00DFC8ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8E888E791ACD934C00DFC8ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8E888E781ACD934C00DFC8ED /* NewNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNoteViewController.h; sourceTree = "<group>"; };
+		8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNoteViewController.m; sourceTree = "<group>"; };
 		8E888E7C1ACD934C00DFC8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E888E7E1ACD934C00DFC8ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E888E811ACD934C00DFC8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8E888E871ACD934C00DFC8ED /* LivingWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LivingWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E8C1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E888E8D1ACD934C00DFC8ED /* LivingWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LivingWordsTests.m; sourceTree = "<group>"; };
 		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,8 +106,8 @@
 			children = (
 				8E888E721ACD934C00DFC8ED /* AppDelegate.h */,
 				8E888E731ACD934C00DFC8ED /* AppDelegate.m */,
-				8E888E781ACD934C00DFC8ED /* ViewController.h */,
-				8E888E791ACD934C00DFC8ED /* ViewController.m */,
+				8E888E781ACD934C00DFC8ED /* NewNoteViewController.h */,
+				8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */,
 				8E888E7B1ACD934C00DFC8ED /* Main.storyboard */,
 				8E888E7E1ACD934C00DFC8ED /* Images.xcassets */,
 				8E888E801ACD934C00DFC8ED /* LaunchScreen.xib */,
@@ -131,7 +129,6 @@
 		8E888E8A1ACD934C00DFC8ED /* LivingWordsTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E888E8D1ACD934C00DFC8ED /* LivingWordsTests.m */,
 				8E888E8B1ACD934C00DFC8ED /* Supporting Files */,
 			);
 			path = LivingWordsTests;
@@ -323,7 +320,7 @@
 			files = (
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
 				8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */,
-				8E888E7A1ACD934C00DFC8ED /* ViewController.m in Sources */,
+				8E888E7A1ACD934C00DFC8ED /* NewNoteViewController.m in Sources */,
 				8E888E711ACD934C00DFC8ED /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E888E8E1ACD934C00DFC8ED /* LivingWordsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
