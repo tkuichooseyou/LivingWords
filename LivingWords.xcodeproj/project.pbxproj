@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		014900CF3748CD78C972394D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 582CBA5B1E901BCB839901C7 /* libPods.a */; };
+		8E09B15F1ACDC0AB00688218 /* scss in Resources */ = {isa = PBXBuildFile; fileRef = 8E09B15E1ACDC0AB00688218 /* scss */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivingWordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D10096C678A28C20C98B96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8E09B15E1ACDC0AB00688218 /* scss */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scss; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		8E888E621ACD934C00DFC8ED = {
 			isa = PBXGroup;
 			children = (
+				8E09B15E1ACDC0AB00688218 /* scss */,
 				8E888E6D1ACD934C00DFC8ED /* LivingWords */,
 				8E888E8A1ACD934C00DFC8ED /* LivingWordsTests */,
 				8E888E6C1ACD934C00DFC8ED /* Products */,
@@ -163,6 +166,7 @@
 				8E888E681ACD934C00DFC8ED /* Frameworks */,
 				8E888E691ACD934C00DFC8ED /* Resources */,
 				36DDE9E5CEEA528F620985F9 /* Copy Pods Resources */,
+				8E09B1601ACDC0CD00688218 /* Run Script - pixate */,
 			);
 			buildRules = (
 			);
@@ -235,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E09B15F1ACDC0AB00688218 /* scss in Resources */,
 				8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */,
 				8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */,
 				8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */,
@@ -295,6 +300,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		8E09B1601ACDC0CD00688218 /* Run Script - pixate */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - pixate";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source /Users/${USER}/.rvm/environments/default\n${GEM_HOME}/bin/sass ${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/scss/default.scss ${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/default.css";
 		};
 		F0F42487084376849AEC68F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
