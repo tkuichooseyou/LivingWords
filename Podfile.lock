@@ -1,0 +1,40 @@
+PODS:
+  - Keys (1.0.2)
+  - KFEpubKit (0.0.6):
+    - KissXML
+    - SSZipArchive
+  - KissXML (5.0)
+  - Kiwi (2.3.1)
+  - ReactiveCocoa (2.4.7):
+    - ReactiveCocoa/UI (= 2.4.7)
+  - ReactiveCocoa/Core (2.4.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.7)
+  - ReactiveCocoa/UI (2.4.7):
+    - ReactiveCocoa/Core
+  - SSZipArchive (0.3.2)
+
+DEPENDENCIES:
+  - Keys (from `https://github.com/ashfurrow/empty-podspec.git`)
+  - KFEpubKit
+  - Kiwi
+  - ReactiveCocoa
+
+EXTERNAL SOURCES:
+  Keys:
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+CHECKOUT OPTIONS:
+  Keys:
+    :commit: dfc3c5e75dd23e5e9f938f4552eaceec4a8b4b73
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+SPEC CHECKSUMS:
+  Keys: 70ad9d2bc98140b7002547b7325e9eebd5a1d17e
+  KFEpubKit: 945938610590a08cd6301370fb25da837d535292
+  KissXML: ce643413d618ad69886d0d43c3792b7dedfe476e
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
+  SSZipArchive: 11801759495fa4efb7512ef652eb0042d68305d7
+
+COCOAPODS: 0.36.3
