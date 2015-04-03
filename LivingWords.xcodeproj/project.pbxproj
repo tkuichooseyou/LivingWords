@@ -83,6 +83,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8E09B1611ACDDC8A00688218 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E888E781ACD934C00DFC8ED /* NewNoteViewController.h */,
+				8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8E09B1621ACDDC9800688218 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8E888E7B1ACD934C00DFC8ED /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		8E09B1661ACDE01A00688218 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8E888E621ACD934C00DFC8ED = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +133,9 @@
 			children = (
 				8E888E721ACD934C00DFC8ED /* AppDelegate.h */,
 				8E888E731ACD934C00DFC8ED /* AppDelegate.m */,
-				8E888E781ACD934C00DFC8ED /* NewNoteViewController.h */,
-				8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */,
-				8E888E7B1ACD934C00DFC8ED /* Main.storyboard */,
+				8E09B1661ACDE01A00688218 /* Models */,
+				8E09B1611ACDDC8A00688218 /* ViewControllers */,
+				8E09B1621ACDDC9800688218 /* Storyboards */,
 				8E888E7E1ACD934C00DFC8ED /* Images.xcassets */,
 				8E888E801ACD934C00DFC8ED /* LaunchScreen.xib */,
 				8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */,
