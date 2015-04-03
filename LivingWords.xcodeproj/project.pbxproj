@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		014900CF3748CD78C972394D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 582CBA5B1E901BCB839901C7 /* libPods.a */; };
 		8E09B15F1ACDC0AB00688218 /* scss in Resources */ = {isa = PBXBuildFile; fileRef = 8E09B15E1ACDC0AB00688218 /* scss */; };
+		8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1681ACF215500688218 /* CoreDataScheduler.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -35,6 +36,8 @@
 		6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivingWordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D10096C678A28C20C98B96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8E09B15E1ACDC0AB00688218 /* scss */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scss; sourceTree = "<group>"; };
+		8E09B1671ACF215500688218 /* CoreDataScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataScheduler.h; sourceTree = "<group>"; };
+		8E09B1681ACF215500688218 /* CoreDataScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataScheduler.m; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		8E09B1661ACDE01A00688218 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E09B1671ACF215500688218 /* CoreDataScheduler.h */,
+				8E09B1681ACF215500688218 /* CoreDataScheduler.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
+				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,
 				8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */,
 				8E888E7A1ACD934C00DFC8ED /* NewNoteViewController.m in Sources */,
 				8E888E711ACD934C00DFC8ED /* main.m in Sources */,
