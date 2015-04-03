@@ -25,16 +25,16 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
-                                <rect key="frame" x="16" y="148" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
+                                <rect key="frame" x="16" y="110" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
-                                <rect key="frame" x="16" y="110" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
+                                <rect key="frame" x="16" y="148" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -77,10 +77,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="7XW-Ip-g7S">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="TQj-wa-iY3"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="icu-xx-rJn"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="UN2-xI-4Xw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="icu-xx-rJn">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="Z3u-RD-ESL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UN2-xI-4Xw">
+                            <connections>
+                                <action selector="save:" destination="BYZ-38-t0r" id="9CG-Vi-zmW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="locationTextField" destination="h5a-T9-tnE" id="a1M-Vi-Znn"/>
+                        <outlet property="speakerTextField" destination="dQc-kk-x0f" id="SWL-P4-6vt"/>
+                        <outlet property="textTextView" destination="vie-dF-cNn" id="Og4-zC-JxC"/>
+                        <outlet property="titleTextField" destination="T4t-GJ-Z9d" id="J2A-ga-NuH"/>
+                        <outlet property="verseTextField" destination="wGU-Pg-6bc" id="R9O-zg-pyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
