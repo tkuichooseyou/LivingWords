@@ -1,0 +1,121 @@
+#import <Kiwi/Kiwi.h>
+#import "AppDelegate.h"
+#import "SceneMediator.h"
+#import "NewNoteViewController.h"
+
+@interface AppDelegate ()
+@property (strong, readwrite) PersistenceController *persistenceController;
+@property (nonatomic, strong) SceneMediator *sceneMediator;
+@end
+
+SPEC_BEGIN(AppDelegateSpec)
+
+describe(@"AppDelegate", ^{
+    __block AppDelegate *appDelegate;
+    __block UIApplication *mockApplication;
+
+    beforeEach(^{
+        appDelegate = [AppDelegate new];
+        mockApplication = [UIApplication nullMock];
+    });
+
+    describe(@"-application:didFinishLaunchingWithOptions:", ^{
+        __block NSDictionary *mockOptions;
+        __block PersistenceController *mockPersistenceController;
+        beforeEach(^{
+            mockOptions = [NSDictionary nullMock];
+            mockPersistenceController = [PersistenceController nullMock];
+            [PersistenceController stub:@selector(alloc)
+                              andReturn:mockPersistenceController];
+            [mockPersistenceController stub:@selector(initWithCallback:)
+                                  andReturn:mockPersistenceController];
+        });
+
+        it(@"initializes persistence controller", ^{
+            [[appDelegate should] receive:@selector(setPersistenceController:)
+                            withArguments:mockPersistenceController];
+
+            [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
+        });
+
+        it(@"sets scene mediator on self", ^{
+            SceneMediator *mockSceneMediator = [SceneMediator nullMock];
+            [SceneMediator stub:@selector(new) andReturn:mockSceneMediator];
+
+            [[appDelegate should] receive:@selector(setSceneMediator:)
+                            withArguments:mockSceneMediator];
+
+            [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
+        });
+
+        context(@"when calling callback", ^{
+            __block void (^callback)();
+            __block NewNoteViewController *mockNewNoteVC;
+            __block SceneMediator *mockSceneMediator;
+            beforeEach(^{
+                [mockPersistenceController stub:@selector(initWithCallback:) withBlock:^id(NSArray *params) {
+                    callback = [params firstObject];
+                    return nil;
+                }];
+
+                UINavigationController *mockNavigationController = [UINavigationController nullMock];
+                UIWindow *mockWindow = [UIWindow nullMock];
+                [appDelegate stub:@selector(window) andReturn:mockWindow];
+                [mockWindow stub:@selector(rootViewController) andReturn:mockNavigationController];
+                mockNewNoteVC = [NewNoteViewController nullMock];
+                [mockNavigationController stub:@selector(topViewController) andReturn:mockNewNoteVC];
+                mockSceneMediator = [SceneMediator nullMock];
+                [appDelegate stub:@selector(sceneMediator) andReturn:mockSceneMediator];
+            });
+
+            it(@"sets scene mediator on initial view controller", ^{
+                [[mockNewNoteVC should] receive:@selector(setSceneMediator:)
+                                  withArguments:mockSceneMediator];
+
+                [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
+                callback();
+            });
+
+            it(@"injects persistence controller into initial view controller", ^{
+                [appDelegate stub:@selector(persistenceController) andReturn:mockPersistenceController];
+
+                [[mockNewNoteVC should] receive:@selector(setPersistenceController:)
+                                  withArguments:mockPersistenceController];
+
+                [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
+                callback();
+            });
+        });
+    });
+
+    context(@"persistence controller", ^{
+        __block PersistenceController *mockPersistenceController;
+        beforeEach(^{
+            mockPersistenceController = [PersistenceController nullMock];
+            [appDelegate stub:@selector(persistenceController) andReturn:mockPersistenceController];
+        });
+
+        describe(@"-applicationWillResignActive:", ^{
+            it(@"lets persistence controller save", ^{
+                [[mockPersistenceController should] receive:@selector(save)];
+                [appDelegate applicationWillResignActive:[UIApplication nullMock]];
+            });
+        });
+
+        describe(@"-applicationDidEnterBackground:", ^{
+            it(@"lets persistence controller save", ^{
+                [[mockPersistenceController should] receive:@selector(save)];
+                [appDelegate applicationDidEnterBackground:[UIApplication nullMock]];
+            });
+        });
+
+        describe(@"-applicationWillTerminate:", ^{
+            it(@"lets persistence controller save", ^{
+                [[mockPersistenceController should] receive:@selector(save)];
+                [appDelegate applicationWillTerminate:[UIApplication nullMock]];
+            });
+        });
+    });
+});
+
+SPEC_END
