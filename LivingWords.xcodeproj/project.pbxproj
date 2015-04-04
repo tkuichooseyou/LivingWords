@@ -10,6 +10,7 @@
 		014900CF3748CD78C972394D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 582CBA5B1E901BCB839901C7 /* libPods.a */; };
 		8E09B15F1ACDC0AB00688218 /* scss in Resources */ = {isa = PBXBuildFile; fileRef = 8E09B15E1ACDC0AB00688218 /* scss */; };
 		8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1681ACF215500688218 /* CoreDataScheduler.m */; };
+		8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B16B1ACF258800688218 /* PersistenceController.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -38,6 +39,9 @@
 		8E09B15E1ACDC0AB00688218 /* scss */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scss; sourceTree = "<group>"; };
 		8E09B1671ACF215500688218 /* CoreDataScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataScheduler.h; sourceTree = "<group>"; };
 		8E09B1681ACF215500688218 /* CoreDataScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataScheduler.m; sourceTree = "<group>"; };
+		8E09B16A1ACF258800688218 /* PersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistenceController.h; sourceTree = "<group>"; };
+		8E09B16B1ACF258800688218 /* PersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceController.m; sourceTree = "<group>"; };
+		8E09B16D1ACF283E00688218 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			children = (
 				8E09B1671ACF215500688218 /* CoreDataScheduler.h */,
 				8E09B1681ACF215500688218 /* CoreDataScheduler.m */,
+				8E09B16A1ACF258800688218 /* PersistenceController.h */,
+				8E09B16B1ACF258800688218 /* PersistenceController.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			children = (
 				8E888E6F1ACD934C00DFC8ED /* Info.plist */,
 				8E888E701ACD934C00DFC8ED /* main.m */,
+				8E09B16D1ACF283E00688218 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
+				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
 				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,
 				8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */,
 				8E888E7A1ACD934C00DFC8ED /* NewNoteViewController.m in Sources */,
@@ -498,6 +506,7 @@
 			baseConfigurationReference = 5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -510,6 +519,7 @@
 			baseConfigurationReference = 76D10096C678A28C20C98B96 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
