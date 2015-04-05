@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7535.1" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Note" representedClassName="Note" syncable="YES">
+    <entity name="Note" representedClassName="" syncable="YES">
         <attribute name="collection" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="449769600" defaultValueString="NOW" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="449856000" defaultValueString="NOW" syncable="YES"/>
         <attribute name="key_takeaways" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speaker" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,7 +15,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="tags" inverseEntity="Note" syncable="YES"/>
     </entity>
-    <entity name="Verse" representedClassName="Verse" syncable="YES">
+    <entity name="Verse" representedClassName="" syncable="YES">
         <attribute name="book" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="chapter" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>

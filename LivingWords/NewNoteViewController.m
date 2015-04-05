@@ -12,18 +12,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)cancel:(id)sender {
 }
 
 - (IBAction)save:(id)sender {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Note"
+                                                         inManagedObjectContext:self.persistenceController.managedObjectContext];
+    NSManagedObject *newNote = [[NSManagedObject alloc] initWithEntity:entityDescription
+                                        insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+
+    [newNote setValue:self.titleTextField.text forKey:@"title"];
+    [newNote setValue:self.locationTextField.text forKey:@"location"];
+    [newNote setValue:self.speakerTextField.text forKey:@"speaker"];
+    [newNote setValue:self.textTextView.text forKey:@"text"];
+
+    NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
+                                                         inManagedObjectContext:self.persistenceController.managedObjectContext];
+    NSManagedObject *newVerse = [[NSManagedObject alloc] initWithEntity:verseEntityDescription
+                                        insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+
+    [newVerse setValue:self.verseTextField.text forKey:@"book"];
+    [newVerse setValue:self.verseTextField.text forKey:@"chapter"];
+    [newVerse setValue:self.verseTextField.text forKey:@"number"];
+    NSSet *verseSet = [NSSet setWithObject:newVerse];
+    [newNote setValue:verseSet forKey:@"verses"];
+
+    [self.persistenceController save];
 }
 
 @end

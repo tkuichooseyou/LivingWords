@@ -1,7 +1,7 @@
 #import <Kiwi/Kiwi.h>
 #import "AppDelegate.h"
 #import "SceneMediator.h"
-#import "NewNoteViewController.h"
+#import "NotesViewController.h"
 
 @interface AppDelegate ()
 @property (strong, readwrite) PersistenceController *persistenceController;
@@ -50,7 +50,7 @@ describe(@"AppDelegate", ^{
 
         context(@"when calling callback", ^{
             __block void (^callback)();
-            __block NewNoteViewController *mockNewNoteVC;
+            __block NotesViewController *mockNotesVC;
             __block SceneMediator *mockSceneMediator;
             beforeEach(^{
                 [mockPersistenceController stub:@selector(initWithCallback:) withBlock:^id(NSArray *params) {
@@ -62,14 +62,14 @@ describe(@"AppDelegate", ^{
                 UIWindow *mockWindow = [UIWindow nullMock];
                 [appDelegate stub:@selector(window) andReturn:mockWindow];
                 [mockWindow stub:@selector(rootViewController) andReturn:mockNavigationController];
-                mockNewNoteVC = [NewNoteViewController nullMock];
-                [mockNavigationController stub:@selector(topViewController) andReturn:mockNewNoteVC];
+                mockNotesVC = [NotesViewController nullMock];
+                [mockNavigationController stub:@selector(topViewController) andReturn:mockNotesVC];
                 mockSceneMediator = [SceneMediator nullMock];
                 [appDelegate stub:@selector(sceneMediator) andReturn:mockSceneMediator];
             });
 
             it(@"sets scene mediator on initial view controller", ^{
-                [[mockNewNoteVC should] receive:@selector(setSceneMediator:)
+                [[mockNotesVC should] receive:@selector(setSceneMediator:)
                                   withArguments:mockSceneMediator];
 
                 [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
@@ -79,7 +79,7 @@ describe(@"AppDelegate", ^{
             it(@"injects persistence controller into initial view controller", ^{
                 [appDelegate stub:@selector(persistenceController) andReturn:mockPersistenceController];
 
-                [[mockNewNoteVC should] receive:@selector(setPersistenceController:)
+                [[mockNotesVC should] receive:@selector(setPersistenceController:)
                                   withArguments:mockPersistenceController];
 
                 [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];

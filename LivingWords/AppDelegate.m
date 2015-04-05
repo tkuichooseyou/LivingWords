@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
-#import "NewNoteViewController.h"
 #import "SceneMediator.h"
+#import "NotesViewController.h"
 
 @interface AppDelegate ()
 @property (strong, readwrite) PersistenceController *persistenceController;
@@ -37,9 +37,27 @@
 - (void)completeUserInterface
 {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    NewNoteViewController *controller = (NewNoteViewController *)navigationController.topViewController;
+    NotesViewController *controller = (NotesViewController *)navigationController.topViewController;
     controller.sceneMediator = self.sceneMediator;
     controller.persistenceController = self.persistenceController;
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]]];
+    controller.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                     initWithFetchRequest:fetchRequest
+                                     managedObjectContext:self.persistenceController.managedObjectContext
+                                     sectionNameKeyPath:nil
+                                     cacheName:nil];
+    [controller.fetchedResultsController setDelegate:controller];
+
+    NSError *error = nil;
+    [controller.fetchedResultsController performFetch:&error];
+    [controller.tableView reloadData];
+
+    if (error) {
+        NSLog(@"Unable to perform fetch.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
 }
 
 @end

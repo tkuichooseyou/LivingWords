@@ -4,8 +4,6 @@
 @implementation SceneMediator
 - (void)segueWithIdentifier:(NSString *)identifier segue:(UIStoryboardSegue *)segue
 {
-
-    //Print the class names of the source and view controllers
     NSLog(@"Transitioning From %@ to %@", segue.sourceViewController, segue.destinationViewController);
 
     //Pass the mediator object to the destination view controller and take appropriate action depending on segue
