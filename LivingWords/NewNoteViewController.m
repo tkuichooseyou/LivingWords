@@ -12,36 +12,40 @@
 
 @implementation NewNoteViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
 }
 
 - (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)save:(id)sender {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Note"
-                                                         inManagedObjectContext:self.persistenceController.managedObjectContext];
-    Note *newNote = [[Note alloc] initWithEntity:entityDescription
-                  insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Note"
+                                                             inManagedObjectContext:self.persistenceController.managedObjectContext];
+        Note *newNote = [[Note alloc] initWithEntity:entityDescription
+                      insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
 
-    newNote.title = self.titleTextField.text;
-    newNote.location = self.locationTextField.text;
-    newNote.speaker = self.speakerTextField.text;
-    newNote.text = self.textTextView.text;
+        newNote.title = self.titleTextField.text;
+        newNote.location = self.locationTextField.text;
+        newNote.speaker = self.speakerTextField.text;
+        newNote.text = self.textTextView.text;
 
-    NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
-                                                         inManagedObjectContext:self.persistenceController.managedObjectContext];
-    Verse *newVerse = [[Verse alloc] initWithEntity:verseEntityDescription
-                     insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+        NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
+                                                                  inManagedObjectContext:self.persistenceController.managedObjectContext];
+        Verse *newVerse = [[Verse alloc] initWithEntity:verseEntityDescription
+                         insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
 
-    newVerse.book = self.verseTextField.text;
-    newVerse.chapter = self.verseTextField.text;
-    newVerse.number = self.verseTextField.text;
-    NSSet *verseSet = [NSSet setWithObject:newVerse];
-    newNote.verses = verseSet;
+        newVerse.book = self.verseTextField.text;
+        newVerse.chapter = self.verseTextField.text;
+        newVerse.number = self.verseTextField.text;
+        NSSet *verseSet = [NSSet setWithObject:newVerse];
+        newNote.verses = verseSet;
 
-    [self.persistenceController save];
+        [self.persistenceController save];
+    }];
 }
 
 @end

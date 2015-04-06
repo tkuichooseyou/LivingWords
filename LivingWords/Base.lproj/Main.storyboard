@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--New Note-->
+        <!--New Note View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NewNoteViewController" sceneMemberID="viewController">
@@ -17,8 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-nn-6TR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="New Note" id="7XW-Ip-g7S">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="icu-xx-rJn">
+                                            <connections>
+                                                <action selector="cancel:" destination="BYZ-38-t0r" id="Z3u-RD-ESL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UN2-xI-4Xw">
+                                            <connections>
+                                                <action selector="save:" destination="BYZ-38-t0r" id="9CG-Vi-zmW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-GJ-Z9d">
-                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <rect key="frame" x="16" y="54" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -26,7 +43,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
-                                <rect key="frame" x="16" y="66" width="568" height="30"/>
+                                <rect key="frame" x="16" y="92" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -34,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
-                                <rect key="frame" x="16" y="104" width="568" height="30"/>
+                                <rect key="frame" x="16" y="130" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -42,7 +59,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGU-Pg-6bc">
-                                <rect key="frame" x="16" y="142" width="568" height="30"/>
+                                <rect key="frame" x="16" y="168" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -50,7 +67,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
-                                <rect key="frame" x="16" y="180" width="568" height="412"/>
+                                <rect key="frame" x="16" y="206" width="568" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -61,8 +78,12 @@
                             <constraint firstItem="dQc-kk-x0f" firstAttribute="top" secondItem="h5a-T9-tnE" secondAttribute="bottom" constant="8" id="4Lo-0L-ZQM"/>
                             <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="692-nU-1kQ"/>
                             <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6pj-k0-3zR"/>
+                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="8gO-2L-qXg"/>
+                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="top" secondItem="Qgl-nn-6TR" secondAttribute="bottom" constant="10" id="A3r-o2-E3l"/>
                             <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A7w-id-ybf"/>
                             <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gx3-5M-kDn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qgl-nn-6TR" secondAttribute="trailing" constant="-16" id="HpL-KP-U8X"/>
+                            <constraint firstItem="h5a-T9-tnE" firstAttribute="top" secondItem="Qgl-nn-6TR" secondAttribute="bottom" id="OxK-8i-wJ0"/>
                             <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rg5-i5-BcI"/>
                             <constraint firstItem="wGU-Pg-6bc" firstAttribute="top" secondItem="dQc-kk-x0f" secondAttribute="bottom" constant="8" id="UA6-fY-kvy"/>
                             <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bo0-lm-dVJ"/>
@@ -70,24 +91,23 @@
                             <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gbd-0W-Vq2"/>
                             <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gu9-um-l7e"/>
                             <constraint firstItem="h5a-T9-tnE" firstAttribute="top" secondItem="T4t-GJ-Z9d" secondAttribute="bottom" constant="8" id="hbM-fz-5jC"/>
+                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="bottom" secondItem="T4t-GJ-Z9d" secondAttribute="bottom" id="mAE-Qf-czd"/>
+                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="top" secondItem="T4t-GJ-Z9d" secondAttribute="top" constant="-28" id="oUh-XK-3CO"/>
                             <constraint firstItem="T4t-GJ-Z9d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oy3-dT-oLK"/>
                             <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pTv-jY-lpf"/>
+                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="pvJ-Pv-xhX"/>
                             <constraint firstItem="vie-dF-cNn" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="rXQ-8l-7Hj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vie-dF-cNn" secondAttribute="bottom" constant="8" id="wlv-dM-JBL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mAE-Qf-czd"/>
+                                <exclude reference="oUh-XK-3CO"/>
+                                <exclude reference="oy3-dT-oLK"/>
+                                <exclude reference="OxK-8i-wJ0"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="New Note" id="7XW-Ip-g7S">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="icu-xx-rJn">
-                            <connections>
-                                <action selector="cancel:" destination="BYZ-38-t0r" id="Z3u-RD-ESL"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="UN2-xI-4Xw">
-                            <connections>
-                                <action selector="save:" destination="BYZ-38-t0r" id="9CG-Vi-zmW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="h5a-T9-tnE" id="a1M-Vi-Znn"/>
                         <outlet property="speakerTextField" destination="dQc-kk-x0f" id="SWL-P4-6vt"/>
@@ -100,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="1714" y="-399"/>
         </scene>
-        <!--Notes View Controller-->
+        <!--Library-->
         <scene sceneID="I8y-np-zbI">
             <objects>
                 <viewController id="6dJ-uj-xk2" customClass="NotesViewController" sceneMemberID="viewController">
@@ -168,7 +188,13 @@
                             <constraint firstAttribute="bottomMargin" secondItem="0So-g0-M3m" secondAttribute="bottom" id="yiK-0y-Zbb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DYF-YW-vey"/>
+                    <navigationItem key="navigationItem" title="Library" id="DYF-YW-vey">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9QH-Xq-lgF">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="NewNoteViewController" id="nBZ-EP-dVx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0So-g0-M3m" id="F1U-cH-2Tr"/>
                     </connections>

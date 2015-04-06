@@ -13,6 +13,11 @@
     [super viewDidLoad];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
+}
+
 #pragma mark - UITableView
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
