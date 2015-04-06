@@ -1,4 +1,6 @@
 #import "NewNoteViewController.h"
+#import "Note.h"
+#import "Verse.h"
 
 @interface NewNoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -20,24 +22,24 @@
 - (IBAction)save:(id)sender {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Note"
                                                          inManagedObjectContext:self.persistenceController.managedObjectContext];
-    NSManagedObject *newNote = [[NSManagedObject alloc] initWithEntity:entityDescription
-                                        insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+    Note *newNote = [[Note alloc] initWithEntity:entityDescription
+                  insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
 
-    [newNote setValue:self.titleTextField.text forKey:@"title"];
-    [newNote setValue:self.locationTextField.text forKey:@"location"];
-    [newNote setValue:self.speakerTextField.text forKey:@"speaker"];
-    [newNote setValue:self.textTextView.text forKey:@"text"];
+    newNote.title = self.titleTextField.text;
+    newNote.location = self.locationTextField.text;
+    newNote.speaker = self.speakerTextField.text;
+    newNote.text = self.textTextView.text;
 
     NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
                                                          inManagedObjectContext:self.persistenceController.managedObjectContext];
-    NSManagedObject *newVerse = [[NSManagedObject alloc] initWithEntity:verseEntityDescription
-                                        insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+    Verse *newVerse = [[Verse alloc] initWithEntity:verseEntityDescription
+                     insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
 
-    [newVerse setValue:self.verseTextField.text forKey:@"book"];
-    [newVerse setValue:self.verseTextField.text forKey:@"chapter"];
-    [newVerse setValue:self.verseTextField.text forKey:@"number"];
+    newVerse.book = self.verseTextField.text;
+    newVerse.chapter = self.verseTextField.text;
+    newVerse.number = self.verseTextField.text;
     NSSet *verseSet = [NSSet setWithObject:newVerse];
-    [newNote setValue:verseSet forKey:@"verses"];
+    newNote.verses = verseSet;
 
     [self.persistenceController save];
 }

@@ -1,5 +1,6 @@
 #import "NotesViewController.h"
 #import "NoteCell.h"
+#import "Note.h"
 
 @interface NotesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -81,9 +82,9 @@
 #pragma mark - private methods
 
 - (void)configureCell:(NoteCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    cell.dateLabel = [object valueForKey:@"date"];
-    cell.titleLabel = [object valueForKey:@"title"];
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    cell.dateLabel.text = [note.date"];
+    cell.titleLabel.text = note.title;
 }
 
 @end
