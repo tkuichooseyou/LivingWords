@@ -142,7 +142,7 @@ describe(@"AppDelegate", ^{
                 [mockNotesVC stub:@selector(tableView) andReturn:mockTableView];
 
                 [[mockTableView should] receive:@selector(reloadData)];
-                
+
                 callback();
             });
         });

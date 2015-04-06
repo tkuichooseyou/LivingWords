@@ -136,18 +136,13 @@
 		8E09B1661ACDE01A00688218 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E2AE8C81AD331880074C686 /* Utility */,
 				8E2AE8C51AD3176C0074C686 /* Note.h */,
 				8E2AE8C61AD3176C0074C686 /* Note.m */,
 				8E2AE8C21AD3176C0074C686 /* Verse.h */,
 				8E2AE8C31AD3176C0074C686 /* Verse.m */,
 				8E2AE8BF1AD3176B0074C686 /* Tag.h */,
 				8E2AE8C01AD3176B0074C686 /* Tag.m */,
-				8E09B1671ACF215500688218 /* CoreDataScheduler.h */,
-				8E09B1681ACF215500688218 /* CoreDataScheduler.m */,
-				8E09B16A1ACF258800688218 /* PersistenceController.h */,
-				8E09B16B1ACF258800688218 /* PersistenceController.m */,
-				8E09B1701AD08A8400688218 /* SceneMediator.h */,
-				8E09B1711AD08A8400688218 /* SceneMediator.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -168,6 +163,19 @@
 				8E09B17C1AD0DE3E00688218 /* NoteCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		8E2AE8C81AD331880074C686 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8E09B1671ACF215500688218 /* CoreDataScheduler.h */,
+				8E09B1681ACF215500688218 /* CoreDataScheduler.m */,
+				8E09B16A1ACF258800688218 /* PersistenceController.h */,
+				8E09B16B1ACF258800688218 /* PersistenceController.m */,
+				8E09B1701AD08A8400688218 /* SceneMediator.h */,
+				8E09B1711AD08A8400688218 /* SceneMediator.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		8E888E621ACD934C00DFC8ED = {
