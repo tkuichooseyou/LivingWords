@@ -1,4 +1,5 @@
 PODS:
+  - JVFloatingDrawer (0.1.0)
   - KFEpubKit (0.0.6):
     - KissXML
     - SSZipArchive
@@ -15,12 +16,14 @@ PODS:
   - SSZipArchive (0.3.2)
 
 DEPENDENCIES:
+  - JVFloatingDrawer
   - KFEpubKit
   - Kiwi
   - PixateFreestyle
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
+  JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   KFEpubKit: 945938610590a08cd6301370fb25da837d535292
   KissXML: ce643413d618ad69886d0d43c3792b7dedfe476e
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
