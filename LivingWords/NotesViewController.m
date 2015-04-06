@@ -19,7 +19,6 @@
     return [self.fetchedResultsController.sections count];
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSArray *sections = [self.fetchedResultsController sections];
@@ -35,6 +34,10 @@
 
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -74,6 +77,8 @@
         }
     }
 }
+
+#pragma mark - private methods
 
 - (void)configureCell:(NoteCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];

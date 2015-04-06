@@ -43,12 +43,13 @@
 
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
     [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]]];
-    controller.fetchedResultsController = [[NSFetchedResultsController alloc]
-                                     initWithFetchRequest:fetchRequest
-                                     managedObjectContext:self.persistenceController.managedObjectContext
-                                     sectionNameKeyPath:nil
-                                     cacheName:nil];
-    [controller.fetchedResultsController setDelegate:controller];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
+                                                            initWithFetchRequest:fetchRequest
+                                                            managedObjectContext:self.persistenceController.managedObjectContext
+                                                            sectionNameKeyPath:nil
+                                                            cacheName:nil];
+    fetchedResultsController.delegate = controller;
+    controller.fetchedResultsController = fetchedResultsController;
 
     NSError *error = nil;
     [controller.fetchedResultsController performFetch:&error];

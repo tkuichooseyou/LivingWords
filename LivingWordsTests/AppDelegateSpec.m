@@ -48,15 +48,21 @@ describe(@"AppDelegate", ^{
             [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
         });
 
-        context(@"when calling callback", ^{
+        context(@"when calling completeUserInterface callback", ^{
             __block void (^callback)();
             __block NotesViewController *mockNotesVC;
             __block SceneMediator *mockSceneMediator;
+            __block NSFetchedResultsController *mockFetchedResultsController;
+            __block NSFetchRequest *mockFetchRequest;
+            __block NSManagedObjectContext *mockManagedObjectContext;
+
             beforeEach(^{
                 [mockPersistenceController stub:@selector(initWithCallback:) withBlock:^id(NSArray *params) {
                     callback = [params firstObject];
                     return nil;
                 }];
+
+                [appDelegate stub:@selector(persistenceController) andReturn:mockPersistenceController];
 
                 UINavigationController *mockNavigationController = [UINavigationController nullMock];
                 UIWindow *mockWindow = [UIWindow nullMock];
@@ -66,23 +72,77 @@ describe(@"AppDelegate", ^{
                 [mockNavigationController stub:@selector(topViewController) andReturn:mockNotesVC];
                 mockSceneMediator = [SceneMediator nullMock];
                 [appDelegate stub:@selector(sceneMediator) andReturn:mockSceneMediator];
+
+                mockFetchRequest = [NSFetchRequest nullMock];
+                [NSFetchRequest stub:@selector(alloc) andReturn:mockFetchRequest];
+                [mockFetchRequest stub:@selector(initWithEntityName:)
+                             andReturn:mockFetchRequest
+                         withArguments:@"Note"];
+
+                mockManagedObjectContext = [NSManagedObjectContext nullMock];
+                [mockPersistenceController stub:@selector(managedObjectContext) andReturn:mockManagedObjectContext];
+
+                mockFetchedResultsController = [NSFetchedResultsController nullMock];
+                [NSFetchedResultsController stub:@selector(alloc) andReturn:mockFetchedResultsController];
+                [mockFetchedResultsController stub:@selector(initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:)
+                                         andReturn:mockFetchedResultsController
+                                     withArguments:mockFetchRequest, mockManagedObjectContext, nil, nil];
+
+                [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
             });
 
             it(@"sets scene mediator on initial view controller", ^{
                 [[mockNotesVC should] receive:@selector(setSceneMediator:)
                                   withArguments:mockSceneMediator];
 
-                [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
                 callback();
             });
 
             it(@"injects persistence controller into initial view controller", ^{
-                [appDelegate stub:@selector(persistenceController) andReturn:mockPersistenceController];
-
                 [[mockNotesVC should] receive:@selector(setPersistenceController:)
                                   withArguments:mockPersistenceController];
 
-                [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
+                callback();
+            });
+
+            it(@"sets fetched results controller on initial view controller", ^{
+                [[mockNotesVC should] receive:@selector(setFetchedResultsController:)
+                                  withArguments:mockFetchedResultsController];
+
+                callback();
+            });
+
+            it(@"sets delegate on fetched results controller", ^{
+                [[mockFetchedResultsController should] receive:@selector(setDelegate:)
+                                                 withArguments:mockNotesVC];
+
+                callback();
+            });
+
+            it(@"sorts fetched results by date", ^{
+                NSSortDescriptor *mockSortDescriptor = [NSSortDescriptor nullMock];
+                [NSSortDescriptor stub:@selector(sortDescriptorWithKey:ascending:)
+                             andReturn:mockSortDescriptor
+                 withArguments:@"date", theValue(YES)];
+
+                [[mockFetchRequest should] receive:@selector(setSortDescriptors:)
+                                     withArguments:@[mockSortDescriptor]];
+
+                callback();
+            });
+
+            it(@"performs fetch for notes", ^{
+                [mockNotesVC stub:@selector(fetchedResultsController) andReturn:mockFetchedResultsController];
+                [[mockFetchedResultsController should] receive:@selector(performFetch:)];
+                callback();
+            });
+
+            it(@"reloads table view", ^{
+                UITableView *mockTableView = [UITableView nullMock];
+                [mockNotesVC stub:@selector(tableView) andReturn:mockTableView];
+
+                [[mockTableView should] receive:@selector(reloadData)];
+                
                 callback();
             });
         });
