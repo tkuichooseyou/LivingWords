@@ -40,7 +40,7 @@ describe(@"VerseParser", ^{
             [[expectFutureValue(result.numberEnd) shouldEventually] equal:@17];
         });
 
-        xit(@"returns multiple verses", ^{
+        it(@"returns multiple verses", ^{
             NSString *verseString = @"1 John 3:16-17, John 3:16";
 
             NSSet *set = [VerseParser parseString:verseString];
@@ -48,12 +48,13 @@ describe(@"VerseParser", ^{
             ParsedVerse *resultTwo = [[set allObjects] lastObject];
 
             [[expectFutureValue(resultOne.book) shouldEventually] equal:@"1 John"];
-            [[expectFutureValue(resultOne.chapterStart) shouldEventually] equal:@"3"];
-            [[expectFutureValue(resultOne.numberStart) shouldEventually] equal:@"16-17"];
+            [[expectFutureValue(resultOne.chapterStart) shouldEventually] equal:@3];
+            [[expectFutureValue(resultOne.numberStart) shouldEventually] equal:@16];
+            [[expectFutureValue(resultOne.numberEnd) shouldEventually] equal:@17];
 
             [[expectFutureValue(resultTwo.book) shouldEventually] equal:@"John"];
-            [[expectFutureValue(resultTwo.chapterStart) shouldEventually] equal:@"3"];
-            [[expectFutureValue(resultTwo.numberStart) shouldEventually] equal:@"16"];
+            [[expectFutureValue(resultTwo.chapterStart) shouldEventually] equal:@3];
+            [[expectFutureValue(resultTwo.numberStart) shouldEventually] equal:@16];
         });
     });
 });
