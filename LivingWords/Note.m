@@ -2,6 +2,7 @@
 #import "Tag.h"
 #import "Verse.h"
 
+
 @implementation Note
 
 @dynamic collection;

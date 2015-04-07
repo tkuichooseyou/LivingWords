@@ -6,11 +6,12 @@
 @interface Verse : NSManagedObject
 
 @property (nonatomic, retain) NSString * book;
-@property (nonatomic, retain) NSNumber * chapterStart;
-@property (nonatomic, retain) NSNumber * numberStart;
-@property (nonatomic, retain) NSNumber * numberEnd;
 @property (nonatomic, retain) NSNumber * chapterEnd;
+@property (nonatomic, retain) NSNumber * chapterStart;
+@property (nonatomic, retain) NSNumber * numberEnd;
+@property (nonatomic, retain) NSNumber * numberStart;
 @property (nonatomic, retain) NSSet *notes;
+
 @end
 
 @interface Verse (CoreDataGeneratedAccessors)

@@ -5,10 +5,10 @@
 @implementation Verse
 
 @dynamic book;
-@dynamic chapterStart;
-@dynamic numberStart;
-@dynamic numberEnd;
 @dynamic chapterEnd;
+@dynamic chapterStart;
+@dynamic numberEnd;
+@dynamic numberStart;
 @dynamic notes;
 
 @end

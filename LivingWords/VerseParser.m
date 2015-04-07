@@ -37,4 +37,10 @@
     return [NSOrderedSet orderedSetWithArray:versesSequence.array];
 }
 
++ (NSString *)displayVerse:(Verse *)verse
+{
+    return [NSString stringWithFormat:@"%@ %@:%@",
+            verse.book, verse.chapterStart, verse.numberStart];
+}
+
 @end

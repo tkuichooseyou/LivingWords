@@ -1,6 +1,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "EditNoteViewController.h"
 #import "Verse.h"
+#import "VerseParser.h"
 
 @interface EditNoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -18,7 +19,7 @@
     self.titleTextField.text = self.note.title;
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
-    self.verseTextField.text = [(Verse *)[[self.note.verses allObjects] firstObject] book];
+    self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
     self.textTextView.text = self.note.text;
 
     RAC(self, note.title) = self.titleTextField.rac_textSignal;

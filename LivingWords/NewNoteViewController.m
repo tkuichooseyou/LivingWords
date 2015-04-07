@@ -1,6 +1,7 @@
 #import "NewNoteViewController.h"
 #import "Note.h"
 #import "Verse.h"
+#import "VerseFactory.h"
 
 @interface NewNoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -33,15 +34,9 @@
         newNote.speaker = self.speakerTextField.text;
         newNote.text = self.textTextView.text;
 
-        NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
-                                                                  inManagedObjectContext:self.persistenceController.managedObjectContext];
-        Verse *newVerse = [[Verse alloc] initWithEntity:verseEntityDescription
-                         insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+        NSOrderedSet *verseSet = [VerseFactory createWithText:self.verseTextField.text
+                                         managedObjectContext:self.persistenceController.managedObjectContext];
 
-        newVerse.book = self.verseTextField.text;
-        newVerse.chapterStart = @([self.verseTextField.text integerValue]);
-        newVerse.numberStart = @([self.verseTextField.text integerValue]);
-        NSSet *verseSet = [NSSet setWithObject:newVerse];
         newNote.verses = verseSet;
 
         [self.persistenceController save];

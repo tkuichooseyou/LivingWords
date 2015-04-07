@@ -9,7 +9,7 @@
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="notes" inverseEntity="Tag" syncable="YES"/>
-        <relationship name="verses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Verse" inverseName="notes" inverseEntity="Verse" syncable="YES"/>
+        <relationship name="verses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Verse" inverseName="notes" inverseEntity="Verse" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName="Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +24,7 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="verses" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-416" positionY="24" width="128" height="178"/>
+        <element name="Note" positionX="-416" positionY="24" width="128" height="180"/>
         <element name="Tag" positionX="-234" positionY="24" width="128" height="73"/>
         <element name="Verse" positionX="-54" positionY="18" width="128" height="135"/>
     </elements>

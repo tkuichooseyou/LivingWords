@@ -18,7 +18,6 @@
 		8E09B17A1AD0DB4700688218 /* NotesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1791AD0DB4700688218 /* NotesViewControllerSpec.m */; };
 		8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B17C1AD0DE3E00688218 /* NoteCell.m */; };
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
-		8E2AE8C71AD3176C0074C686 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C61AD3176C0074C686 /* Note.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
@@ -27,13 +26,14 @@
 		8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7B1ACD934C00DFC8ED /* Main.storyboard */; };
 		8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7E1ACD934C00DFC8ED /* Images.xcassets */; };
 		8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E801ACD934C00DFC8ED /* LaunchScreen.xib */; };
+		8EC19B0A1AD4A0E500257932 /* Verse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC19B091AD4A0E500257932 /* Verse.m */; };
+		8EC19B0D1AD4A12200257932 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC19B0C1AD4A12200257932 /* Note.m */; };
 		8EC534771AD420EB0058A5FD /* VerseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534761AD420EB0058A5FD /* VerseFactory.m */; };
 		8EC5347A1AD421120058A5FD /* VerseFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534791AD421120058A5FD /* VerseFactorySpec.m */; };
 		8EC5347F1AD4260B0058A5FD /* VerseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5347E1AD4260B0058A5FD /* VerseParser.m */; };
 		8EC534811AD426410058A5FD /* VerseParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534801AD426410058A5FD /* VerseParserSpec.m */; };
 		8EC534861AD42A2F0058A5FD /* ParsedVerse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534851AD42A2F0058A5FD /* ParsedVerse.m */; };
 		8EC534891AD4325D0058A5FD /* Bible.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534881AD4325D0058A5FD /* Bible.m */; };
-		8ECDD4AD1AD48A0100A6AD68 /* Verse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDD4AC1AD48A0100A6AD68 /* Verse.m */; };
 		944E88AE4E73AF1D92FBCF02 /* libPods-LivingWordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +69,6 @@
 		8E09B17C1AD0DE3E00688218 /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
 		8E2AE8BF1AD3176B0074C686 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		8E2AE8C01AD3176B0074C686 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
-		8E2AE8C51AD3176C0074C686 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		8E2AE8C61AD3176C0074C686 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +84,10 @@
 		8E888E811ACD934C00DFC8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8E888E871ACD934C00DFC8ED /* LivingWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LivingWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E8C1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC19B081AD4A0E500257932 /* Verse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Verse.h; sourceTree = "<group>"; };
+		8EC19B091AD4A0E500257932 /* Verse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Verse.m; sourceTree = "<group>"; };
+		8EC19B0B1AD4A12200257932 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		8EC19B0C1AD4A12200257932 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		8EC534751AD420EB0058A5FD /* VerseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerseFactory.h; sourceTree = "<group>"; };
 		8EC534761AD420EB0058A5FD /* VerseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerseFactory.m; sourceTree = "<group>"; };
 		8EC534791AD421120058A5FD /* VerseFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerseFactorySpec.m; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		8EC534851AD42A2F0058A5FD /* ParsedVerse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerse.m; sourceTree = "<group>"; };
 		8EC534871AD4325D0058A5FD /* Bible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bible.h; sourceTree = "<group>"; };
 		8EC534881AD4325D0058A5FD /* Bible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bible.m; sourceTree = "<group>"; };
-		8ECDD4AB1AD48A0100A6AD68 /* Verse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Verse.h; sourceTree = "<group>"; };
-		8ECDD4AC1AD48A0100A6AD68 /* Verse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Verse.m; sourceTree = "<group>"; };
 		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,12 +305,12 @@
 		8EC534831AD42A090058A5FD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8E2AE8C51AD3176C0074C686 /* Note.h */,
-				8E2AE8C61AD3176C0074C686 /* Note.m */,
+				8EC19B0B1AD4A12200257932 /* Note.h */,
+				8EC19B0C1AD4A12200257932 /* Note.m */,
 				8E2AE8BF1AD3176B0074C686 /* Tag.h */,
 				8E2AE8C01AD3176B0074C686 /* Tag.m */,
-				8ECDD4AB1AD48A0100A6AD68 /* Verse.h */,
-				8ECDD4AC1AD48A0100A6AD68 /* Verse.m */,
+				8EC19B081AD4A0E500257932 /* Verse.h */,
+				8EC19B091AD4A0E500257932 /* Verse.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -508,9 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */,
+				8EC19B0D1AD4A12200257932 /* Note.m in Sources */,
 				8E09B1781AD0DAF800688218 /* NotesViewController.m in Sources */,
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
-				8E2AE8C71AD3176C0074C686 /* Note.m in Sources */,
 				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
 				8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */,
 				8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */,
@@ -523,7 +523,7 @@
 				8E888E7A1ACD934C00DFC8ED /* NewNoteViewController.m in Sources */,
 				8EC534771AD420EB0058A5FD /* VerseFactory.m in Sources */,
 				8E888E711ACD934C00DFC8ED /* main.m in Sources */,
-				8ECDD4AD1AD48A0100A6AD68 /* Verse.m in Sources */,
+				8EC19B0A1AD4A0E500257932 /* Verse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

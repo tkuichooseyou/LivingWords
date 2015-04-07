@@ -57,6 +57,25 @@ describe(@"VerseParser", ^{
             [[expectFutureValue(resultTwo.numberStart) shouldEventually] equal:@16];
         });
     });
+
+    describe(@"+displayVerse:", ^{
+        it(@"returns formatted string for single verse", ^{
+            NSManagedObjectContext *mockManagedObjectContext = [NSManagedObjectContext nullMock];
+            NSEntityDescription *mockEntityDescription = [NSEntityDescription nullMock];
+            [NSEntityDescription stub:@selector(entityForName:inManagedObjectContext:)
+                            andReturn:mockEntityDescription
+                        withArguments:@"Verse", mockManagedObjectContext];
+
+            Verse *mockVerse = [Verse nullMock];
+            [mockVerse stub:@selector(book) andReturn:@"John"];
+            [mockVerse stub:@selector(chapterStart) andReturn:@3];
+            [mockVerse stub:@selector(numberStart) andReturn:@16];
+
+            NSString *result = [VerseParser displayVerse:mockVerse];
+
+            [[result should] equal:@"John 3:16"];
+        });
+    });
 });
 
 SPEC_END
