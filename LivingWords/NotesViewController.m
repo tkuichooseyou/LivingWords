@@ -3,18 +3,15 @@
 #import "Note.h"
 
 @interface NotesViewController () <UITableViewDataSource, UITableViewDelegate>
-
 @end
 
 @implementation NotesViewController
 
--(void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.selectedNote = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
 }
 
@@ -42,8 +39,19 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if (record) {
+            [self.fetchedResultsController.managedObjectContext deleteObject:record];
+        }
+    }
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

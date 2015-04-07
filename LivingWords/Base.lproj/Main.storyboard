@@ -120,6 +120,95 @@
             </objects>
             <point key="canvasLocation" x="1714" y="-399"/>
         </scene>
+        <!--Edit Note View Controller-->
+        <scene sceneID="l46-qp-141">
+            <objects>
+                <viewController id="L0A-vn-K2B" customClass="EditNoteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P33-3W-Yo1"/>
+                        <viewControllerLayoutGuide type="bottom" id="jHg-Up-X3S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QKA-Ho-ylT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YeD-qv-yJh">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sz-Wh-M5C">
+                                <rect key="frame" x="16" y="110" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O98-Kl-Wvl">
+                                <rect key="frame" x="16" y="148" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-MP-AaD">
+                                <rect key="frame" x="16" y="186" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
+                                <rect key="frame" x="16" y="224" width="568" height="376"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="top" secondItem="P33-3W-Yo1" secondAttribute="bottom" constant="8" id="615-4s-Yzv"/>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="6Nj-8Q-Kb7"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="7qK-uQ-kLM"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="9nW-xz-UxK"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="INi-Xg-ank"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="L4g-xC-zOz"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="ScC-mu-cXZ"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="top" secondItem="0sz-Wh-M5C" secondAttribute="bottom" constant="8" id="Uzd-SF-klN"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="top" secondItem="YeD-qv-yJh" secondAttribute="bottom" constant="8" id="XQr-Z8-j7w"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="top" secondItem="0sz-Wh-M5C" secondAttribute="bottom" constant="8" id="ZBo-UV-iGJ"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="top" secondItem="pyp-MP-AaD" secondAttribute="bottom" constant="8" id="ZHi-7E-2an"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="brQ-Tm-mbK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0cp-vj-Ohg" secondAttribute="bottom" id="ewQ-oX-QF6"/>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="lgo-1Q-fjl"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="top" secondItem="O98-Kl-Wvl" secondAttribute="bottom" constant="8" id="nCe-nB-gUB"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="nFf-b9-nPZ"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="ntk-b9-Rwq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZBo-UV-iGJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="0sz-Wh-M5C" id="3Ct-eZ-1VH"/>
+                        <outlet property="speakerTextField" destination="O98-Kl-Wvl" id="Ozf-zu-1yr"/>
+                        <outlet property="textTextView" destination="0cp-vj-Ohg" id="cJs-NQ-WB0"/>
+                        <outlet property="titleTextField" destination="YeD-qv-yJh" id="9Ax-hy-7nu"/>
+                        <outlet property="verseTextField" destination="pyp-MP-AaD" id="o0B-yc-Ed9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6lN-n2-7YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="350"/>
+        </scene>
         <!--Library-->
         <scene sceneID="I8y-np-zbI">
             <objects>
@@ -171,6 +260,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="Ueg-SG-8tk" id="hd4-sO-jWb"/>
                                             <outlet property="titleLabel" destination="e58-fg-xeO" id="iwR-0y-Xvf"/>
+                                            <segue destination="L0A-vn-K2B" kind="show" identifier="EditNoteViewController" id="moF-Ee-vLv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

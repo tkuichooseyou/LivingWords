@@ -20,6 +20,7 @@
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8C41AD3176C0074C686 /* Verse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C31AD3176C0074C686 /* Verse.m */; };
 		8E2AE8C71AD3176C0074C686 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C61AD3176C0074C686 /* Note.m */; };
+		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -66,6 +67,8 @@
 		8E2AE8C31AD3176C0074C686 /* Verse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Verse.m; sourceTree = "<group>"; };
 		8E2AE8C51AD3176C0074C686 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		8E2AE8C61AD3176C0074C686 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
+		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				8E888E791ACD934C00DFC8ED /* NewNoteViewController.m */,
 				8E09B1761AD0DAF800688218 /* NotesViewController.h */,
 				8E09B1771AD0DAF800688218 /* NotesViewController.m */,
+				8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */,
+				8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
 				8E2AE8C71AD3176C0074C686 /* Note.m in Sources */,
 				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
+				8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */,
 				8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */,
 				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,
 				8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */,
