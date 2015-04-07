@@ -1,13 +1,18 @@
-//
-//  VerseFactory.m
-//  LivingWords
-//
-//  Created by Teddy Ku on 4/7/15.
-//  Copyright (c) 2015 Teddy Ku. All rights reserved.
-//
-
 #import "VerseFactory.h"
 
 @implementation VerseFactory
+
++ (NSSet *)createWithText:(NSString *)text managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
+                                                              inManagedObjectContext:managedObjectContext];
+    Verse *newVerse = [[Verse alloc] initWithEntity:verseEntityDescription
+                     insertIntoManagedObjectContext:managedObjectContext];
+    
+    newVerse.book = text;
+//    newVerse.chapterStart = text;
+//    newVerse.numberStart = text;
+    return [NSSet setWithObject:newVerse];
+}
 
 @end

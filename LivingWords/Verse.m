@@ -1,10 +1,14 @@
 #import "Verse.h"
+#import "Note.h"
+
 
 @implementation Verse
 
 @dynamic book;
-@dynamic chapter;
-@dynamic number;
+@dynamic chapterStart;
+@dynamic numberStart;
+@dynamic numberEnd;
+@dynamic chapterEnd;
 @dynamic notes;
 
 @end

@@ -39,8 +39,8 @@
                          insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
 
         newVerse.book = self.verseTextField.text;
-        newVerse.chapter = self.verseTextField.text;
-        newVerse.number = self.verseTextField.text;
+        newVerse.chapterStart = @([self.verseTextField.text integerValue]);
+        newVerse.numberStart = @([self.verseTextField.text integerValue]);
         NSSet *verseSet = [NSSet setWithObject:newVerse];
         newNote.verses = verseSet;
 
