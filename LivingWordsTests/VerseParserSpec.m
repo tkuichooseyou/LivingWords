@@ -9,8 +9,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse with parsed properties", ^{
             NSString *verseString = @"John 3:16";
 
-            NSSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [[set allObjects] firstObject];
+            NSOrderedSet *set = [VerseParser parseString:verseString];
+            ParsedVerse *result = [set firstObject];
 
             [[expectFutureValue(result.book) shouldEventually] equal:@"John"];
             [[expectFutureValue(result.chapterStart) shouldEventually] equal:@3];
@@ -20,8 +20,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse for numbered book", ^{
             NSString *verseString = @"1 John 3:16";
 
-            NSSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [[set allObjects] firstObject];
+            NSOrderedSet *set = [VerseParser parseString:verseString];
+            ParsedVerse *result = [set firstObject];
 
             [[expectFutureValue(result.book) shouldEventually] equal:@"1 John"];
             [[expectFutureValue(result.chapterStart) shouldEventually] equal:@3];
@@ -31,8 +31,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse for range of numbers", ^{
             NSString *verseString = @"1 John 3:16-17";
 
-            NSSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [[set allObjects] firstObject];
+            NSOrderedSet *set = [VerseParser parseString:verseString];
+            ParsedVerse *result = [set firstObject];
 
             [[expectFutureValue(result.book) shouldEventually] equal:@"1 John"];
             [[expectFutureValue(result.chapterStart) shouldEventually] equal:@3];
@@ -43,9 +43,9 @@ describe(@"VerseParser", ^{
         it(@"returns multiple verses", ^{
             NSString *verseString = @"1 John 3:16-17, John 3:16";
 
-            NSSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *resultOne = [[set allObjects] firstObject];
-            ParsedVerse *resultTwo = [[set allObjects] lastObject];
+            NSOrderedSet *set = [VerseParser parseString:verseString];
+            ParsedVerse *resultOne = [set firstObject];
+            ParsedVerse *resultTwo = [set lastObject];
 
             [[expectFutureValue(resultOne.book) shouldEventually] equal:@"1 John"];
             [[expectFutureValue(resultOne.chapterStart) shouldEventually] equal:@3];

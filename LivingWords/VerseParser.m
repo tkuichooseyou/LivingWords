@@ -4,7 +4,7 @@
 
 @implementation VerseParser
 
-+ (NSSet *)parseString:(NSString *)string
++ (NSOrderedSet *)parseString:(NSString *)string
 {
     NSError *error = NULL;
     NSString *regexString = @"(\\d\\s\\p{L}+|\\p{L}+)\\.?\\s*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?";
@@ -17,7 +17,7 @@
                                       options:0
                                         range:NSMakeRange(0, string.length)];
 
-    RACSequence *versesSequence = [matches.rac_sequence map:^id(NSTextCheckingResult *match) {
+    RACSequence *versesSequence = [matches.rac_sequence map:^ParsedVerse *(NSTextCheckingResult *match) {
         NSRange bookRange = [match rangeAtIndex:1];
         NSRange chapterRange = [match rangeAtIndex:2];
         NSRange numberStartRange = [match rangeAtIndex:3];
@@ -34,7 +34,7 @@
         return verse;
     }];
 
-    return [NSSet setWithArray:versesSequence.array];
+    return [NSOrderedSet orderedSetWithArray:versesSequence.array];
 }
 
 @end

@@ -2,5 +2,5 @@
 #import "ParsedVerse.h"
 
 @interface VerseParser : NSObject
-+ (NSSet *)parseString:(NSString *)string;
++ (NSOrderedSet *)parseString:(NSString *)string;
 @end

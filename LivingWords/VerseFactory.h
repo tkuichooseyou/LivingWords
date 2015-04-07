@@ -3,5 +3,5 @@
 
 
 @interface VerseFactory : NSObject
-+ (NSSet *)createWithText:(NSString *)text managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
++ (NSOrderedSet *)createWithText:(NSString *)text managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 @end
