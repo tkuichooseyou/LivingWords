@@ -17,7 +17,23 @@
                                       options:0
                                         range:NSMakeRange(0, string.length)];
 
-    RACSequence *versesSequence = [matches.rac_sequence map:^ParsedVerse *(NSTextCheckingResult *match) {
+    RACSequence *versesSequence = [matches.rac_sequence map:[self verseMatcherFromString:string]];
+
+    return [NSOrderedSet orderedSetWithArray:versesSequence.array];
+}
+
++ (NSString *)displayVerse:(Verse *)verse
+{
+    return [NSString stringWithFormat:@"%@ %@:%@",
+            verse.book, verse.chapterStart, verse.numberStart];
+}
+
+#pragma mark - private
+
+typedef ParsedVerse *(^verseMatcher)(NSTextCheckingResult *);
+
++ (verseMatcher)verseMatcherFromString:(NSString *)string {
+    return ^ParsedVerse *(NSTextCheckingResult *match) {
         NSRange bookRange = [match rangeAtIndex:1];
         NSRange chapterRange = [match rangeAtIndex:2];
         NSRange numberStartRange = [match rangeAtIndex:3];
@@ -32,15 +48,7 @@
             verse.numberEnd = @([[string substringWithRange:numberEndRange] integerValue]);
         }
         return verse;
-    }];
-
-    return [NSOrderedSet orderedSetWithArray:versesSequence.array];
-}
-
-+ (NSString *)displayVerse:(Verse *)verse
-{
-    return [NSString stringWithFormat:@"%@ %@:%@",
-            verse.book, verse.chapterStart, verse.numberStart];
+    };
 }
 
 @end
