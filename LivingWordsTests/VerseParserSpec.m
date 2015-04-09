@@ -41,7 +41,7 @@ describe(@"VerseParser", ^{
         });
 
         it(@"returns multiple verses", ^{
-            NSString *verseString = @"1 John 3:16-17, John 3:16";
+            NSString *verseString = @"1 John 3:16-17, 1 Corinthians 3:16";
 
             NSOrderedSet *set = [VerseParser parseString:verseString];
             ParsedVerse *resultOne = [set firstObject];
@@ -52,9 +52,15 @@ describe(@"VerseParser", ^{
             [[resultOne.numberStart should] equal:@16];
             [[resultOne.numberEnd should] equal:@17];
 
-            [[resultTwo.book should] equal:@"John"];
+            [[resultTwo.book should] equal:@"1 Corinthians"];
             [[resultTwo.chapterStart should] equal:@3];
             [[resultTwo.numberStart should] equal:@16];
+        });
+
+        it(@"returns empty set if no verse is parsed", ^{
+            NSString *verseString = @"something";
+            NSOrderedSet *set = [VerseParser parseString:verseString];
+            [[set should] beEmpty];
         });
     });
 

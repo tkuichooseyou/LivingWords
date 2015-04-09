@@ -7,7 +7,9 @@
 + (NSOrderedSet *)parseString:(NSString *)string
 {
     NSError *error = NULL;
-    NSString *regexString = @"(\\d\\s\\p{L}+|\\p{L}+)\\.?\\s*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?";
+    NSString *bibleBooks = [[Bible books] componentsJoinedByString:@"|"];
+    NSString *regexString = [NSString stringWithFormat:@"(%@)\\.?\\s*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?[\\p{Pd}\\p{Zs}:]*(\\d+)?",
+                             bibleBooks];
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern:regexString
                                   options:NSRegularExpressionCaseInsensitive
@@ -33,12 +35,13 @@
 typedef ParsedVerse *(^verseMatcher)(NSTextCheckingResult *);
 
 + (verseMatcher)verseMatcherFromString:(NSString *)string {
+
     return ^ParsedVerse *(NSTextCheckingResult *match) {
+        ParsedVerse *verse = [ParsedVerse new];
         NSRange bookRange = [match rangeAtIndex:1];
         NSRange chapterRange = [match rangeAtIndex:2];
         NSRange numberStartRange = [match rangeAtIndex:3];
 
-        ParsedVerse *verse = [ParsedVerse new];
         verse.book = [string substringWithRange:bookRange];
         verse.chapterStart = @([[string substringWithRange:chapterRange] integerValue]);
         verse.numberStart = @([[string substringWithRange:numberStartRange] integerValue]);
