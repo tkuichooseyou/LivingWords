@@ -20,7 +20,13 @@
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
     self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
-    self.textTextView.text = self.note.text;
+
+    NSError *error;
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithData:self.note.attributedText
+                                                               options:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
+                                                                         NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
+                                                    documentAttributes:nil error:&error];
+    self.textTextView.attributedText = attributedText;
 
     RAC(self, note.title) = self.titleTextField.rac_textSignal;
     RAC(self, note.location) = self.locationTextField.rac_textSignal;

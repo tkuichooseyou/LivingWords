@@ -11,6 +11,7 @@
 @dynamic location;
 @dynamic speaker;
 @dynamic text;
+@dynamic attributedText;
 @dynamic title;
 @dynamic tags;
 @dynamic verses;

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="attributedText" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="collection" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="450115200" defaultValueString="NOW" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="450288000" defaultValueString="NOW" syncable="YES"/>
         <attribute name="key_takeaways" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speaker" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +25,7 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="verses" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-416" positionY="24" width="128" height="180"/>
+        <element name="Note" positionX="-416" positionY="24" width="128" height="195"/>
         <element name="Tag" positionX="-234" positionY="24" width="128" height="73"/>
         <element name="Verse" positionX="-54" positionY="18" width="128" height="135"/>
     </elements>

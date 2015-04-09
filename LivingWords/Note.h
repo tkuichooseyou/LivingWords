@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSString * speaker;
 @property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSData * attributedText;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) NSOrderedSet *verses;
