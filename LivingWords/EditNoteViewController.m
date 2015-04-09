@@ -23,15 +23,24 @@
 
     NSError *error;
     NSAttributedString *attributedText = [[NSAttributedString alloc] initWithData:self.note.attributedText
-                                                               options:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
-                                                                         NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-                                                    documentAttributes:nil error:&error];
+                                                                          options:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
+                                                                                    NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
+                                                               documentAttributes:nil error:&error];
     self.textTextView.attributedText = attributedText;
 
-    RAC(self, note.title) = self.titleTextField.rac_textSignal;
-    RAC(self, note.location) = self.locationTextField.rac_textSignal;
-    RAC(self, note.speaker) = self.speakerTextField.rac_textSignal;
-    RAC(self, note.text) = self.textTextView.rac_textSignal;
+    RAC(self.note, title) = self.titleTextField.rac_textSignal;
+    RAC(self.note, location) = self.locationTextField.rac_textSignal;
+    RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
+    RAC(self.note, text) = self.textTextView.rac_textSignal;;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.note.attributedText = [self.textTextView.attributedText dataFromRange:NSMakeRange(0, self.textTextView.attributedText.length)
+                                                            documentAttributes:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
+                                                                                 NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
+                                                                         error:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
