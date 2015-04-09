@@ -9,8 +9,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse with parsed properties", ^{
             NSString *verseString = @"John 3:16";
 
-            NSOrderedSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [set firstObject];
+            NSArray *parsedVerses = [VerseParser parseString:verseString];
+            ParsedVerse *result = [parsedVerses firstObject];
 
             [[result.book should] equal:@"John"];
             [[result.chapterStart should] equal:@3];
@@ -20,8 +20,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse for numbered book", ^{
             NSString *verseString = @"1 John 3:16";
 
-            NSOrderedSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [set firstObject];
+            NSArray *parsedVerses = [VerseParser parseString:verseString];
+            ParsedVerse *result = [parsedVerses firstObject];
 
             [[result.book should] equal:@"1 John"];
             [[result.chapterStart should] equal:@3];
@@ -31,8 +31,8 @@ describe(@"VerseParser", ^{
         it(@"returns verse for range of numbers", ^{
             NSString *verseString = @"1 John 3:16-17";
 
-            NSOrderedSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *result = [set firstObject];
+            NSArray *parsedVerses = [VerseParser parseString:verseString];
+            ParsedVerse *result = [parsedVerses firstObject];
 
             [[result.book should] equal:@"1 John"];
             [[result.chapterStart should] equal:@3];
@@ -43,9 +43,9 @@ describe(@"VerseParser", ^{
         it(@"returns multiple verses", ^{
             NSString *verseString = @"1 John 3:16-17, 1 Corinthians 3:16";
 
-            NSOrderedSet *set = [VerseParser parseString:verseString];
-            ParsedVerse *resultOne = [set firstObject];
-            ParsedVerse *resultTwo = [set lastObject];
+            NSArray *parsedVerses = [VerseParser parseString:verseString];
+            ParsedVerse *resultOne = [parsedVerses firstObject];
+            ParsedVerse *resultTwo = [parsedVerses lastObject];
 
             [[resultOne.book should] equal:@"1 John"];
             [[resultOne.chapterStart should] equal:@3];
@@ -59,8 +59,8 @@ describe(@"VerseParser", ^{
 
         it(@"returns empty set if no verse is parsed", ^{
             NSString *verseString = @"something";
-            NSOrderedSet *set = [VerseParser parseString:verseString];
-            [[set should] beEmpty];
+            NSArray *parsedVerses = [VerseParser parseString:verseString];
+            [[parsedVerses should] beEmpty];
         });
     });
 

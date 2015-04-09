@@ -3,6 +3,6 @@
 #import "Verse.h"
 
 @interface VerseParser : NSObject
-+ (NSOrderedSet *)parseString:(NSString *)string;
++ (NSArray *)parseString:(NSString *)string;
 + (NSString *)displayVerse:(Verse *)verse;
 @end

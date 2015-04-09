@@ -4,7 +4,7 @@
 
 @implementation VerseParser
 
-+ (NSOrderedSet *)parseString:(NSString *)string
++ (NSArray *)parseString:(NSString *)string
 {
     NSError *error = NULL;
     NSString *bibleBooks = [[Bible books] componentsJoinedByString:@"|"];
@@ -21,7 +21,7 @@
 
     RACSequence *versesSequence = [matches.rac_sequence map:[self verseMatcherFromString:string]];
 
-    return [NSOrderedSet orderedSetWithArray:versesSequence.array];
+    return versesSequence.array;
 }
 
 + (NSString *)displayVerse:(Verse *)verse

@@ -6,7 +6,7 @@
 
 + (NSOrderedSet *)createWithText:(NSString *)text managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
-    NSOrderedSet *parsedVerses = [VerseParser parseString:text];
+    NSOrderedSet *parsedVerses = [NSOrderedSet orderedSetWithArray:[VerseParser parseString:text]];
     NSEntityDescription *verseEntityDescription = [NSEntityDescription entityForName:@"Verse"
                                                               inManagedObjectContext:managedObjectContext];
 
