@@ -6,4 +6,5 @@
 @property (nonatomic, strong) NSNumber *chapterEnd;
 @property (nonatomic, strong) NSNumber *numberStart;
 @property (nonatomic, strong) NSNumber *numberEnd;
+@property (nonatomic) NSRange range;
 @end

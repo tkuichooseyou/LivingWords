@@ -10,6 +10,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
 
+@property (strong, nonatomic) NSArray *parsedVerses;
+
 @end
 
 @implementation EditNoteViewController
@@ -31,7 +33,10 @@
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
     RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
-    RAC(self.note, text) = self.textTextView.rac_textSignal;;
+    RAC(self.note, text) = self.textTextView.rac_textSignal;
+    RAC(self, parsedVerses) = [self.textTextView.rac_textSignal map:^NSArray *(NSString *text) {
+        return [VerseParser parseString:text];
+    }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

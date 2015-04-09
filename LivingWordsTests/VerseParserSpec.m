@@ -15,6 +15,8 @@ describe(@"VerseParser", ^{
             [[result.book should] equal:@"John"];
             [[result.chapterStart should] equal:@3];
             [[result.numberStart should] equal:@16];
+            [[theValue(result.range.location) should] equal:theValue(0)];
+            [[theValue(result.range.length) should] equal:theValue(verseString.length)];
         });
 
         it(@"returns verse for numbered book", ^{
