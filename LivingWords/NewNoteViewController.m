@@ -8,7 +8,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
-@property (weak, nonatomic) IBOutlet UITextView *textTextView;
 @end
 
 @implementation NewNoteViewController
@@ -32,13 +31,7 @@
         newNote.title = self.titleTextField.text;
         newNote.location = self.locationTextField.text;
         newNote.speaker = self.speakerTextField.text;
-        newNote.text = self.textTextView.text;
-        NSData *data = [self.textTextView.attributedText dataFromRange:NSMakeRange(0, self.textTextView.attributedText.length)
-                                                    documentAttributes:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
-                                                                         NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-                                                                 error:nil];
-        newNote.attributedText = data;
-
+        newNote.text = [self.richTextEditor getHTML];
 
         NSOrderedSet *verseSet = [VerseFactory createWithText:self.verseTextField.text
                                          managedObjectContext:self.persistenceController.managedObjectContext];
