@@ -3,9 +3,16 @@
 #import "Note.h"
 
 @interface NotesViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation NotesViewController
+
+-(void)viewDidLoad
+{
+    self.dateFormatter = [NSDateFormatter new];
+    self.dateFormatter.dateStyle = NSDateFormatterShortStyle;
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -96,7 +103,7 @@
 
 - (void)configureCell:(NoteCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    cell.dateLabel.text = [note.date"];
+    cell.dateLabel.text = [self.dateFormatter stringFromDate:note.date];
     cell.titleLabel.text = note.title;
 }
 
