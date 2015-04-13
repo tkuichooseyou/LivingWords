@@ -17,9 +17,9 @@
 		8E09B1781AD0DAF800688218 /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1771AD0DAF800688218 /* NotesViewController.m */; };
 		8E09B17A1AD0DB4700688218 /* NotesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1791AD0DB4700688218 /* NotesViewControllerSpec.m */; };
 		8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B17C1AD0DE3E00688218 /* NoteCell.m */; };
-		8E0DF9851AD84BAC00ECA44E /* RichTextEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0DF9841AD84BAC00ECA44E /* RichTextEditor.m */; };
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
+		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -35,7 +35,6 @@
 		8EC534811AD426410058A5FD /* VerseParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534801AD426410058A5FD /* VerseParserSpec.m */; };
 		8EC534861AD42A2F0058A5FD /* ParsedVerse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534851AD42A2F0058A5FD /* ParsedVerse.m */; };
 		8EC534891AD4325D0058A5FD /* Bible.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534881AD4325D0058A5FD /* Bible.m */; };
-		8EFA2E9D1ADC128500245AE3 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA2E9C1ADC128500245AE3 /* FetchedResultsDataSource.m */; };
 		8EFA2EA01ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */; };
 		944E88AE4E73AF1D92FBCF02 /* libPods-LivingWordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */; };
 /* End PBXBuildFile section */
@@ -70,12 +69,12 @@
 		8E09B1791AD0DB4700688218 /* NotesViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewControllerSpec.m; sourceTree = "<group>"; };
 		8E09B17B1AD0DE3E00688218 /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
 		8E09B17C1AD0DE3E00688218 /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
-		8E0DF9831AD84BAC00ECA44E /* RichTextEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextEditor.h; sourceTree = "<group>"; };
-		8E0DF9841AD84BAC00ECA44E /* RichTextEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextEditor.m; sourceTree = "<group>"; };
 		8E2AE8BF1AD3176B0074C686 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		8E2AE8C01AD3176B0074C686 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
+		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,8 +102,6 @@
 		8EC534851AD42A2F0058A5FD /* ParsedVerse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerse.m; sourceTree = "<group>"; };
 		8EC534871AD4325D0058A5FD /* Bible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bible.h; sourceTree = "<group>"; };
 		8EC534881AD4325D0058A5FD /* Bible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bible.m; sourceTree = "<group>"; };
-		8EFA2E9B1ADC128500245AE3 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
-		8EFA2E9C1ADC128500245AE3 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
 		8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FetchedResultsController+DelegateForTableView.h"; sourceTree = "<group>"; };
 		8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FetchedResultsController+DelegateForTableView.m"; sourceTree = "<group>"; };
 		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,10 +169,8 @@
 				8E2AE8C81AD331880074C686 /* Utility */,
 				8EC534871AD4325D0058A5FD /* Bible.h */,
 				8EC534881AD4325D0058A5FD /* Bible.m */,
-				8E0DF9831AD84BAC00ECA44E /* RichTextEditor.h */,
-				8E0DF9841AD84BAC00ECA44E /* RichTextEditor.m */,
-				8EFA2E9B1ADC128500245AE3 /* FetchedResultsDataSource.h */,
-				8EFA2E9C1ADC128500245AE3 /* FetchedResultsDataSource.m */,
+				8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */,
+				8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -537,11 +532,10 @@
 				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
 				8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */,
 				8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */,
-				8E0DF9851AD84BAC00ECA44E /* RichTextEditor.m in Sources */,
 				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,
 				8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */,
+				8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */,
 				8EC5347F1AD4260B0058A5FD /* VerseParser.m in Sources */,
-				8EFA2E9D1ADC128500245AE3 /* FetchedResultsDataSource.m in Sources */,
 				8E09B1721AD08A8400688218 /* SceneMediator.m in Sources */,
 				8EFA2EA01ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m in Sources */,
 				8EC534861AD42A2F0058A5FD /* ParsedVerse.m in Sources */,

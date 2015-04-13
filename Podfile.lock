@@ -14,7 +14,6 @@ PODS:
   - ReactiveCocoa/UI (2.4.7):
     - ReactiveCocoa/Core
   - SSZipArchive (0.3.2)
-  - ZSSRichTextEditor (0.5.2.1)
 
 DEPENDENCIES:
   - JVFloatingDrawer
@@ -22,7 +21,6 @@ DEPENDENCIES:
   - Kiwi
   - PixateFreestyle
   - ReactiveCocoa
-  - ZSSRichTextEditor
 
 SPEC CHECKSUMS:
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
@@ -32,6 +30,5 @@ SPEC CHECKSUMS:
   PixateFreestyle: 46d97070c7d647519dc367c70cbe84c189e07ca9
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   SSZipArchive: 11801759495fa4efb7512ef652eb0042d68305d7
-  ZSSRichTextEditor: 56ed060d6d7a98fb6be9fceb8074ced22160349b
 
 COCOAPODS: 0.36.3
