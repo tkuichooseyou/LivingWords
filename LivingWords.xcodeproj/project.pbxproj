@@ -167,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC534831AD42A090058A5FD /* CoreData */,
+				8EFA2EA41ADC556400245AE3 /* Extensions */,
 				8EC534781AD420F00058A5FD /* Factories */,
 				8E2AE8C81AD331880074C686 /* Utility */,
 				8EC534871AD4325D0058A5FD /* Bible.h */,
@@ -175,8 +176,6 @@
 				8E0DF9841AD84BAC00ECA44E /* RichTextEditor.m */,
 				8EFA2E9B1ADC128500245AE3 /* FetchedResultsDataSource.h */,
 				8EFA2E9C1ADC128500245AE3 /* FetchedResultsDataSource.m */,
-				8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */,
-				8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -328,6 +327,15 @@
 				8EC19B091AD4A0E500257932 /* Verse.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		8EFA2EA41ADC556400245AE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */,
+				8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		D210B1DEE1252F18E3F7B116 /* Frameworks */ = {
