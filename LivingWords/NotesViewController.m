@@ -8,12 +8,6 @@
 
 @implementation NotesViewController
 
--(void)viewDidLoad
-{
-    self.dateFormatter = [NSDateFormatter new];
-    self.dateFormatter.dateStyle = NSDateFormatterShortStyle;
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -39,10 +33,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"NoteCell";
-    NoteCell *cell = (NoteCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier
-                                                                 forIndexPath:indexPath];
-
-    [self configureCell:cell atIndexPath:indexPath];
+    NoteCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                                     forIndexPath:indexPath];
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell configureForNote:note];
     return cell;
 }
 
@@ -88,7 +82,9 @@
             break;
         }
         case NSFetchedResultsChangeUpdate: {
-            [self configureCell:(NoteCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            NoteCell *cell = (NoteCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            [cell configureForNote:note];
             break;
         }
         case NSFetchedResultsChangeMove: {
@@ -97,14 +93,6 @@
             break;
         }
     }
-}
-
-#pragma mark - private methods
-
-- (void)configureCell:(NoteCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.dateLabel.text = [self.dateFormatter stringFromDate:note.date];
-    cell.titleLabel.text = note.title;
 }
 
 @end
