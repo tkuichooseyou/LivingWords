@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSNumber * numberStart;
 @property (nonatomic, retain) NSSet *notes;
 
+- (NSString *)displayFormatted;
+
 @end
 
 @interface Verse (CoreDataGeneratedAccessors)

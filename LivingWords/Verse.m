@@ -11,4 +11,12 @@
 @dynamic numberStart;
 @dynamic notes;
 
+
+- (NSString *)displayFormatted
+{
+    return [NSString stringWithFormat:@"%@ %@:%@",
+            self.book, self.chapterStart, self.numberStart];
+}
+
 @end
+

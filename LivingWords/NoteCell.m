@@ -1,4 +1,5 @@
 #import "NoteCell.h"
+#import "Verse.h"
 
 @interface NoteCell ()
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -18,6 +19,9 @@
 {
     self.dateLabel.text = [self.dateFormatter stringFromDate:note.date];
     self.titleLabel.text = note.title;
+    self.verseLabel.text = [(Verse *)[note.verses firstObject] displayFormatted];
+    self.speakerLabel.text = [NSString stringWithFormat:@"- %@", note.speaker ];
+    self.locationLabel.text = note.location;
 }
 
 @end

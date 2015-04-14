@@ -230,7 +230,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="h3"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e58-fg-xeO">
@@ -240,19 +240,60 @@
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="h3"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xv-jl-t9j">
+                                                    <rect key="frame" x="8" y="60" width="43" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Lr-wFK">
+                                                    <rect key="frame" x="104" y="8" width="64" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywu-FT-k8I">
+                                                    <rect key="frame" x="525" y="8" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-right"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="location-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="centerY" secondItem="Ywu-FT-k8I" secondAttribute="centerY" id="CfA-HU-eqx"/>
                                                 <constraint firstItem="e58-fg-xeO" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="JAU-VI-H3d"/>
+                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="top" secondItem="e58-fg-xeO" secondAttribute="bottom" constant="2" id="KWg-iL-O76"/>
                                                 <constraint firstItem="Ueg-SG-8tk" firstAttribute="top" secondItem="I3y-5r-CWR" secondAttribute="topMargin" id="MKL-Pw-cGL"/>
+                                                <constraint firstItem="Rwh-Lr-wFK" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="trailing" constant="8" id="P7U-v5-0Mb"/>
                                                 <constraint firstItem="Ueg-SG-8tk" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="PlL-L7-ZSx"/>
                                                 <constraint firstItem="e58-fg-xeO" firstAttribute="top" secondItem="Ueg-SG-8tk" secondAttribute="bottom" constant="8" id="Tcc-3j-570"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ywu-FT-k8I" secondAttribute="trailing" id="XOo-8y-azH"/>
+                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="udj-4C-Frd"/>
+                                                <constraint firstItem="Rwh-Lr-wFK" firstAttribute="centerY" secondItem="Ueg-SG-8tk" secondAttribute="centerY" id="wQj-V0-BLZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="table-cell"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dateLabel" destination="Ueg-SG-8tk" id="hd4-sO-jWb"/>
+                                            <outlet property="locationLabel" destination="Ywu-FT-k8I" id="2iu-61-KvE"/>
+                                            <outlet property="speakerLabel" destination="Rwh-Lr-wFK" id="L83-uv-tde"/>
                                             <outlet property="titleLabel" destination="e58-fg-xeO" id="iwR-0y-Xvf"/>
+                                            <outlet property="verseLabel" destination="0Xv-jl-t9j" id="ewO-GO-NaW"/>
                                             <segue destination="L0A-vn-K2B" kind="show" identifier="EditNoteViewController" id="moF-Ee-vLv"/>
                                         </connections>
                                     </tableViewCell>
