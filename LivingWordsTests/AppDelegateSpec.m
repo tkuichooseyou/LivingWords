@@ -52,9 +52,9 @@ describe(@"AppDelegate", ^{
             __block void (^callback)();
             __block NotesViewController *mockNotesVC;
             __block SceneMediator *mockSceneMediator;
-            __block NSFetchedResultsController *mockFetchedResultsController;
-            __block NSFetchRequest *mockFetchRequest;
             __block NSManagedObjectContext *mockManagedObjectContext;
+            __block FetchedResultsDataSource *mockFetchedResultsDataSource;
+            __block UITableView *mockTableView;
 
             beforeEach(^{
                 [mockPersistenceController stub:@selector(initWithCallback:) withBlock:^id(NSArray *params) {
@@ -73,20 +73,17 @@ describe(@"AppDelegate", ^{
                 mockSceneMediator = [SceneMediator nullMock];
                 [appDelegate stub:@selector(sceneMediator) andReturn:mockSceneMediator];
 
-                mockFetchRequest = [NSFetchRequest nullMock];
-                [NSFetchRequest stub:@selector(alloc) andReturn:mockFetchRequest];
-                [mockFetchRequest stub:@selector(initWithEntityName:)
-                             andReturn:mockFetchRequest
-                         withArguments:@"Note"];
+                mockTableView = [UITableView nullMock];
+                [mockNotesVC stub:@selector(tableView) andReturn:mockTableView];
 
                 mockManagedObjectContext = [NSManagedObjectContext nullMock];
                 [mockPersistenceController stub:@selector(managedObjectContext) andReturn:mockManagedObjectContext];
 
-                mockFetchedResultsController = [NSFetchedResultsController nullMock];
-                [NSFetchedResultsController stub:@selector(alloc) andReturn:mockFetchedResultsController];
-                [mockFetchedResultsController stub:@selector(initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:)
-                                         andReturn:mockFetchedResultsController
-                                     withArguments:mockFetchRequest, mockManagedObjectContext, nil, nil];
+                mockFetchedResultsDataSource = [FetchedResultsDataSource nullMock];
+                [FetchedResultsDataSource stub:@selector(alloc) andReturn:mockFetchedResultsDataSource];
+                [mockFetchedResultsDataSource stub:@selector(initWithManagedObjectContext:tableView:)
+                                         andReturn:mockFetchedResultsDataSource
+                                     withArguments:mockManagedObjectContext, mockTableView];
 
                 [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
             });
@@ -105,42 +102,14 @@ describe(@"AppDelegate", ^{
                 callback();
             });
 
-            it(@"sets fetched results controller on initial view controller", ^{
-                [[mockNotesVC should] receive:@selector(setFetchedResultsController:)
-                                  withArguments:mockFetchedResultsController];
+            it(@"sets fetched data source on initial view controller", ^{
+                [[mockNotesVC should] receive:@selector(setFetchedResultsDataSource:)
+                                  withArguments:mockFetchedResultsDataSource];
 
-                callback();
-            });
-
-            it(@"sets delegate on fetched results controller", ^{
-                [[mockFetchedResultsController should] receive:@selector(setDelegate:)
-                                                 withArguments:mockNotesVC];
-
-                callback();
-            });
-
-            it(@"sorts fetched results by date", ^{
-                NSSortDescriptor *mockSortDescriptor = [NSSortDescriptor nullMock];
-                [NSSortDescriptor stub:@selector(sortDescriptorWithKey:ascending:)
-                             andReturn:mockSortDescriptor
-                 withArguments:@"date", theValue(YES)];
-
-                [[mockFetchRequest should] receive:@selector(setSortDescriptors:)
-                                     withArguments:@[mockSortDescriptor]];
-
-                callback();
-            });
-
-            it(@"performs fetch for notes", ^{
-                [mockNotesVC stub:@selector(fetchedResultsController) andReturn:mockFetchedResultsController];
-                [[mockFetchedResultsController should] receive:@selector(performFetch:)];
                 callback();
             });
 
             it(@"reloads table view", ^{
-                UITableView *mockTableView = [UITableView nullMock];
-                [mockNotesVC stub:@selector(tableView) andReturn:mockTableView];
-
                 [[mockTableView should] receive:@selector(reloadData)];
 
                 callback();
