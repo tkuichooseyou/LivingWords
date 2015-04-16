@@ -1,4 +1,5 @@
 #import <Kiwi/Kiwi.h>
+#import <UIKit/UIKit.h>
 #import "VerseParser.h"
 
 
@@ -82,6 +83,36 @@ describe(@"VerseParser", ^{
             NSString *result = [VerseParser displayVerse:mockVerse];
 
             [[result should] equal:@"John 3:16"];
+        });
+    });
+
+    describe(@"+styleString:", ^{
+        it(@"colors verses", ^{
+            NSString *input = @"I think John 3:16 is a good verse, and so is Romans 8:28";
+            NSDictionary *attributes = @{
+                                         NSForegroundColorAttributeName : [UIColor blueColor],
+                                         @"verse" : @(YES)
+                                         };
+            NSMutableAttributedString *mutableExpected = [[NSMutableAttributedString alloc] initWithString:input];
+            NSRange rangeOne = [input rangeOfString:@"John 3:16"];
+            NSRange rangeTwo = [input rangeOfString:@"Romans 8:28"];
+            [mutableExpected addAttributes:attributes range:rangeOne];
+            [mutableExpected addAttributes:attributes range:rangeTwo];
+            NSAttributedString *expected = [mutableExpected copy];
+
+            NSAttributedString *result = [VerseParser styleString:input];
+            NSDictionary *expectedAttrsOne = [expected attributesAtIndex:rangeOne.location
+                                                       effectiveRange:&rangeOne];
+            NSDictionary *actualAttrsOne = [result attributesAtIndex:rangeOne.location
+                                                   effectiveRange:&rangeOne];
+            NSDictionary *expectedAttrsTwo = [expected attributesAtIndex:rangeTwo.location
+                                                       effectiveRange:&rangeTwo];
+            NSDictionary *actualAttrsTwo = [result attributesAtIndex:rangeTwo.location
+                                                   effectiveRange:&rangeTwo];
+
+            [[result.string should] equal:expected.string];
+            [[actualAttrsOne should] equal:expectedAttrsOne];
+            [[actualAttrsTwo should] equal:expectedAttrsTwo];
         });
     });
 });

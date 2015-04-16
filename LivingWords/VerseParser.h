@@ -5,4 +5,5 @@
 @interface VerseParser : NSObject
 + (NSArray *)parseString:(NSString *)string;
 + (NSString *)displayVerse:(Verse *)verse;
++ (NSAttributedString *)styleString:(NSString *)string;
 @end

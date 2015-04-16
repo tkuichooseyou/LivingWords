@@ -38,17 +38,8 @@
 
     @weakify(self)
     [self.textTextView.rac_textSignal subscribeNext:^(NSString *text) {
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
-        NSArray *parsedVerses = [VerseParser parseString:text];
-        for (ParsedVerse *parsedVerse in parsedVerses) {
-            NSDictionary *attributes = @{
-                                         NSForegroundColorAttributeName : [UIColor redColor],
-                                         @"verse" : @(YES)
-                                         };
-            [string addAttributes:attributes range:parsedVerse.range];
-        }
         @strongify(self)
-        [self.textTextView setAttributedText:string];
+        [self.textTextView setAttributedText:[VerseParser styleString:text]];
     }];
 }
 
