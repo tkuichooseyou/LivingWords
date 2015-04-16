@@ -9,9 +9,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
-
-@property (strong, nonatomic) NSArray *parsedVerses;
-
 @end
 
 @implementation EditNoteViewController
@@ -29,13 +26,29 @@
                                                                                     NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
                                                                documentAttributes:nil error:&error];
     self.textTextView.attributedText = attributedText;
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                           action:@selector(textTapped:)];
+    [self.textTextView addGestureRecognizer:tapGestureRecognizer];
+    
 
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
     RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
     RAC(self.note, text) = self.textTextView.rac_textSignal;
-    RAC(self, parsedVerses) = [self.textTextView.rac_textSignal map:^NSArray *(NSString *text) {
-        return [VerseParser parseString:text];
+
+    @weakify(self)
+    [self.textTextView.rac_textSignal subscribeNext:^(NSString *text) {
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+        NSArray *parsedVerses = [VerseParser parseString:text];
+        for (ParsedVerse *parsedVerse in parsedVerses) {
+            NSDictionary *attributes = @{
+                                         NSForegroundColorAttributeName : [UIColor redColor],
+                                         @"verse" : @(YES)
+                                         };
+            [string addAttributes:attributes range:parsedVerse.range];
+        }
+        @strongify(self)
+        [self.textTextView setAttributedText:string];
     }];
 }
 
@@ -51,6 +64,29 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
+}
+
+- (void)textTapped:(UITapGestureRecognizer *)recognizer
+{
+    UITextView *textView = (UITextView *)recognizer.view;
+
+    NSLayoutManager *layoutManager = textView.layoutManager;
+    CGPoint location = [recognizer locationInView:textView];
+    location.x -= textView.textContainerInset.left;
+    location.y -= textView.textContainerInset.top;
+
+    NSUInteger characterIndex = [layoutManager characterIndexForPoint:location
+                                                      inTextContainer:textView.textContainer
+                             fractionOfDistanceBetweenInsertionPoints:NULL];
+
+    if (characterIndex < textView.textStorage.length) {
+
+        NSRange range;
+        NSNumber *value = [textView.attributedText attribute:@"verse" atIndex:characterIndex effectiveRange:&range];
+        if ([value isEqual:@(YES)]) {
+            NSLog(@"Tapped!");
+        }
+    }
 }
 
 @end
