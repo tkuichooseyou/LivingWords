@@ -89,4 +89,8 @@
     }
 }
 
+- (IBAction)rightBarButtonItemTapped:(id)sender {
+    self.textTextView.userInteractionEnabled = !self.textTextView.userInteractionEnabled;
+}
+
 @end

@@ -190,6 +190,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="SPF-wU-275">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mBx-dl-o0x">
+                            <connections>
+                                <action selector="rightBarButtonItemTapped:" destination="L0A-vn-K2B" id="5f7-wI-eZD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="0sz-Wh-M5C" id="3Ct-eZ-1VH"/>
                         <outlet property="speakerTextField" destination="O98-Kl-Wvl" id="Ozf-zu-1yr"/>
