@@ -7,4 +7,6 @@
 @property (nonatomic, strong) NSNumber *numberStart;
 @property (nonatomic, strong) NSNumber *numberEnd;
 @property (nonatomic) NSRange range;
+
+- (NSString *)urlString;
 @end

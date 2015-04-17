@@ -34,13 +34,10 @@
 + (NSAttributedString *)styleString:(NSString *)text
 {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
-    NSDictionary *attributes = @{
-                                 NSForegroundColorAttributeName : [UIColor blueColor],
-                                 @"verse" : @(YES)
-                                 };
     NSArray *parsedVerses = [VerseParser parseString:text];
+
     for (ParsedVerse *parsedVerse in parsedVerses) {
-        [string addAttributes:attributes range:parsedVerse.range];
+        [string addAttributes:@{NSLinkAttributeName : [parsedVerse urlString]} range:parsedVerse.range];
     };
     return [string copy];
 }

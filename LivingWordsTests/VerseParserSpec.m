@@ -87,17 +87,16 @@ describe(@"VerseParser", ^{
     });
 
     describe(@"+styleString:", ^{
-        it(@"colors verses", ^{
+        it(@"returns string with url attribute on verses", ^{
             NSString *input = @"I think John 3:16 is a good verse, and so is Romans 8:28";
-            NSDictionary *attributes = @{
-                                         NSForegroundColorAttributeName : [UIColor blueColor],
-                                         @"verse" : @(YES)
-                                         };
+
+            NSDictionary *attributesOne = @{ NSLinkAttributeName : @"John/3/16" };
+            NSDictionary *attributesTwo = @{ NSLinkAttributeName : @"Romans/8/28" };
             NSMutableAttributedString *mutableExpected = [[NSMutableAttributedString alloc] initWithString:input];
             NSRange rangeOne = [input rangeOfString:@"John 3:16"];
             NSRange rangeTwo = [input rangeOfString:@"Romans 8:28"];
-            [mutableExpected addAttributes:attributes range:rangeOne];
-            [mutableExpected addAttributes:attributes range:rangeTwo];
+            [mutableExpected addAttributes:attributesOne range:rangeOne];
+            [mutableExpected addAttributes:attributesTwo range:rangeTwo];
             NSAttributedString *expected = [mutableExpected copy];
 
             NSAttributedString *result = [VerseParser styleString:input];

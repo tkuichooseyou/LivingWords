@@ -3,7 +3,7 @@
 #import "Verse.h"
 #import "VerseParser.h"
 
-@interface EditNoteViewController ()
+@interface EditNoteViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
@@ -25,11 +25,10 @@
                                                                           options:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
                                                                                     NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
                                                                documentAttributes:nil error:&error];
+    self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     self.textTextView.attributedText = attributedText;
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                           action:@selector(textTapped:)];
-    [self.textTextView addGestureRecognizer:tapGestureRecognizer];
-    
+    self.textTextView.delegate = self;
+
 
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
@@ -57,31 +56,21 @@
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
 }
 
-- (void)textTapped:(UITapGestureRecognizer *)recognizer
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
 {
-    UITextView *textView = (UITextView *)recognizer.view;
-
-    NSLayoutManager *layoutManager = textView.layoutManager;
-    CGPoint location = [recognizer locationInView:textView];
-    location.x -= textView.textContainerInset.left;
-    location.y -= textView.textContainerInset.top;
-
-    NSUInteger characterIndex = [layoutManager characterIndexForPoint:location
-                                                      inTextContainer:textView.textContainer
-                             fractionOfDistanceBetweenInsertionPoints:NULL];
-
-    if (characterIndex < textView.textStorage.length) {
-
-        NSRange range;
-        NSNumber *value = [textView.attributedText attribute:@"verse" atIndex:characterIndex effectiveRange:&range];
-        if ([value isEqual:@(YES)]) {
-            NSLog(@"Tapped!");
-        }
+    if (!self.textTextView.editable) {
+        NSLog(@"Tapped!");
     }
+
+    return NO;
 }
 
 - (IBAction)rightBarButtonItemTapped:(id)sender {
-    self.textTextView.userInteractionEnabled = !self.textTextView.userInteractionEnabled;
+    self.navigationItem.rightBarButtonItem.title = self.textTextView.editable ? @"Edit" : @"Save";
+    self.textTextView.editable = !self.textTextView.editable;
+    if (self.textTextView.editable) {
+        [self.textTextView becomeFirstResponder];
+    }
 }
 
 @end
