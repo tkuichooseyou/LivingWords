@@ -28,6 +28,7 @@
 		8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7B1ACD934C00DFC8ED /* Main.storyboard */; };
 		8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E7E1ACD934C00DFC8ED /* Images.xcassets */; };
 		8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E888E801ACD934C00DFC8ED /* LaunchScreen.xib */; };
+		8E9832FA1AE1884A009C91A6 /* ShowVerseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9832F91AE1884A009C91A6 /* ShowVerseViewController.m */; };
 		8EC19B0A1AD4A0E500257932 /* Verse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC19B091AD4A0E500257932 /* Verse.m */; };
 		8EC19B0D1AD4A12200257932 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC19B0C1AD4A12200257932 /* Note.m */; };
 		8EC534771AD420EB0058A5FD /* VerseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534761AD420EB0058A5FD /* VerseFactory.m */; };
@@ -90,6 +91,8 @@
 		8E888E811ACD934C00DFC8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8E888E871ACD934C00DFC8ED /* LivingWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LivingWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E8C1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9832F81AE1884A009C91A6 /* ShowVerseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowVerseViewController.h; sourceTree = "<group>"; };
+		8E9832F91AE1884A009C91A6 /* ShowVerseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowVerseViewController.m; sourceTree = "<group>"; };
 		8EC19B081AD4A0E500257932 /* Verse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Verse.h; sourceTree = "<group>"; };
 		8EC19B091AD4A0E500257932 /* Verse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Verse.m; sourceTree = "<group>"; };
 		8EC19B0B1AD4A12200257932 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				8E09B1771AD0DAF800688218 /* NotesViewController.m */,
 				8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */,
 				8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */,
+				8E9832F81AE1884A009C91A6 /* ShowVerseViewController.h */,
+				8E9832F91AE1884A009C91A6 /* ShowVerseViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				8E09B1781AD0DAF800688218 /* NotesViewController.m in Sources */,
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
 				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
+				8E9832FA1AE1884A009C91A6 /* ShowVerseViewController.m in Sources */,
 				8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */,
 				8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */,
 				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,

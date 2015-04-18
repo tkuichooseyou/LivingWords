@@ -2,6 +2,7 @@
 #import "EditNoteViewController.h"
 #import "Verse.h"
 #import "VerseParser.h"
+#import "ShowVerseViewController.h"
 
 @interface EditNoteViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -60,6 +61,16 @@
 {
     if (!self.textTextView.editable) {
         NSLog(@"Tapped!");
+        ShowVerseViewController *showVerseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowVerseViewController"];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            [self presentViewController:showVerseVC animated:YES completion:nil];
+        } else {
+        UIPopoverController *showVersePopoverController = [[UIPopoverController alloc] initWithContentViewController:showVerseVC];
+        [showVersePopoverController presentPopoverFromRect:CGRectMake(0, 0, 15, 15)
+                                                    inView:self.view
+                                  permittedArrowDirections:UIPopoverArrowDirectionUp
+                                                  animated:YES];
+        }
     }
 
     return NO;
