@@ -254,7 +254,13 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaH-3l-SDF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QkK-Xc-IJd" id="cvS-Jr-vGK"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fpH-8q-YiF">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -262,12 +268,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HaH-3l-SDF" secondAttribute="trailing" constant="-16" id="O1d-fK-1c0"/>
                             <constraint firstItem="HaH-3l-SDF" firstAttribute="leading" secondItem="3bd-vl-mhi" secondAttribute="leadingMargin" constant="-16" id="VCX-zs-ORv"/>
                             <constraint firstItem="hZd-zq-vkY" firstAttribute="leading" secondItem="3bd-vl-mhi" secondAttribute="leadingMargin" constant="-16" id="e0x-7E-cXi"/>
+                            <constraint firstAttribute="centerY" secondItem="fpH-8q-YiF" secondAttribute="centerY" id="emX-Ym-fEV"/>
+                            <constraint firstAttribute="centerX" secondItem="fpH-8q-YiF" secondAttribute="centerX" id="lpW-Um-mqd"/>
                             <constraint firstItem="HaH-3l-SDF" firstAttribute="top" secondItem="hZd-zq-vkY" secondAttribute="bottom" id="p8c-vP-ixp"/>
                             <constraint firstItem="mrj-Q7-gOu" firstAttribute="top" secondItem="HaH-3l-SDF" secondAttribute="bottom" id="vPv-TB-7De"/>
                             <constraint firstItem="hZd-zq-vkY" firstAttribute="top" secondItem="DqC-mg-c0a" secondAttribute="bottom" id="yut-bL-7fS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="fpH-8q-YiF" id="ofL-uC-dDc"/>
                         <outlet property="webView" destination="HaH-3l-SDF" id="O1w-aL-cTV"/>
                     </connections>
                 </viewController>

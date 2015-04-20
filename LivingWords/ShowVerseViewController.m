@@ -3,13 +3,14 @@
 #import "Bible.h"
 #import "VerseParser.h"
 
-@interface ShowVerseViewController () <KFEpubControllerDelegate>
+@interface ShowVerseViewController () <KFEpubControllerDelegate, UIWebViewDelegate>
 
 @property (nonatomic, strong) KFEpubController *epubController;
 @property (nonatomic, strong) KFEpubContentModel *contentModel;
 @property (nonatomic) NSUInteger spineIndex;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) ParsedVerse *parsedVerse;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -26,6 +27,7 @@
 {
     [super viewDidLoad];
 
+    [self.spinner startAnimating];
     self.title = [self.parsedVerse displayFormatted];
     NSURL *epubURL = [[NSBundle mainBundle] URLForResource:@"esv_classic_reference_bible" withExtension:@"epub"];
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -65,5 +67,11 @@
     NSLog(@"epubController:didFailWithError: %@", error.description);
 }
 
+#pragma mark - UIWebViewDelegate
+
+-(void) webViewDidFinishLoad:(UIWebView *)webView{
+    [self.spinner stopAnimating];
+    self.spinner.hidden=YES;
+}
 
 @end
