@@ -25,7 +25,7 @@
 
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     self.textTextView.delegate = self;
-    self.editing = NO;
+    self.editing = self.textTextView.editable;
 
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
@@ -41,7 +41,6 @@
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
 {
     if (!self.textTextView.editable) {
-        NSLog(@"Tapped!");
         ShowVerseViewController *showVerseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowVerseViewController"];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             [self presentViewController:showVerseVC animated:YES completion:nil];
@@ -70,6 +69,7 @@
     if (editing) {
         self.navigationItem.rightBarButtonItem.title = @"Save";
         [self.textTextView becomeFirstResponder];
+        self.textTextView.attributedText = [[NSAttributedString alloc] initWithString:self.textTextView.text];
     } else {
         self.navigationItem.rightBarButtonItem.title = @"Edit";
         [self.textTextView setAttributedText:[VerseParser styleString:self.textTextView.text]];
