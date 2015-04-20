@@ -8,5 +8,6 @@
 @property (nonatomic, strong) NSNumber *numberEnd;
 @property (nonatomic) NSRange range;
 
++ (instancetype)createFromUrlString:(NSString *)urlString;
 - (NSString *)urlString;
 @end

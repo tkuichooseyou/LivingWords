@@ -1,6 +1,6 @@
 #import <KFEpubKit/KFEpubKit.h>
 #import "ShowVerseViewController.h"
-#import "ParsedVerse.h"
+#import "Bible.h"
 
 @interface ShowVerseViewController () <KFEpubControllerDelegate>
 
@@ -13,6 +13,13 @@
 @end
 
 @implementation ShowVerseViewController
+
++ (instancetype) createWithStoryboard:(UIStoryboard *)storyboard parsedVerse:(ParsedVerse *)parsedVerse
+{
+    ShowVerseViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ShowVerseViewController"];
+    vc.parsedVerse = parsedVerse;
+    return vc;
+}
 
 - (void)viewDidLoad
 {
@@ -30,30 +37,23 @@
 
 #pragma mark Epub Contents
 
-- (void)updateContentForSpineIndex:(NSUInteger)currentSpineIndex
+- (void)updateContentForContentFile:(NSString *)contentFile
 {
-    NSString *contentFile = self.contentModel.manifest[self.contentModel.spine[currentSpineIndex]][@"href"];
-    NSURL *contentURL = [self.epubController.epubContentBaseURL URLByAppendingPathComponent:contentFile];
-    NSLog(@"content URL :%@", contentURL);
-
+    NSURL *contentURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",
+                                              [self.epubController.epubContentBaseURL absoluteURL],
+                                              contentFile]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:contentURL];
     [self.webView loadRequest:request];
 }
 
 #pragma mark KFEpubControllerDelegate Methods
 
-- (void)epubController:(KFEpubController *)controller willOpenEpub:(NSURL *)epubURL
-{
-    NSLog(@"will open epub");
-}
-
-
 - (void)epubController:(KFEpubController *)controller didOpenEpub:(KFEpubContentModel *)contentModel
 {
-    NSLog(@"opened: %@", contentModel.metaData[@"title"]);
     self.contentModel = contentModel;
-    self.spineIndex = 4;
-    [self updateContentForSpineIndex:self.spineIndex];
+    NSString *contentFile = [Bible contentFileFromContentModel:contentModel
+                                                   parsedVerse:self.parsedVerse];
+    [self updateContentForContentFile:contentFile];
 }
 
 

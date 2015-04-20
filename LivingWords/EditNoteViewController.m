@@ -17,11 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSString *defaultText = @"Type some notes with verses, like John 3:16, inside here";
+
     self.titleTextField.text = self.note.title;
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
     self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
-    self.textTextView.text = self.note.text;
+    self.textTextView.text = [self.note.text  isEqual: @""] ? defaultText : self.note.text;
 
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     self.textTextView.delegate = self;
@@ -41,7 +44,10 @@
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
 {
     if (!self.textTextView.editable) {
-        ShowVerseViewController *showVerseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowVerseViewController"];
+        ParsedVerse *parsedVerse = [ParsedVerse createFromUrlString:[URL absoluteString]];
+        ShowVerseViewController *showVerseVC = [ShowVerseViewController createWithStoryboard:self.storyboard
+                                                                                 parsedVerse:parsedVerse];
+
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             [self presentViewController:showVerseVC animated:YES completion:nil];
         } else {

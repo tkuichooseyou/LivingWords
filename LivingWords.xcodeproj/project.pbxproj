@@ -20,6 +20,8 @@
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
 		8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */ = {isa = PBXBuildFile; fileRef = 8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */; };
+		8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */; };
+		8E5936DE1AE56A4400A0295B /* BibleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DD1AE56A4400A0295B /* BibleSpec.m */; };
 		8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */; };
 		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
@@ -77,6 +79,8 @@
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = esv_classic_reference_bible.epub; path = Resources/esv_classic_reference_bible.epub; sourceTree = "<group>"; };
+		8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerseSpec.m; sourceTree = "<group>"; };
+		8E5936DD1AE56A4400A0295B /* BibleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BibleSpec.m; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
 		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
 		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				8E09B16E1AD082D900688218 /* AppDelegateSpec.m */,
 				8EC5347B1AD421220058A5FD /* Models */,
 				8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */,
+				8E5936DD1AE56A4400A0295B /* BibleSpec.m */,
 				8E09B1751AD09EBC00688218 /* ViewControllers */,
 				8E888E8B1ACD934C00DFC8ED /* Supporting Files */,
 			);
@@ -318,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC534801AD426410058A5FD /* VerseParserSpec.m */,
+				8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -564,12 +570,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */,
 				8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */,
 				8E09B1741AD09EB700688218 /* NewNoteViewControllerSpec.m in Sources */,
 				8EC5347A1AD421120058A5FD /* VerseFactorySpec.m in Sources */,
 				8E09B17A1AD0DB4700688218 /* NotesViewControllerSpec.m in Sources */,
 				8EC534811AD426410058A5FD /* VerseParserSpec.m in Sources */,
 				8E09B16F1AD082D900688218 /* AppDelegateSpec.m in Sources */,
+				8E5936DE1AE56A4400A0295B /* BibleSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
