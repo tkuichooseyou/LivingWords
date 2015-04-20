@@ -21,14 +21,9 @@
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
     self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
+    self.textTextView.text = self.note.text;
 
-    NSError *error;
-    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithData:self.note.attributedText
-                                                                          options:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
-                                                                                    NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-                                                               documentAttributes:nil error:&error];
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
-    self.textTextView.attributedText = attributedText;
     self.textTextView.delegate = self;
     self.editing = NO;
 
@@ -36,21 +31,6 @@
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
     RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
     RAC(self.note, text) = self.textTextView.rac_textSignal;
-
-    @weakify(self)
-    [self.textTextView.rac_textSignal subscribeNext:^(NSString *text) {
-        @strongify(self)
-        [self.textTextView setAttributedText:[VerseParser styleString:text]];
-    }];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    self.note.attributedText = [self.textTextView.attributedText dataFromRange:NSMakeRange(0, self.textTextView.attributedText.length)
-                                                            documentAttributes:@{NSDocumentTypeDocumentAttribute: NSRTFDTextDocumentType,
-                                                                                 NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-                                                                         error:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -92,6 +72,7 @@
         [self.textTextView becomeFirstResponder];
     } else {
         self.navigationItem.rightBarButtonItem.title = @"Edit";
+        [self.textTextView setAttributedText:[VerseParser styleString:self.textTextView.text]];
     }
 }
 
