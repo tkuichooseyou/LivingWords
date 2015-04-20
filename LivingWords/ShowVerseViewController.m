@@ -1,6 +1,7 @@
 #import <KFEpubKit/KFEpubKit.h>
 #import "ShowVerseViewController.h"
 #import "Bible.h"
+#import "VerseParser.h"
 
 @interface ShowVerseViewController () <KFEpubControllerDelegate>
 
@@ -24,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.title = [self.parsedVerse displayFormatted];
     NSURL *epubURL = [[NSBundle mainBundle] URLForResource:@"esv_classic_reference_bible" withExtension:@"epub"];
     NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     self.epubController = [[KFEpubController alloc] initWithEpubURL:epubURL andDestinationFolder:documentsURL];

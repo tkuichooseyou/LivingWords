@@ -74,7 +74,20 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
                                 <rect key="frame" x="16" y="226" width="568" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Type some notes with verses, like John 3:16, inside here">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="ArialMT"/>
+                                            <integer key="NSLigature" value="0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="33.700000000000003">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="33.700000762939453"/>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>

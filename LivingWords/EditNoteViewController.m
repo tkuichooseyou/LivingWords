@@ -18,13 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSString *defaultText = @"Type some notes with verses, like John 3:16, inside here";
-
     self.titleTextField.text = self.note.title;
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
     self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
-    self.textTextView.text = [self.note.text  isEqual: @""] ? defaultText : self.note.text;
+    self.textTextView.text = self.note.text;
 
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     self.textTextView.delegate = self;

@@ -10,4 +10,5 @@
 
 + (instancetype)createFromUrlString:(NSString *)urlString;
 - (NSString *)urlString;
+- (NSString *)displayFormatted;
 @end

@@ -18,4 +18,10 @@
     return [NSString stringWithFormat:@"%@/%@/%@", self.book, self.chapterStart, self.numberStart];
 }
 
+- (NSString *)displayFormatted
+{
+    return [NSString stringWithFormat:@"%@ %@:%@",
+            self.book, self.chapterStart, self.numberStart];
+}
+
 @end
