@@ -10,6 +10,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
+@property (nonatomic) BOOL editing;
 @end
 
 @implementation EditNoteViewController
@@ -29,7 +30,7 @@
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     self.textTextView.attributedText = attributedText;
     self.textTextView.delegate = self;
-
+    self.editing = NO;
 
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
@@ -76,11 +77,21 @@
     return NO;
 }
 
-- (IBAction)rightBarButtonItemTapped:(id)sender {
-    self.navigationItem.rightBarButtonItem.title = self.textTextView.editable ? @"Edit" : @"Save";
-    self.textTextView.editable = !self.textTextView.editable;
-    if (self.textTextView.editable) {
+- (IBAction)rightBarButtonItemTapped:(id)sender
+{
+    self.editing = self.editing ? NO : YES;
+}
+
+- (void)setEditing:(BOOL)editing
+{
+    _editing = editing;
+    self.textTextView.editable = editing;
+
+    if (editing) {
+        self.navigationItem.rightBarButtonItem.title = @"Save";
         [self.textTextView becomeFirstResponder];
+    } else {
+        self.navigationItem.rightBarButtonItem.title = @"Edit";
     }
 }
 
