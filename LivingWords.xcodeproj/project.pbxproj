@@ -19,6 +19,7 @@
 		8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B17C1AD0DE3E00688218 /* NoteCell.m */; };
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
+		8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */ = {isa = PBXBuildFile; fileRef = 8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */; };
 		8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */; };
 		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
@@ -75,6 +76,7 @@
 		8E2AE8C01AD3176B0074C686 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = esv_classic_reference_bible.epub; path = Resources/esv_classic_reference_bible.epub; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
 		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
 		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		8E888E6E1ACD934C00DFC8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */,
 				8E888E6F1ACD934C00DFC8ED /* Info.plist */,
 				8E888E701ACD934C00DFC8ED /* main.m */,
 				8E09B16D1ACF283E00688218 /* PrefixHeader.pch */,
@@ -435,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */,
 				8E09B15F1ACDC0AB00688218 /* scss in Resources */,
 				8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */,
 				8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */,
