@@ -3,14 +3,14 @@
 #import "Bible.h"
 #import "VerseParser.h"
 
-@interface ShowVerseViewController () <KFEpubControllerDelegate, UIWebViewDelegate>
+@interface ShowVerseViewController () <KFEpubControllerDelegate>
 
 @property (nonatomic, strong) KFEpubController *epubController;
 @property (nonatomic, strong) KFEpubContentModel *contentModel;
 @property (nonatomic) NSUInteger spineIndex;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) ParsedVerse *parsedVerse;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -40,18 +40,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark Epub Contents
-
-- (void)updateContentForContentFile:(NSString *)contentFile
-{
-    NSURL *contentURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",
-                                              [self.epubController.epubContentBaseURL absoluteURL],
-                                              contentFile]];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:contentURL];
-    [self.webView loadRequest:request];
-}
-
 #pragma mark KFEpubControllerDelegate Methods
+
+- (void)epubController:(KFEpubController *)controller didFailWithError:(NSError *)error
+{
+    NSLog(@"epubController:didFailWithError: %@", error.description);
+}
 
 - (void)epubController:(KFEpubController *)controller didOpenEpub:(KFEpubContentModel *)contentModel
 {
@@ -61,15 +55,23 @@
     [self updateContentForContentFile:contentFile];
 }
 
+#pragma mark Epub Contents
 
-- (void)epubController:(KFEpubController *)controller didFailWithError:(NSError *)error
+- (void)updateContentForContentFile:(NSString *)contentFile
 {
-    NSLog(@"epubController:didFailWithError: %@", error.description);
-}
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:contentFile];
+//    NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+//
+    NSError *error = nil;
+    NSString *path = [NSString stringWithFormat:@"%@/%@",
+                      [self.epubController.epubContentBaseURL relativePath], contentFile];
+    NSString *res = [NSString stringWithContentsOfFile:path
+                                              encoding:NSUTF8StringEncoding
+                                                 error:&error];
+    self.textView.text = res;
 
-#pragma mark - UIWebViewDelegate
-
--(void) webViewDidFinishLoad:(UIWebView *)webView{
     [self.spinner stopAnimating];
     self.spinner.hidden=YES;
 }

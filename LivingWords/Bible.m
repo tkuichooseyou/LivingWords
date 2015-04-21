@@ -8,17 +8,18 @@
     NSInteger spineIndex = [self spineIndexFromSpine:contentModel.spine parsedVerse:parsedVerse];
     NSString *contentFile = contentModel.manifest[contentModel.spine[spineIndex]][@"href"];
 
-    NSString *chapterAndNumberStart = [NSString stringWithFormat:@"%03d%03d",
-                              [parsedVerse.chapterStart intValue],
-                              [parsedVerse.numberStart intValue]
-                              ];
-    NSString *tempString = [[contentFile componentsSeparatedByString:@"."] firstObject];
-    NSString *bookNumber = [tempString substringFromIndex:[tempString rangeOfString:@"Text/b"].length];
-    NSString *verseLocation = [NSString stringWithFormat:@"%@%@",
-                               bookNumber,
-                               chapterAndNumberStart
-                               ];
-    return [NSString stringWithFormat:@"%@#v%@", contentFile, verseLocation];
+//    NSString *chapterAndNumberStart = [NSString stringWithFormat:@"%03d%03d",
+//                              [parsedVerse.chapterStart intValue],
+//                              [parsedVerse.numberStart intValue]
+//                              ];
+//    NSString *tempString = [[contentFile componentsSeparatedByString:@"."] firstObject];
+//    NSString *bookNumber = [tempString substringFromIndex:[tempString rangeOfString:@"Text/b"].length];
+//    NSString *verseLocation = [NSString stringWithFormat:@"%@%@",
+//                               bookNumber,
+//                               chapterAndNumberStart
+//                               ];
+//    return [NSString stringWithFormat:@"%@#v%@", contentFile, verseLocation];
+    return contentFile;
 }
 
 + (NSInteger)spineIndexFromSpine:(NSArray *)spine parsedVerse:(ParsedVerse *)parsedVerse
