@@ -1,7 +1,9 @@
 #import <KFEpubKit/KFEpubKit.h>
+#import <hpple/TFHpple.h>
 #import "ShowVerseViewController.h"
 #import "Bible.h"
 #import "VerseParser.h"
+#import "LivingWords-Swift.h"
 
 @interface ShowVerseViewController () <KFEpubControllerDelegate>
 
@@ -49,29 +51,9 @@
 
 - (void)epubController:(KFEpubController *)controller didOpenEpub:(KFEpubContentModel *)contentModel
 {
-    self.contentModel = contentModel;
-    NSString *contentFile = [Bible contentFileFromContentModel:contentModel
-                                                   parsedVerse:self.parsedVerse];
-    [self updateContentForContentFile:contentFile];
-}
-
-#pragma mark Epub Contents
-
-- (void)updateContentForContentFile:(NSString *)contentFile
-{
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:contentFile];
-//    NSString *content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-//
-    NSError *error = nil;
-    NSString *path = [NSString stringWithFormat:@"%@/%@",
-                      [self.epubController.epubContentBaseURL relativePath], contentFile];
-    NSString *res = [NSString stringWithContentsOfFile:path
-                                              encoding:NSUTF8StringEncoding
-                                                 error:&error];
-    self.textView.text = res;
-
+    self.textView.text = [BibleParser textForContentModel:contentModel
+                                                 epubPath:[self.epubController.epubContentBaseURL relativePath]
+                                              parsedVerse:self.parsedVerse];
     [self.spinner stopAnimating];
     self.spinner.hidden=YES;
 }
