@@ -5,13 +5,20 @@ class BibleParser: NSObject {
         let path = String(format:"%@/%@", epubPath, contentFile)
         let data:NSData? = NSData(contentsOfFile:path)
         let doc:TFHpple = TFHpple(HTMLData:data)
-        let xpathQuery = "//span[@class='chapter-num' and text()=3]/following::span[@class='verse-num' and text()=16]/following::span[@class='woc']"
-        let elements:NSArray = doc.searchWithXPathQuery(xpathQuery)
-        let element:TFHppleElement = elements.firstObject as! TFHppleElement
-        let textNodes = element.children.filter { $0.isTextNode() }
-        return textNodes
-            .map{ $0.content }
-            .reduce("", combine: +)
+        let xpathQueryOne = "//span[@class='chapter-num' and text()=\(parsedVerse.chapterStart)]/following::span[@class='verse-num' and text()=\(parsedVerse.numberStart)]/following::span[@class='woc']"
+        let xpathQueryTwo = "//span[@class='chapter-num' and text()=\(parsedVerse.chapterStart)]/following::span[@class='verse-num' and text()=\(parsedVerse.numberStart)]/following-sibling::text()"
+        var elements:NSArray = doc.searchWithXPathQuery(xpathQueryOne)
+        if elements.count == 0 {
+            elements = doc.searchWithXPathQuery(xpathQueryTwo)
+            return elements.firstObject!.content
+        }
+        if let element:TFHppleElement = elements.firstObject as? TFHppleElement {
+            let textNodes = element.children.filter { $0.isTextNode() }
+            return textNodes
+                .map{ $0.content }
+                .reduce("", combine: +)
+        }
+        return ""
     }
 
     class func contentFileFromContentModel(contentModel:KFEpubContentModel, parsedVerse:ParsedVerse) -> (String, String) {
