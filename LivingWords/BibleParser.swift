@@ -5,11 +5,13 @@ class BibleParser: NSObject {
         let path = String(format:"%@/%@", epubPath, contentFile)
         let data:NSData? = NSData(contentsOfFile:path)
         let doc:TFHpple = TFHpple(HTMLData:data)
-        let elements:NSArray = doc.searchWithXPathQuery("//p[@id='\(verseID)'] | span[@id='\(verseID)']")
-//        doc.searchWithXPathQuery("//p[@id='v43001019']")
+        let xpathQuery = "//span[@class='chapter-num' and text()=3]/following::span[@class='verse-num' and text()=16]/following::span[@class='woc']"
+        let elements:NSArray = doc.searchWithXPathQuery(xpathQuery)
         let element:TFHppleElement = elements.firstObject as! TFHppleElement
-
-        return element.text()
+        let textNodes = element.children.filter { $0.isTextNode() }
+        return textNodes
+            .map{ $0.content }
+            .reduce("", combine: +)
     }
 
     class func contentFileFromContentModel(contentModel:KFEpubContentModel, parsedVerse:ParsedVerse) -> (String, String) {
