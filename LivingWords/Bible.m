@@ -1,36 +1,6 @@
-#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Bible.h"
 
 @implementation Bible
-
-+ (NSString *)contentFileFromContentModel:(KFEpubContentModel *)contentModel parsedVerse:(ParsedVerse *)parsedVerse
-{
-    NSInteger spineIndex = [self spineIndexFromSpine:contentModel.spine parsedVerse:parsedVerse];
-    NSString *contentFile = contentModel.manifest[contentModel.spine[spineIndex]][@"href"];
-
-//    NSString *chapterAndNumberStart = [NSString stringWithFormat:@"%03d%03d",
-//                              [parsedVerse.chapterStart intValue],
-//                              [parsedVerse.numberStart intValue]
-//                              ];
-//    NSString *tempString = [[contentFile componentsSeparatedByString:@"."] firstObject];
-//    NSString *bookNumber = [tempString substringFromIndex:[tempString rangeOfString:@"Text/b"].length];
-//    NSString *verseLocation = [NSString stringWithFormat:@"%@%@",
-//                               bookNumber,
-//                               chapterAndNumberStart
-//                               ];
-//    return [NSString stringWithFormat:@"%@#v%@", contentFile, verseLocation];
-    return contentFile;
-}
-
-+ (NSInteger)spineIndexFromSpine:(NSArray *)spine parsedVerse:(ParsedVerse *)parsedVerse
-{
-    NSString *searchString = [NSString stringWithFormat:@"%@.text", parsedVerse.book];
-    NSString *key = [[[[spine rac_sequence] filter:^BOOL(NSString *string) {
-        return [string rangeOfString:searchString].location != NSNotFound;
-    }] array] firstObject];
-
-    return [spine indexOfObject:key];
-}
 
 + (NSArray *)books
 {

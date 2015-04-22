@@ -21,7 +21,6 @@
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
 		8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */ = {isa = PBXBuildFile; fileRef = 8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */; };
 		8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */; };
-		8E5936DE1AE56A4400A0295B /* BibleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DD1AE56A4400A0295B /* BibleSpec.m */; };
 		8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */; };
 		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E7DB03F1AE6CE5000827E69 /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
@@ -81,7 +80,6 @@
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = esv_classic_reference_bible.epub; path = Resources/esv_classic_reference_bible.epub; sourceTree = "<group>"; };
 		8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerseSpec.m; sourceTree = "<group>"; };
-		8E5936DD1AE56A4400A0295B /* BibleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BibleSpec.m; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
 		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
 		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
@@ -116,6 +114,7 @@
 		8EC534851AD42A2F0058A5FD /* ParsedVerse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerse.m; sourceTree = "<group>"; };
 		8EC534871AD4325D0058A5FD /* Bible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bible.h; sourceTree = "<group>"; };
 		8EC534881AD4325D0058A5FD /* Bible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bible.m; sourceTree = "<group>"; };
+		8EEB26BC1AE742FF0007AD69 /* LivingWordsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWordsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FetchedResultsController+DelegateForTableView.h"; sourceTree = "<group>"; };
 		8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FetchedResultsController+DelegateForTableView.m"; sourceTree = "<group>"; };
 		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,7 +282,6 @@
 				8E09B16E1AD082D900688218 /* AppDelegateSpec.m */,
 				8EC5347B1AD421220058A5FD /* Models */,
 				8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */,
-				8E5936DD1AE56A4400A0295B /* BibleSpec.m */,
 				8E09B1751AD09EBC00688218 /* ViewControllers */,
 				8E888E8B1ACD934C00DFC8ED /* Supporting Files */,
 			);
@@ -293,6 +291,7 @@
 		8E888E8B1ACD934C00DFC8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EEB26BC1AE742FF0007AD69 /* LivingWordsTests-Bridging-Header.h */,
 				8E888E8C1ACD934C00DFC8ED /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -583,7 +582,6 @@
 				8E09B17A1AD0DB4700688218 /* NotesViewControllerSpec.m in Sources */,
 				8EC534811AD426410058A5FD /* VerseParserSpec.m in Sources */,
 				8E09B16F1AD082D900688218 /* AppDelegateSpec.m in Sources */,
-				8E5936DE1AE56A4400A0295B /* BibleSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +733,7 @@
 			baseConfigurationReference = 8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -746,6 +745,8 @@
 				INFOPLIST_FILE = LivingWordsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LivingWordsTests/LivingWordsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LivingWords.app/LivingWords";
 			};
 			name = Debug;
@@ -755,6 +756,7 @@
 			baseConfigurationReference = CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -762,6 +764,7 @@
 				INFOPLIST_FILE = LivingWordsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LivingWordsTests/LivingWordsTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LivingWords.app/LivingWords";
 			};
 			name = Release;
