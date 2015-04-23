@@ -10,7 +10,9 @@ class BibleParser: NSObject {
         var elements:NSArray = doc.searchWithXPathQuery(xpathQueryOne)
         if elements.count == 0 {
             elements = doc.searchWithXPathQuery(xpathQueryTwo)
-            return elements.firstObject!.content
+            if let element: TFHppleElement = elements.firstObject as? TFHppleElement {
+                return element.content
+            }
         }
         if let element:TFHppleElement = elements.firstObject as? TFHppleElement {
             let textNodes = element.children.filter { $0.isTextNode() }
@@ -18,7 +20,7 @@ class BibleParser: NSObject {
                 .map{ $0.content }
                 .reduce("", combine: +)
         }
-        return ""
+        return "Verse not found for \(parsedVerse.displayFormatted())"
     }
 
     class func contentFileFromContentModel(contentModel:KFEpubContentModel, parsedVerse:ParsedVerse) -> (String, String) {
