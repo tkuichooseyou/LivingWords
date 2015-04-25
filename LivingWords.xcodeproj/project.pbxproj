@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		014900CF3748CD78C972394D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 582CBA5B1E901BCB839901C7 /* libPods.a */; };
+		70272EC09A5C7E7018628239 /* Pods_LivingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8CD4A9593497A57F5611EE20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3A57C72DDBC818746B799 /* libPods.a */; };
 		8E09B15F1ACDC0AB00688218 /* scss in Resources */ = {isa = PBXBuildFile; fileRef = 8E09B15E1ACDC0AB00688218 /* scss */; };
 		8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1681ACF215500688218 /* CoreDataScheduler.m */; };
 		8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B16B1ACF258800688218 /* PersistenceController.m */; };
@@ -19,8 +20,10 @@
 		8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B17C1AD0DE3E00688218 /* NoteCell.m */; };
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
-		8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */ = {isa = PBXBuildFile; fileRef = 8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */; };
+		8E3B360B1AE8A2710032503B /* BibleParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */; };
+		8E3B360C1AE8A2E90032503B /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
 		8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */; };
+		8E62484C1AE89AD4004E0B5A /* esv.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E62484B1AE89AD4004E0B5A /* esv.html */; };
 		8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */; };
 		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E7DB03F1AE6CE5000827E69 /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
@@ -41,7 +44,6 @@
 		8EC534861AD42A2F0058A5FD /* ParsedVerse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534851AD42A2F0058A5FD /* ParsedVerse.m */; };
 		8EC534891AD4325D0058A5FD /* Bible.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534881AD4325D0058A5FD /* Bible.m */; };
 		8EFA2EA01ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */; };
-		944E88AE4E73AF1D92FBCF02 /* libPods-LivingWordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		582CBA5B1E901BCB839901C7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EC3A57C72DDBC818746B799 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EFDCB04C1439A930F233389 /* Pods-LivingWordsQuickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsQuickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsQuickTests/Pods-LivingWordsQuickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D6F4EFBEEEA2545F6E4630 /* Pods-LivingWordsQuickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsQuickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsQuickTests/Pods-LivingWordsQuickTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivingWordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D10096C678A28C20C98B96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8E09B15E1ACDC0AB00688218 /* scss */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scss; sourceTree = "<group>"; };
 		8E09B1671ACF215500688218 /* CoreDataScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataScheduler.h; sourceTree = "<group>"; };
@@ -78,8 +82,9 @@
 		8E2AE8C01AD3176B0074C686 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
-		8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = esv_classic_reference_bible.epub; path = Resources/esv_classic_reference_bible.epub; sourceTree = "<group>"; };
+		8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleParserSpec.swift; sourceTree = "<group>"; };
 		8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerseSpec.m; sourceTree = "<group>"; };
+		8E62484B1AE89AD4004E0B5A /* esv.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = esv.html; path = Resources/esv.html; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
 		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
 		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FetchedResultsController+DelegateForTableView.h"; sourceTree = "<group>"; };
 		8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FetchedResultsController+DelegateForTableView.m"; sourceTree = "<group>"; };
 		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5E6ABE7823CC519BDC1FF9D /* Pods_LivingWordsQuickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWordsQuickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				014900CF3748CD78C972394D /* libPods.a in Frameworks */,
+				8CD4A9593497A57F5611EE20 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944E88AE4E73AF1D92FBCF02 /* libPods-LivingWordsTests.a in Frameworks */,
+				70272EC09A5C7E7018628239 /* Pods_LivingWordsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +154,8 @@
 				76D10096C678A28C20C98B96 /* Pods.release.xcconfig */,
 				8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */,
 				CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */,
+				0EFDCB04C1439A930F233389 /* Pods-LivingWordsQuickTests.debug.xcconfig */,
+				38D6F4EFBEEEA2545F6E4630 /* Pods-LivingWordsQuickTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -267,7 +275,7 @@
 		8E888E6E1ACD934C00DFC8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E5936D71AE54B0000A0295B /* esv_classic_reference_bible.epub */,
+				8E62484B1AE89AD4004E0B5A /* esv.html */,
 				8E888E6F1ACD934C00DFC8ED /* Info.plist */,
 				8E7DB03D1AE6CE4F00827E69 /* LivingWords-Bridging-Header.h */,
 				8E888E701ACD934C00DFC8ED /* main.m */,
@@ -282,6 +290,7 @@
 				8E09B16E1AD082D900688218 /* AppDelegateSpec.m */,
 				8EC5347B1AD421220058A5FD /* Models */,
 				8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */,
+				8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */,
 				8E09B1751AD09EBC00688218 /* ViewControllers */,
 				8E888E8B1ACD934C00DFC8ED /* Supporting Files */,
 			);
@@ -357,8 +366,9 @@
 		D210B1DEE1252F18E3F7B116 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				582CBA5B1E901BCB839901C7 /* libPods.a */,
-				6E94C4E1EF698183A9C60D87 /* libPods-LivingWordsTests.a */,
+				C5E6ABE7823CC519BDC1FF9D /* Pods_LivingWordsQuickTests.framework */,
+				298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */,
+				0EC3A57C72DDBC818746B799 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -395,6 +405,7 @@
 				8E888E841ACD934C00DFC8ED /* Frameworks */,
 				8E888E851ACD934C00DFC8ED /* Resources */,
 				F0F42487084376849AEC68F3 /* Copy Pods Resources */,
+				45E7C49469F77AD2C9A59627 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,9 +459,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E5936DA1AE55B4700A0295B /* esv_classic_reference_bible.epub in Resources */,
 				8E09B15F1ACDC0AB00688218 /* scss in Resources */,
 				8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */,
+				8E62484C1AE89AD4004E0B5A /* esv.html in Resources */,
 				8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */,
 				8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */,
 			);
@@ -509,6 +520,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45E7C49469F77AD2C9A59627 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E09B1601ACDC0CD00688218 /* Run Script - pixate */ = {
@@ -576,11 +602,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */,
+				8E3B360C1AE8A2E90032503B /* BibleParser.swift in Sources */,
 				8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */,
 				8E09B1741AD09EB700688218 /* NewNoteViewControllerSpec.m in Sources */,
 				8EC5347A1AD421120058A5FD /* VerseFactorySpec.m in Sources */,
 				8E09B17A1AD0DB4700688218 /* NotesViewControllerSpec.m in Sources */,
 				8EC534811AD426410058A5FD /* VerseParserSpec.m in Sources */,
+				8E3B360B1AE8A2710032503B /* BibleParserSpec.swift in Sources */,
 				8E09B16F1AD082D900688218 /* AppDelegateSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

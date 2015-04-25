@@ -34,6 +34,20 @@
                ReferencedContainer = "container:LivingWords.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E28ADC61AE89390009610C9"
+               BuildableName = "LivingWordsQuickTests.xctest"
+               BlueprintName = "LivingWordsQuickTests"
+               ReferencedContainer = "container:LivingWords.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "8E888E861ACD934C00DFC8ED"
                BuildableName = "LivingWordsTests.xctest"
                BlueprintName = "LivingWordsTests"
+               ReferencedContainer = "container:LivingWords.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E28ADC61AE89390009610C9"
+               BuildableName = "LivingWordsQuickTests.xctest"
+               BlueprintName = "LivingWordsQuickTests"
                ReferencedContainer = "container:LivingWords.xcodeproj">
             </BuildableReference>
          </TestableReference>

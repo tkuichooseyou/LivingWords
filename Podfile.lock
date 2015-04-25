@@ -1,12 +1,9 @@
 PODS:
-  - hpple (0.2.0)
   - JVFloatingDrawer (0.1.0)
-  - KFEpubKit (0.0.6):
-    - KissXML
-    - SSZipArchive
-  - KissXML (5.0)
   - Kiwi (2.3.1)
+  - Nimble (0.4.2)
   - PixateFreestyle (2.1.4)
+  - Quick (0.3.1)
   - ReactiveCocoa (2.4.7):
     - ReactiveCocoa/UI (= 2.4.7)
   - ReactiveCocoa/Core (2.4.7):
@@ -14,24 +11,21 @@ PODS:
   - ReactiveCocoa/no-arc (2.4.7)
   - ReactiveCocoa/UI (2.4.7):
     - ReactiveCocoa/Core
-  - SSZipArchive (0.3.2)
 
 DEPENDENCIES:
-  - hpple
   - JVFloatingDrawer
-  - KFEpubKit
   - Kiwi
+  - Nimble
   - PixateFreestyle
+  - Quick
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
-  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
-  KFEpubKit: 945938610590a08cd6301370fb25da837d535292
-  KissXML: ce643413d618ad69886d0d43c3792b7dedfe476e
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
   PixateFreestyle: 46d97070c7d647519dc367c70cbe84c189e07ca9
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
-  SSZipArchive: 11801759495fa4efb7512ef652eb0042d68305d7
 
 COCOAPODS: 0.36.3
