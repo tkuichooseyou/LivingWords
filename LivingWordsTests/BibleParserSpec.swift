@@ -8,7 +8,11 @@ class BibleParserSpec: QuickSpec {
                 it("returns text for verse") {
                     let parsedVerse = ParsedVerse()
                     parsedVerse.book = "John"
-                    expect(BibleParser.textForParsedVerse(parsedVerse)) == "For God so loved the world"
+                    parsedVerse.chapterStart = 3
+                    parsedVerse.numberStart = 16
+                    let expected = "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+
+                    expect(BibleParser.textForParsedVerse(parsedVerse)) == expected
                 }
             }
         }

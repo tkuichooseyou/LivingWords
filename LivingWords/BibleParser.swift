@@ -1,8 +1,18 @@
+import UIKit
 
 public class BibleParser: NSObject {
     public class func textForParsedVerse(parsedVerse:ParsedVerse) -> String {
-//    NSURL *epubURL = [[NSBundle mainBundle] URLForResource:@"esv_classic_reference_bible" withExtension:@"epub"];
-//    NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        if let bookURL = NSBundle.mainBundle().URLForResource(parsedVerse.book.lowercaseString, withExtension: "html") {
+            var error: NSError?
+            let bookString = NSString(contentsOfURL: bookURL, encoding: NSHTMLTextDocumentType, error: &error)
+//            let bookString = NSAttributedString(
+//                fileURL: bookURL,
+//                options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+//                documentAttributes: nil,
+//                error: &error)
+        }
+
+
         return ""
 //        return contentFiles
 //            .map { String(format:"%@/%@", epubPath, $0) }
