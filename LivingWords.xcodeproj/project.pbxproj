@@ -23,10 +23,10 @@
 		8E3B360B1AE8A2710032503B /* BibleParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */; };
 		8E3B360C1AE8A2E90032503B /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
 		8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */; };
-		8E62484C1AE89AD4004E0B5A /* esv.html in Resources */ = {isa = PBXBuildFile; fileRef = 8E62484B1AE89AD4004E0B5A /* esv.html */; };
 		8E64B2751AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */; };
 		8E6AF69F1ADC88E70027EA95 /* FetchedResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */; };
 		8E7DB03F1AE6CE5000827E69 /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
+		8E8461341AEEA29F0080C376 /* esv in Resources */ = {isa = PBXBuildFile; fileRef = 8E8461331AEEA29F0080C376 /* esv */; };
 		8E888E711ACD934C00DFC8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E701ACD934C00DFC8ED /* main.m */; };
 		8E888E741ACD934C00DFC8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E731ACD934C00DFC8ED /* AppDelegate.m */; };
 		8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E888E751ACD934C00DFC8ED /* LivingWords.xcdatamodeld */; };
@@ -84,12 +84,12 @@
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleParserSpec.swift; sourceTree = "<group>"; };
 		8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerseSpec.m; sourceTree = "<group>"; };
-		8E62484B1AE89AD4004E0B5A /* esv.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = esv.html; path = Resources/esv.html; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
 		8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsDataSource.h; sourceTree = "<group>"; };
 		8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSource.m; sourceTree = "<group>"; };
 		8E7DB03D1AE6CE4F00827E69 /* LivingWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWords-Bridging-Header.h"; sourceTree = "<group>"; };
 		8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleParser.swift; sourceTree = "<group>"; };
+		8E8461331AEEA29F0080C376 /* esv */ = {isa = PBXFileReference; lastKnownFileType = folder; name = esv; path = Resources/esv; sourceTree = "<group>"; };
 		8E888E6B1ACD934C00DFC8ED /* LivingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E888E6F1ACD934C00DFC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E888E701ACD934C00DFC8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		8E888E6E1ACD934C00DFC8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E62484B1AE89AD4004E0B5A /* esv.html */,
+				8E8461331AEEA29F0080C376 /* esv */,
 				8E888E6F1ACD934C00DFC8ED /* Info.plist */,
 				8E7DB03D1AE6CE4F00827E69 /* LivingWords-Bridging-Header.h */,
 				8E888E701ACD934C00DFC8ED /* main.m */,
@@ -461,9 +461,9 @@
 			files = (
 				8E09B15F1ACDC0AB00688218 /* scss in Resources */,
 				8E888E7D1ACD934C00DFC8ED /* Main.storyboard in Resources */,
-				8E62484C1AE89AD4004E0B5A /* esv.html in Resources */,
 				8E888E821ACD934C00DFC8ED /* LaunchScreen.xib in Resources */,
 				8E888E7F1ACD934C00DFC8ED /* Images.xcassets in Resources */,
+				8E8461341AEEA29F0080C376 /* esv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
