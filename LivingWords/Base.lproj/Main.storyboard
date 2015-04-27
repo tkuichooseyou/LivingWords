@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -40,7 +40,7 @@
                                 </userDefinedRuntimeAttributes>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-GJ-Z9d">
-                                <rect key="frame" x="16" y="74" width="568" height="30"/>
+                                <rect key="frame" x="70" y="74" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -48,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
-                                <rect key="frame" x="16" y="112" width="568" height="30"/>
+                                <rect key="frame" x="70" y="112" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
-                                <rect key="frame" x="16" y="150" width="568" height="30"/>
+                                <rect key="frame" x="70" y="150" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -64,7 +64,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGU-Pg-6bc">
-                                <rect key="frame" x="16" y="188" width="568" height="30"/>
+                                <rect key="frame" x="70" y="188" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <userDefinedRuntimeAttributes>
@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
-                                <rect key="frame" x="16" y="226" width="568" height="366"/>
+                                <rect key="frame" x="70" y="226" width="480" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Type some notes with verses, like John 3:16, inside here">
@@ -94,21 +94,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dQc-kk-x0f" firstAttribute="top" secondItem="h5a-T9-tnE" secondAttribute="bottom" constant="8" id="4Lo-0L-ZQM"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="692-nU-1kQ"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6pj-k0-3zR"/>
+                            <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="692-nU-1kQ"/>
+                            <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="6pj-k0-3zR"/>
                             <constraint firstItem="T4t-GJ-Z9d" firstAttribute="top" secondItem="Qgl-nn-6TR" secondAttribute="bottom" constant="10" id="A3r-o2-E3l"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A7w-id-ybf"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gx3-5M-kDn"/>
+                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="A7w-id-ybf"/>
+                            <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Gx3-5M-kDn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qgl-nn-6TR" secondAttribute="trailing" constant="-16" id="HpL-KP-U8X"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rg5-i5-BcI"/>
+                            <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Rg5-i5-BcI"/>
                             <constraint firstItem="wGU-Pg-6bc" firstAttribute="top" secondItem="dQc-kk-x0f" secondAttribute="bottom" constant="8" id="UA6-fY-kvy"/>
                             <constraint firstItem="Qgl-nn-6TR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wcg-hY-uD4"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bo0-lm-dVJ"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gCs-kU-Fjs"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gbd-0W-Vq2"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gu9-um-l7e"/>
+                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="bo0-lm-dVJ"/>
+                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="gCs-kU-Fjs"/>
+                            <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="gbd-0W-Vq2"/>
+                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="gu9-um-l7e"/>
                             <constraint firstItem="h5a-T9-tnE" firstAttribute="top" secondItem="T4t-GJ-Z9d" secondAttribute="bottom" constant="8" id="hbM-fz-5jC"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pTv-jY-lpf"/>
+                            <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="pTv-jY-lpf"/>
                             <constraint firstItem="Qgl-nn-6TR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="pvJ-Pv-xhX"/>
                             <constraint firstItem="vie-dF-cNn" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="rXQ-8l-7Hj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vie-dF-cNn" secondAttribute="bottom" constant="8" id="wlv-dM-JBL"/>
@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YeD-qv-yJh">
-                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <rect key="frame" x="70" y="81" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -147,7 +147,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sz-Wh-M5C">
-                                <rect key="frame" x="16" y="110" width="568" height="30"/>
+                                <rect key="frame" x="70" y="127" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -155,15 +155,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O98-Kl-Wvl">
-                                <rect key="frame" x="16" y="148" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-MP-AaD">
-                                <rect key="frame" x="16" y="186" width="568" height="30"/>
+                                <rect key="frame" x="70" y="171" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -171,31 +163,39 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
-                                <rect key="frame" x="16" y="224" width="568" height="376"/>
+                                <rect key="frame" x="70" y="264" width="480" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-MP-AaD">
+                                <rect key="frame" x="70" y="216" width="480" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YeD-qv-yJh" firstAttribute="top" secondItem="P33-3W-Yo1" secondAttribute="bottom" constant="8" id="615-4s-Yzv"/>
-                            <constraint firstItem="YeD-qv-yJh" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="6Nj-8Q-Kb7"/>
-                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="7qK-uQ-kLM"/>
-                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="9nW-xz-UxK"/>
-                            <constraint firstItem="pyp-MP-AaD" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="INi-Xg-ank"/>
-                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="L4g-xC-zOz"/>
-                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="ScC-mu-cXZ"/>
-                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="top" secondItem="0sz-Wh-M5C" secondAttribute="bottom" constant="8" id="Uzd-SF-klN"/>
-                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="top" secondItem="YeD-qv-yJh" secondAttribute="bottom" constant="8" id="XQr-Z8-j7w"/>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="top" secondItem="P33-3W-Yo1" secondAttribute="bottom" constant="17" id="615-4s-Yzv"/>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="54" id="6Nj-8Q-Kb7"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="54" id="7qK-uQ-kLM"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="54" id="9nW-xz-UxK"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" constant="-34" id="INi-Xg-ank"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="54" id="L4g-xC-zOz"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" constant="-34" id="ScC-mu-cXZ"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="top" secondItem="0sz-Wh-M5C" secondAttribute="bottom" constant="14" id="Uzd-SF-klN"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="top" secondItem="YeD-qv-yJh" secondAttribute="bottom" constant="16" id="XQr-Z8-j7w"/>
                             <constraint firstItem="O98-Kl-Wvl" firstAttribute="top" secondItem="0sz-Wh-M5C" secondAttribute="bottom" constant="8" id="ZBo-UV-iGJ"/>
-                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="top" secondItem="pyp-MP-AaD" secondAttribute="bottom" constant="8" id="ZHi-7E-2an"/>
-                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="brQ-Tm-mbK"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="0cp-vj-Ohg" secondAttribute="bottom" id="ewQ-oX-QF6"/>
-                            <constraint firstItem="YeD-qv-yJh" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="lgo-1Q-fjl"/>
-                            <constraint firstItem="pyp-MP-AaD" firstAttribute="top" secondItem="O98-Kl-Wvl" secondAttribute="bottom" constant="8" id="nCe-nB-gUB"/>
-                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" id="nFf-b9-nPZ"/>
-                            <constraint firstItem="pyp-MP-AaD" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" id="ntk-b9-Rwq"/>
+                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="top" secondItem="pyp-MP-AaD" secondAttribute="bottom" constant="18" id="ZHi-7E-2an"/>
+                            <constraint firstItem="O98-Kl-Wvl" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" constant="-34" id="brQ-Tm-mbK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0cp-vj-Ohg" secondAttribute="bottom" constant="-43" id="ewQ-oX-QF6"/>
+                            <constraint firstItem="YeD-qv-yJh" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" constant="-34" id="lgo-1Q-fjl"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="top" secondItem="O98-Kl-Wvl" secondAttribute="bottom" constant="15" id="nCe-nB-gUB"/>
+                            <constraint firstItem="0sz-Wh-M5C" firstAttribute="trailing" secondItem="QKA-Ho-ylT" secondAttribute="trailingMargin" constant="-34" id="nFf-b9-nPZ"/>
+                            <constraint firstItem="pyp-MP-AaD" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="54" id="ntk-b9-Rwq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -306,16 +306,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/11/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ueg-SG-8tk">
-                                                    <rect key="frame" x="8" y="8" width="88" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="70" y="16" width="87" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e58-fg-xeO">
-                                                    <rect key="frame" x="8" y="37" width="33" height="21"/>
+                                                    <rect key="frame" x="70" y="48" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -325,44 +325,47 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xv-jl-t9j">
-                                                    <rect key="frame" x="8" y="60" width="43" height="21"/>
+                                                    <rect key="frame" x="70" y="68" width="43" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Lr-wFK">
-                                                    <rect key="frame" x="104" y="8" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Lr-wFK">
+                                                    <rect key="frame" x="166" y="16" width="64" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-left"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywu-FT-k8I">
-                                                    <rect key="frame" x="525" y="8" width="67" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywu-FT-k8I">
+                                                    <rect key="frame" x="509" y="16" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-right"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleId" value="location-label"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ueg-SG-8tk" firstAttribute="centerY" secondItem="Ywu-FT-k8I" secondAttribute="centerY" id="CfA-HU-eqx"/>
-                                                <constraint firstItem="e58-fg-xeO" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="JAU-VI-H3d"/>
-                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="top" secondItem="e58-fg-xeO" secondAttribute="bottom" constant="2" id="KWg-iL-O76"/>
-                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="top" secondItem="I3y-5r-CWR" secondAttribute="topMargin" id="MKL-Pw-cGL"/>
-                                                <constraint firstItem="Rwh-Lr-wFK" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="trailing" constant="8" id="P7U-v5-0Mb"/>
-                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="PlL-L7-ZSx"/>
-                                                <constraint firstItem="e58-fg-xeO" firstAttribute="top" secondItem="Ueg-SG-8tk" secondAttribute="bottom" constant="8" id="Tcc-3j-570"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ywu-FT-k8I" secondAttribute="trailing" id="XOo-8y-azH"/>
-                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="udj-4C-Frd"/>
+                                                <constraint firstItem="e58-fg-xeO" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="JAU-VI-H3d"/>
+                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="top" secondItem="e58-fg-xeO" secondAttribute="bottom" constant="-1" id="KWg-iL-O76"/>
+                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="top" secondItem="I3y-5r-CWR" secondAttribute="topMargin" constant="8" id="MKL-Pw-cGL"/>
+                                                <constraint firstItem="Rwh-Lr-wFK" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="trailing" constant="13" id="P7U-v5-0Mb"/>
+                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="PlL-L7-ZSx"/>
+                                                <constraint firstItem="e58-fg-xeO" firstAttribute="top" secondItem="Ueg-SG-8tk" secondAttribute="bottom" constant="12" id="Tcc-3j-570"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ywu-FT-k8I" secondAttribute="trailing" constant="16" id="XOo-8y-azH"/>
+                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="udj-4C-Frd"/>
                                                 <constraint firstItem="Rwh-Lr-wFK" firstAttribute="centerY" secondItem="Ueg-SG-8tk" secondAttribute="centerY" id="wQj-V0-BLZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -391,6 +394,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Library" id="DYF-YW-vey">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9QH-Xq-lgF">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="nav-bar-item"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="NewNoteViewController" id="nBZ-EP-dVx"/>
                             </connections>

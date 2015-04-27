@@ -4,7 +4,7 @@
  */
 
 
-.table-cell text-label {
+.table-cell text-label, .text-label {
     color: $table-text-color;
     font-family: $table-text-font;
     font-size: $table-text-size;
@@ -12,7 +12,9 @@
 }
 
 .table-cell {
+
     background-color: $white;
+
 
     #location-label {
         color: $gray;

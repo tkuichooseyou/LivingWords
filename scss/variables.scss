@@ -4,21 +4,23 @@
  */
 
 
+
 /* Palette */
 
-$blue:              #0096D7;
+$blue:              #67CBDE;
 $blue-light:        #00B2FF;
 $blue-semidark:     #0070A3;
 $blue-dark:         #002C40;
 $white:             #FFFFFF;
 $white-smoke:       #F7F8FA;
-$gray:              #B0B1B4;
+$gray:              #A7A9AC;
 $gray-superlight:   #F7F7F7;
 $gray-light:        #D8D9DC;
 $gray-dark:         #53555A;
 $green:             #00D705;
 $yellow:            #D7D400;
 $red:               #D70000;
+$black:             #000000;
 
 
 /* Theme */
@@ -29,10 +31,10 @@ $icon-bg:                               transparent; /* Note: optimize by settin
 
 /* Typography */
 
-$font-family-base:                      'Avenir';
+$font-family-base:                      'Times New Roman';
 $font-size-base:                        14pt;
 $font-size-superlarge:                  22pt;
-$font-size-large:                       18pt;
+$font-size-large:                       30pt;
 $font-size-small:                       12pt;
 $font-size-supersmall:                  10pt;
 $heading-font-family:                   $font-family-base;
@@ -40,14 +42,14 @@ $heading-font-family:                   $font-family-base;
 
 /* Navigation bar */
 
-$navbar-bg:                             $blue;
-$navbar-text-color:                     $white;
+$navbar-bg:                             $white;
+$navbar-text-color:                     $black;
 $navbar-text-font:                      $font-family-base;
 $navbar-title-text-weight:              bold;
 $navbar-text-weight:                    light;
 $navbar-text-size:                      17pt;
 $navbar-bar-button-font:                $font-family-base;
-$navbar-bar-button-color:               $white;
+$navbar-bar-button-color:               $black;
 
 
 /* Tab bar */
@@ -62,10 +64,10 @@ $tabbar-text-size:                      $font-size-supersmall;
 
 /* Table views */
 
-$table-text-color:                      $gray-dark;
+$table-text-color:                      $black;
 $table-text-font:                       $font-family-base;
 $table-text-size:                       $font-size-base;
-$table-heading-text-color:              $white;
+$table-heading-text-color:              $black;
 $table-heading-text-size:               $font-size-small;
 $table-heading-bg-color:                $blue-semidark;
 
@@ -78,6 +80,7 @@ $collection-cell-border-color:          $gray;
 $collection-cell-border-radius:         5pt;
 $collection-cell-box-shadow-color:      $gray-light;
 $collection-cell-background-color:      $white;
+
 
 
 /* Forms */
@@ -117,6 +120,7 @@ $segmented-control-text-color:          $blue;
 $segmented-control-text-color-selected: $white;
 
 
+
 /* Buttons */
 
 $button-bg-color:                       $blue;
@@ -128,8 +132,3 @@ $button-border-radius:                  3pt;
 $button-text-size:                      $font-size-base;
 $button-text-size-large:                $font-size-superlarge;
 $button-text-size-small:                $font-size-small;
-
-
-
-
-
