@@ -12,4 +12,7 @@
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
 }
 
+- (IBAction)sort:(id)sender {
+}
+
 @end

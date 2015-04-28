@@ -295,8 +295,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-bf-CJI">
+                                <rect key="frame" x="16" y="64" width="30" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="⌄">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sort:" destination="6dJ-uj-xk2" eventType="touchUpInside" id="RRt-xD-08n"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0So-g0-M3m">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="116" width="600" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="100" id="9Mv-jZ-a6R" customClass="NoteCell">
@@ -386,11 +396,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0So-g0-M3m" firstAttribute="top" secondItem="hpZ-Rh-W1a" secondAttribute="bottom" id="Vax-hH-yyK"/>
+                            <constraint firstItem="0So-g0-M3m" firstAttribute="top" secondItem="QW2-bf-CJI" secondAttribute="bottom" constant="10" id="DtT-uo-LId"/>
+                            <constraint firstItem="0So-g0-M3m" firstAttribute="top" secondItem="hpZ-Rh-W1a" secondAttribute="bottom" constant="40" id="Vax-hH-yyK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0So-g0-M3m" secondAttribute="trailing" constant="-16" id="gBJ-nK-Oy0"/>
+                            <constraint firstItem="QW2-bf-CJI" firstAttribute="top" secondItem="hpZ-Rh-W1a" secondAttribute="bottom" id="puO-gD-jEG"/>
                             <constraint firstItem="0So-g0-M3m" firstAttribute="leading" secondItem="aBQ-Qo-USV" secondAttribute="leadingMargin" constant="-16" id="qfx-hX-rTi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="0So-g0-M3m" secondAttribute="bottom" id="yiK-0y-Zbb"/>
+                            <constraint firstItem="QW2-bf-CJI" firstAttribute="leading" secondItem="aBQ-Qo-USV" secondAttribute="leadingMargin" id="zb7-iM-79l"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Vax-hH-yyK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Library" id="DYF-YW-vey">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9QH-Xq-lgF">
