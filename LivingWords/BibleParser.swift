@@ -3,12 +3,16 @@ import UIKit
 public class BibleParser: NSObject {
     public class func textForParsedVerse(parsedVerse:ParsedVerse) -> String {
         var error: NSError?
-        let pattern = "\"chapter-num\".*?\(parsedVerse.chapterStart).*?\"verse-num\">\(parsedVerse.numberStart)</span>.?<span>(.*?)</span>"
+        let chapterStartPattern = "\"chapter-num\">\\s\(parsedVerse.chapterStart)\\s</span>"
+        let verseNumberStartPattern = "\"verse-num\">\(parsedVerse.numberStart)</span>(?:\\s?<span>)?(.*?)<"
+        let pattern = parsedVerse.numberStart == 1 ?
+            chapterStartPattern + "(.*?)<" :
+            chapterStartPattern + "(?:.*?)" + verseNumberStartPattern
 
         if let bookPath = NSBundle.mainBundle().pathForResource(parsedVerse.book.lowercaseString, ofType: "html", inDirectory: "esv"),
             let bookString = NSString(contentsOfFile: bookPath, encoding: NSUTF8StringEncoding, error: &error) as? String,
             let match = matchesForRegexInText(pattern, text:bookString).first {
-                return match
+                return match.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         }
 
         return ""
