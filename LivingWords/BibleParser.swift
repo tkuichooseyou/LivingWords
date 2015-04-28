@@ -19,7 +19,6 @@ public class BibleParser: NSObject {
     }
 
     class func matchesForRegexInText(regex: String!, text: String!) -> [String] {
-
         let regex = NSRegularExpression(
             pattern: regex,
             options: NSRegularExpressionOptions.DotMatchesLineSeparators,

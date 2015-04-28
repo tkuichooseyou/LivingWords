@@ -21,7 +21,9 @@
     self.titleTextField.text = self.note.title;
     self.locationTextField.text = self.note.location;
     self.speakerTextField.text = self.note.speaker;
-    self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
+    if (self.note.verses.count >= 1) {
+        self.verseTextField.text = [VerseParser displayVerse:[self.note.verses firstObject]];
+    }
     self.textTextView.text = self.note.text;
 
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
