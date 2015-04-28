@@ -41,15 +41,6 @@
     NotesViewController *controller = (NotesViewController *)navigationController.topViewController;
     controller.sceneMediator = self.sceneMediator;
     controller.persistenceController = self.persistenceController;
-
-    FetchedResultsDataSource *fetchedResultsDataSource = [[FetchedResultsDataSource alloc]
-                                                          initWithManagedObjectContext:self.persistenceController.managedObjectContext
-                                                          tableView:controller.tableView];
-
-    controller.fetchedResultsDataSource = fetchedResultsDataSource;
-    controller.tableView.delegate = fetchedResultsDataSource;
-    controller.tableView.dataSource = fetchedResultsDataSource;
-    [controller.tableView reloadData];
 }
 
 @end

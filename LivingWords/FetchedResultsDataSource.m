@@ -7,11 +7,10 @@
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
                                    tableView:(UITableView *)tableView
+                                fetchRequest:(NSFetchRequest *)fetchRequest
 {
     self = [super init];
 
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
-    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
                                                             initWithFetchRequest:fetchRequest
                                                             managedObjectContext:managedObjectContext

@@ -7,7 +7,7 @@
 
 @interface NotesViewController : UIViewController <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) SceneMediator *sceneMediator;
-@property (strong, readwrite) PersistenceController *persistenceController;
+@property (nonatomic, strong, readwrite) PersistenceController *persistenceController;
 @property (strong, nonatomic) Note *selectedNote;
 @property (strong, nonatomic) FetchedResultsDataSource *fetchedResultsDataSource;
 

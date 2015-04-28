@@ -422,6 +422,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateSortButton" destination="QW2-bf-CJI" id="Dkj-jh-ILw"/>
                         <outlet property="tableView" destination="0So-g0-M3m" id="F1U-cH-2Tr"/>
                     </connections>
                 </viewController>

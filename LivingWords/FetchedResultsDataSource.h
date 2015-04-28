@@ -6,6 +6,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
-                                   tableView:(UITableView *)tableView;
+                                   tableView:(UITableView *)tableView
+                                fetchRequest:(NSFetchRequest *)fetchRequest;
 
 @end
