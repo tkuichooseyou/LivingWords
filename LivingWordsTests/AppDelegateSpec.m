@@ -53,7 +53,6 @@ describe(@"AppDelegate", ^{
             __block NotesViewController *mockNotesVC;
             __block SceneMediator *mockSceneMediator;
             __block NSManagedObjectContext *mockManagedObjectContext;
-            __block FetchedResultsDataSource *mockFetchedResultsDataSource;
             __block UITableView *mockTableView;
 
             beforeEach(^{
@@ -79,12 +78,6 @@ describe(@"AppDelegate", ^{
                 mockManagedObjectContext = [NSManagedObjectContext nullMock];
                 [mockPersistenceController stub:@selector(managedObjectContext) andReturn:mockManagedObjectContext];
 
-                mockFetchedResultsDataSource = [FetchedResultsDataSource nullMock];
-                [FetchedResultsDataSource stub:@selector(alloc) andReturn:mockFetchedResultsDataSource];
-                [mockFetchedResultsDataSource stub:@selector(initWithManagedObjectContext:tableView:)
-                                         andReturn:mockFetchedResultsDataSource
-                                     withArguments:mockManagedObjectContext, mockTableView];
-
                 [appDelegate application:mockApplication didFinishLaunchingWithOptions:mockOptions];
             });
 
@@ -98,19 +91,6 @@ describe(@"AppDelegate", ^{
             it(@"injects persistence controller into initial view controller", ^{
                 [[mockNotesVC should] receive:@selector(setPersistenceController:)
                                   withArguments:mockPersistenceController];
-
-                callback();
-            });
-
-            it(@"sets fetched data source on initial view controller", ^{
-                [[mockNotesVC should] receive:@selector(setFetchedResultsDataSource:)
-                                  withArguments:mockFetchedResultsDataSource];
-
-                callback();
-            });
-
-            it(@"reloads table view", ^{
-                [[mockTableView should] receive:@selector(reloadData)];
 
                 callback();
             });
