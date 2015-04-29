@@ -305,6 +305,12 @@
                                     <action selector="sort:" destination="6dJ-uj-xk2" eventType="touchUpInside" id="RRt-xD-08n"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPe-kN-axM">
+                                <rect key="frame" x="78" y="75" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0So-g0-M3m">
                                 <rect key="frame" x="0.0" y="116" width="600" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -397,8 +403,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0So-g0-M3m" firstAttribute="top" secondItem="QW2-bf-CJI" secondAttribute="bottom" constant="10" id="DtT-uo-LId"/>
+                            <constraint firstItem="LPe-kN-axM" firstAttribute="leading" secondItem="QW2-bf-CJI" secondAttribute="trailing" constant="23" id="HaR-rL-dz3"/>
                             <constraint firstItem="0So-g0-M3m" firstAttribute="top" secondItem="hpZ-Rh-W1a" secondAttribute="bottom" constant="40" id="Vax-hH-yyK"/>
+                            <constraint firstItem="LPe-kN-axM" firstAttribute="leading" secondItem="aBQ-Qo-USV" secondAttribute="leadingMargin" constant="62" id="VpA-hh-PIl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0So-g0-M3m" secondAttribute="trailing" constant="-16" id="gBJ-nK-Oy0"/>
+                            <constraint firstItem="LPe-kN-axM" firstAttribute="centerY" secondItem="QW2-bf-CJI" secondAttribute="centerY" id="ion-hP-8XS"/>
                             <constraint firstItem="QW2-bf-CJI" firstAttribute="top" secondItem="hpZ-Rh-W1a" secondAttribute="bottom" id="puO-gD-jEG"/>
                             <constraint firstItem="0So-g0-M3m" firstAttribute="leading" secondItem="aBQ-Qo-USV" secondAttribute="leadingMargin" constant="-16" id="qfx-hX-rTi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="0So-g0-M3m" secondAttribute="bottom" id="yiK-0y-Zbb"/>
@@ -406,6 +415,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="HaR-rL-dz3"/>
                                 <exclude reference="Vax-hH-yyK"/>
                             </mask>
                         </variation>
