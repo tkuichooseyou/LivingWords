@@ -1,3 +1,5 @@
+[![Build Status](https://www.bitrise.io/app/4399b71da39e6c15.svg?token=XKr-Tj3wcW8TtvoODFUOrA)](https://www.bitrise.io/app/4399b71da39e6c15)
+
 # LivingWords
 LivingWords app
 
