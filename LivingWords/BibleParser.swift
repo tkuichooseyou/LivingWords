@@ -6,15 +6,14 @@ public class BibleParser: NSObject {
         let verseStart = parsedVerse.numberStart.integerValue
         let verseEnd = parsedVerse.numberEnd.integerValue
         let verseRange = (verseStart...verseEnd)
-        var patterns: [String] = []
 
-        for verseNum in verseRange {
+        let patterns = (verseRange).map { verseNum -> String in
             let verseNumberStartPattern = "\"verse-num\">\(verseNum)</span>(?:\\s?<span>)?(.*?)<"
             let chapterStartPattern = "\"chapter-num\">\\s\(parsedVerse.chapterStart)\\s</span>"
             if verseNum == 1 {
-                patterns.append(chapterStartPattern + "(.*?)<")
+                return chapterStartPattern + "(.*?)<"
             } else {
-                patterns.append(chapterStartPattern + "(?:.*?)" + verseNumberStartPattern)
+                return chapterStartPattern + "(?:.*?)" + verseNumberStartPattern
             }
         }
 
