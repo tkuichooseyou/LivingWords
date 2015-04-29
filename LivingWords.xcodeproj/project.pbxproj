@@ -20,6 +20,7 @@
 		8E09B17D1AD0DE3E00688218 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B17C1AD0DE3E00688218 /* NoteCell.m */; };
 		8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8C01AD3176B0074C686 /* Tag.m */; };
 		8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */; };
+		8E2B235E1AF1879700BF7906 /* VerseTextDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B235D1AF1879700BF7906 /* VerseTextDelegate.m */; };
 		8E3B360B1AE8A2710032503B /* BibleParserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */; };
 		8E3B360C1AE8A2E90032503B /* BibleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */; };
 		8E5936DC1AE55E8D00A0295B /* ParsedVerseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */; };
@@ -82,6 +83,8 @@
 		8E2AE8C01AD3176B0074C686 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		8E2AE8C91AD33E500074C686 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		8E2AE8CA1AD33E500074C686 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		8E2B235C1AF1879700BF7906 /* VerseTextDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerseTextDelegate.h; sourceTree = "<group>"; };
+		8E2B235D1AF1879700BF7906 /* VerseTextDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerseTextDelegate.m; sourceTree = "<group>"; };
 		8E3B360A1AE8A2710032503B /* BibleParserSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleParserSpec.swift; sourceTree = "<group>"; };
 		8E5936DB1AE55E8D00A0295B /* ParsedVerseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedVerseSpec.m; sourceTree = "<group>"; };
 		8E64B2741AE06833002ABEA7 /* FetchedResultsDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsDataSourceSpec.m; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				8E7DB03E1AE6CE5000827E69 /* BibleParser.swift */,
 				8E6AF69C1ADC88C50027EA95 /* FetchedResultsDataSource.h */,
 				8E6AF69D1ADC88C50027EA95 /* FetchedResultsDataSource.m */,
+				8E2B235C1AF1879700BF7906 /* VerseTextDelegate.h */,
+				8E2B235D1AF1879700BF7906 /* VerseTextDelegate.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 				8E888E771ACD934C00DFC8ED /* LivingWords.xcdatamodeld in Sources */,
 				8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */,
 				8E9832FA1AE1884A009C91A6 /* ShowVerseViewController.m in Sources */,
+				8E2B235E1AF1879700BF7906 /* VerseTextDelegate.m in Sources */,
 				8E2AE8CB1AD33E500074C686 /* EditNoteViewController.m in Sources */,
 				8E2AE8C11AD3176B0074C686 /* Tag.m in Sources */,
 				8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */,
