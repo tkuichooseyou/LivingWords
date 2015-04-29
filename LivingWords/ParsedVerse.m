@@ -23,10 +23,10 @@
 
 - (NSString *)displayFormatted
 {
-    if (self.chapterStart != self.chapterEnd) {
+    if ([self.chapterStart integerValue] != [self.chapterEnd integerValue]) {
         return [NSString stringWithFormat:@"%@ %@:%@-%@:%@",
             self.book, self.chapterStart, self.numberStart, self.chapterEnd, self.numberEnd];
-    } else if (self.numberStart != self.numberEnd) {
+    } else if ([self.numberStart integerValue] != [self.numberEnd integerValue]) {
         return [NSString stringWithFormat:@"%@ %@:%@-%@",
             self.book, self.chapterStart, self.numberStart, self.numberEnd];
     }
