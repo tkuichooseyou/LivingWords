@@ -16,6 +16,8 @@ describe(@"VerseParser", ^{
             [[result.book should] equal:@"John"];
             [[result.chapterStart should] equal:@3];
             [[result.numberStart should] equal:@16];
+            [[result.chapterEnd should] equal:@3];
+            [[result.numberEnd should] equal:@16];
             [[theValue(result.range.location) should] equal:theValue(0)];
             [[theValue(result.range.length) should] equal:theValue(verseString.length)];
         });
@@ -29,6 +31,8 @@ describe(@"VerseParser", ^{
             [[result.book should] equal:@"1 John"];
             [[result.chapterStart should] equal:@3];
             [[result.numberStart should] equal:@16];
+            [[result.chapterEnd should] equal:@3];
+            [[result.numberEnd should] equal:@16];
         });
 
         it(@"returns verse for range of numbers", ^{
@@ -39,6 +43,7 @@ describe(@"VerseParser", ^{
 
             [[result.book should] equal:@"1 John"];
             [[result.chapterStart should] equal:@3];
+            [[result.chapterEnd should] equal:@3];
             [[result.numberStart should] equal:@16];
             [[result.numberEnd should] equal:@17];
         });
@@ -52,12 +57,15 @@ describe(@"VerseParser", ^{
 
             [[resultOne.book should] equal:@"1 John"];
             [[resultOne.chapterStart should] equal:@3];
+            [[resultOne.chapterEnd should] equal:@3];
             [[resultOne.numberStart should] equal:@16];
             [[resultOne.numberEnd should] equal:@17];
 
             [[resultTwo.book should] equal:@"1 Corinthians"];
             [[resultTwo.chapterStart should] equal:@3];
             [[resultTwo.numberStart should] equal:@16];
+            [[resultTwo.chapterEnd should] equal:@3];
+            [[resultTwo.numberEnd should] equal:@16];
         });
 
         it(@"returns empty set if no verse is parsed", ^{
@@ -87,11 +95,11 @@ describe(@"VerseParser", ^{
     });
 
     describe(@"+styleString:", ^{
-        it(@"returns string with url attribute on verses", ^{
+        it(@"returns string with url attribute on verses with single verse number", ^{
             NSString *input = @"I think John 3:16 is a good verse, and so is Romans 8:28";
 
-            NSDictionary *attributesOne = @{ NSLinkAttributeName : @"John/3/16" };
-            NSDictionary *attributesTwo = @{ NSLinkAttributeName : @"Romans/8/28" };
+            NSDictionary *attributesOne = @{ NSLinkAttributeName : @"John/3/16/3/16" };
+            NSDictionary *attributesTwo = @{ NSLinkAttributeName : @"Romans/8/28/8/28" };
             NSMutableAttributedString *mutableExpected = [[NSMutableAttributedString alloc] initWithString:input];
             NSRange rangeOne = [input rangeOfString:@"John 3:16"];
             NSRange rangeTwo = [input rangeOfString:@"Romans 8:28"];

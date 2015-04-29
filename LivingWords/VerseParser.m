@@ -56,12 +56,16 @@ typedef ParsedVerse *(^verseMatcher)(NSTextCheckingResult *);
 
         verse.book = [string substringWithRange:bookRange];
         verse.chapterStart = @([[string substringWithRange:chapterRange] integerValue]);
+//    TODO: real chapter end
+        verse.chapterEnd = @([[string substringWithRange:chapterRange] integerValue]);
         verse.numberStart = @([[string substringWithRange:numberStartRange] integerValue]);
         verse.range = match.range;
 
         if ([match rangeAtIndex:4].location != NSNotFound) {
             NSRange numberEndRange = [match rangeAtIndex:4];
             verse.numberEnd = @([[string substringWithRange:numberEndRange] integerValue]);
+        } else {
+            verse.numberEnd = verse.numberStart;
         }
         return verse;
     };
