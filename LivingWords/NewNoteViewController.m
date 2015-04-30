@@ -9,6 +9,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
+@property (weak, nonatomic) IBOutlet UILabel *defaultLabel;
 @end
 
 @implementation NewNoteViewController
@@ -47,6 +48,21 @@
 
         [self.persistenceController save];
     }];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    self.defaultLabel.hidden = YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.defaultLabel.hidden = ([textView.text length] > 0);
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    self.defaultLabel.hidden = ([textView.text length] > 0);
 }
 
 @end

@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *speakerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verseTextField;
 @property (weak, nonatomic) IBOutlet UITextView *textTextView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UITextField *activeField;
 @property (strong, nonatomic) id textViewDelegate;
 @property (nonatomic) BOOL editing;
 @end
@@ -38,6 +40,17 @@
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
     RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
     RAC(self.note, text) = self.textTextView.rac_textSignal;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -77,6 +90,40 @@
          [textDelegate textView:arguments.first shouldInteractWithURL:arguments.second inRange:NSMakeRange(0, 0)];
      }];
     self.textTextView.delegate = self.textViewDelegate;
+}
+
+- (IBAction)textFieldDidBeginEditing:(UITextField *)sender
+{
+    self.activeField = sender;
+}
+
+- (IBAction)textFieldDidEndEditing:(UITextField *)sender
+{
+    self.activeField = nil;
+}
+
+- (void) keyboardDidShow:(NSNotification *)notification
+{
+    NSDictionary* info = [notification userInfo];
+    CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    kbRect = [self.view convertRect:kbRect fromView:nil];
+
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbRect.size.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbRect.size.height;
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
+    }
+}
+
+- (void) keyboardWillBeHidden:(NSNotification *)notification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 @end

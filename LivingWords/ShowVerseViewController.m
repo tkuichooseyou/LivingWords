@@ -29,6 +29,7 @@
     self.title = [self.parsedVerse displayFormatted];
 
     self.textView.text = [BibleParser textForParsedVerse:self.parsedVerse];
+    [self.textView scrollRangeToVisible:NSMakeRange(0, 0)];
     [self.spinner stopAnimating];
     self.spinner.hidden=YES;
 }

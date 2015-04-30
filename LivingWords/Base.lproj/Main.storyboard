@@ -40,7 +40,7 @@
                                 </userDefinedRuntimeAttributes>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-GJ-Z9d">
-                                <rect key="frame" x="70" y="74" width="480" height="30"/>
+                                <rect key="frame" x="16" y="74" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -48,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
-                                <rect key="frame" x="70" y="112" width="480" height="30"/>
+                                <rect key="frame" x="16" y="112" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
-                                <rect key="frame" x="70" y="150" width="480" height="30"/>
+                                <rect key="frame" x="16" y="150" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -64,57 +64,64 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGU-Pg-6bc">
-                                <rect key="frame" x="70" y="188" width="480" height="30"/>
+                                <rect key="frame" x="16" y="188" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
-                                <rect key="frame" x="70" y="226" width="480" height="366"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
+                                <rect key="frame" x="16" y="226" width="568" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Type some notes with verses, like John 3:16, inside here">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
-                                            <integer key="NSLigature" value="0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="33.700000000000003">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="33.700000762939453"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bkl-64-3DR"/>
+                                </connections>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type a note with verses, like John 3:16!" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-eU-b9D">
+                                <rect key="frame" x="16" y="226" width="568" height="18"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dQc-kk-x0f" firstAttribute="top" secondItem="h5a-T9-tnE" secondAttribute="bottom" constant="8" id="4Lo-0L-ZQM"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="692-nU-1kQ"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="6pj-k0-3zR"/>
+                            <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="692-nU-1kQ"/>
+                            <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6pj-k0-3zR"/>
                             <constraint firstItem="T4t-GJ-Z9d" firstAttribute="top" secondItem="Qgl-nn-6TR" secondAttribute="bottom" constant="10" id="A3r-o2-E3l"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="A7w-id-ybf"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Gx3-5M-kDn"/>
+                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A7w-id-ybf"/>
+                            <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gx3-5M-kDn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qgl-nn-6TR" secondAttribute="trailing" constant="-16" id="HpL-KP-U8X"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="Rg5-i5-BcI"/>
+                            <constraint firstItem="xjA-eU-b9D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JER-yo-q26"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xjA-eU-b9D" secondAttribute="trailing" id="R6g-Tw-n0j"/>
+                            <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rg5-i5-BcI"/>
                             <constraint firstItem="wGU-Pg-6bc" firstAttribute="top" secondItem="dQc-kk-x0f" secondAttribute="bottom" constant="8" id="UA6-fY-kvy"/>
                             <constraint firstItem="Qgl-nn-6TR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wcg-hY-uD4"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="bo0-lm-dVJ"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="gCs-kU-Fjs"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="gbd-0W-Vq2"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="gu9-um-l7e"/>
+                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bo0-lm-dVJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vie-dF-cNn" secondAttribute="trailing" id="e3F-fY-SH4"/>
+                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gCs-kU-Fjs"/>
+                            <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gbd-0W-Vq2"/>
+                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gu9-um-l7e"/>
                             <constraint firstItem="h5a-T9-tnE" firstAttribute="top" secondItem="T4t-GJ-Z9d" secondAttribute="bottom" constant="8" id="hbM-fz-5jC"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-34" id="pTv-jY-lpf"/>
+                            <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="pTv-jY-lpf"/>
                             <constraint firstItem="Qgl-nn-6TR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="pvJ-Pv-xhX"/>
                             <constraint firstItem="vie-dF-cNn" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="rXQ-8l-7Hj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vie-dF-cNn" secondAttribute="bottom" constant="8" id="wlv-dM-JBL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vie-dF-cNn" secondAttribute="bottom" id="wlv-dM-JBL"/>
+                            <constraint firstItem="xjA-eU-b9D" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="zr3-2X-mGW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pTv-jY-lpf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="defaultLabel" destination="xjA-eU-b9D" id="I0A-T2-Svq"/>
                         <outlet property="locationTextField" destination="h5a-T9-tnE" id="a1M-Vi-Znn"/>
                         <outlet property="speakerTextField" destination="dQc-kk-x0f" id="SWL-P4-6vt"/>
                         <outlet property="textTextView" destination="vie-dF-cNn" id="Og4-zC-JxC"/>
@@ -142,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZP-Lf-KD3" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="805"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="795"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YeD-qv-yJh">
                                                 <rect key="frame" x="20" y="20" width="560" height="30"/>
@@ -154,6 +161,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="L0A-vn-K2B" id="HNW-08-9Rb"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sz-Wh-M5C">
                                                 <rect key="frame" x="20" y="65" width="560" height="30"/>
@@ -165,6 +175,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="L0A-vn-K2B" id="Q4L-sl-5at"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O98-Kl-Wvl">
                                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
@@ -176,6 +189,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="L0A-vn-K2B" id="XrQ-yb-MuN"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-MP-AaD">
                                                 <rect key="frame" x="20" y="155" width="560" height="30"/>
@@ -187,14 +203,17 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="L0A-vn-K2B" id="jX1-nH-Yg5"/>
+                                                </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
-                                                <rect key="frame" x="0.0" y="205" width="600" height="600"/>
+                                                <rect key="frame" x="10" y="195" width="580" height="600"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="330" id="cdX-XR-ijM"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -207,9 +226,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="pyp-MP-AaD" secondAttribute="trailing" constant="20" id="5hJ-iB-7fQ"/>
                                             <constraint firstItem="YeD-qv-yJh" firstAttribute="top" secondItem="pZP-Lf-KD3" secondAttribute="top" constant="20" id="8Jn-Ix-ffb"/>
-                                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="top" secondItem="pyp-MP-AaD" secondAttribute="bottom" constant="20" id="BJI-dW-oSp"/>
-                                            <constraint firstAttribute="trailing" secondItem="0cp-vj-Ohg" secondAttribute="trailing" id="Eta-Kk-jEc"/>
-                                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="leading" secondItem="pZP-Lf-KD3" secondAttribute="leading" id="FAu-QP-MyH"/>
+                                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="top" secondItem="pyp-MP-AaD" secondAttribute="bottom" constant="10" id="BJI-dW-oSp"/>
+                                            <constraint firstAttribute="trailing" secondItem="0cp-vj-Ohg" secondAttribute="trailing" constant="10" id="Eta-Kk-jEc"/>
+                                            <constraint firstItem="0cp-vj-Ohg" firstAttribute="leading" secondItem="pZP-Lf-KD3" secondAttribute="leading" constant="10" id="FAu-QP-MyH"/>
                                             <constraint firstItem="pyp-MP-AaD" firstAttribute="top" secondItem="O98-Kl-Wvl" secondAttribute="bottom" constant="15" id="GdE-aM-oUD"/>
                                             <constraint firstItem="pyp-MP-AaD" firstAttribute="leading" secondItem="pZP-Lf-KD3" secondAttribute="leading" constant="20" id="GuQ-e9-UQz"/>
                                             <constraint firstAttribute="trailing" secondItem="YeD-qv-yJh" secondAttribute="trailing" constant="20" id="LyU-do-ntM"/>
@@ -257,6 +276,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="0sz-Wh-M5C" id="3Ct-eZ-1VH"/>
+                        <outlet property="scrollView" destination="cNG-NT-0YF" id="u7C-k6-8wa"/>
                         <outlet property="speakerTextField" destination="O98-Kl-Wvl" id="Ozf-zu-1yr"/>
                         <outlet property="textTextView" destination="0cp-vj-Ohg" id="cJs-NQ-WB0"/>
                         <outlet property="titleTextField" destination="YeD-qv-yJh" id="9Ax-hy-7nu"/>
