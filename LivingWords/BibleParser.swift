@@ -1,10 +1,16 @@
 import UIKit
 
 public class BibleParser: NSObject {
+    static let errorMessage = "Verse not found"
+
     public class func textForParsedVerse(parsedVerse:ParsedVerse) -> String {
         var error: NSError?
         let verseStart = parsedVerse.numberStart.integerValue
         let verseEnd = parsedVerse.numberEnd.integerValue
+        if verseEnd < verseStart {
+            return errorMessage
+        }
+
         let verseRange = (verseStart...verseEnd)
 
         let patterns = (verseRange).map { verseNum -> String in
@@ -23,14 +29,13 @@ public class BibleParser: NSObject {
                     .map { self.matchesForRegexInText($0, text:bookString).first }
                     .reduce("", combine: {
                         if let y = $1 {return $0 + " " + y}
-                        return $0
+                        return errorMessage
                     })
                     .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         } else {
             println(error)
+            return errorMessage
         }
-
-        return ""
     }
 
     class func matchesForRegexInText(regex: String!, text: String!) -> [String] {

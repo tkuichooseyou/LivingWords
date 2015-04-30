@@ -60,6 +60,34 @@ class BibleParserSpec: QuickSpec {
 
                     expect(result) == expected
                 }
+
+                it("returns verse not found for non-existing verse") {
+                    let parsedVerse = ParsedVerse()
+                    parsedVerse.book = "John"
+                    parsedVerse.chapterStart = 3
+                    parsedVerse.numberStart = 100
+                    parsedVerse.chapterEnd = 3
+                    parsedVerse.numberEnd = 100
+                    let expected = "Verse not found"
+
+                    let result = BibleParser.textForParsedVerse(parsedVerse)
+
+                    expect(result) == expected
+                }
+
+                it("returns verse not found for verse end before start") {
+                    let parsedVerse = ParsedVerse()
+                    parsedVerse.book = "John"
+                    parsedVerse.chapterStart = 3
+                    parsedVerse.numberStart = 105
+                    parsedVerse.chapterEnd = 3
+                    parsedVerse.numberEnd = 103
+                    let expected = "Verse not found"
+
+                    let result = BibleParser.textForParsedVerse(parsedVerse)
+
+                    expect(result) == expected
+                }
             }
         }
     }
