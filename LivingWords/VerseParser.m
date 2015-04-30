@@ -33,7 +33,9 @@
 
 + (NSAttributedString *)styleString:(NSString *)text
 {
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text
+                                                                               attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]}];
+
     NSArray *parsedVerses = [VerseParser parseString:text];
 
     for (ParsedVerse *parsedVerse in parsedVerses) {

@@ -98,8 +98,8 @@ describe(@"VerseParser", ^{
         it(@"returns string with url attribute on verses with single verse number", ^{
             NSString *input = @"I think John 3:16 is a good verse, and so is Romans 8:28";
 
-            NSDictionary *attributesOne = @{ NSLinkAttributeName : @"John/3/16/3/16" };
-            NSDictionary *attributesTwo = @{ NSLinkAttributeName : @"Romans/8/28/8/28" };
+            NSDictionary *attributesOne = @{ NSLinkAttributeName : @"John/3/16/3/16", NSFontAttributeName : [UIFont systemFontOfSize:16] };
+            NSDictionary *attributesTwo = @{ NSLinkAttributeName : @"Romans/8/28/8/28", NSFontAttributeName : [UIFont systemFontOfSize:16] };
             NSMutableAttributedString *mutableExpected = [[NSMutableAttributedString alloc] initWithString:input];
             NSRange rangeOne = [input rangeOfString:@"John 3:16"];
             NSRange rangeTwo = [input rangeOfString:@"Romans 8:28"];
