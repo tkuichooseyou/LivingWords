@@ -7,6 +7,11 @@ SPEC_BEGIN(VerseParserSpec)
 
 describe(@"VerseParser", ^{
     describe(@"+parseString:", ^{
+        it(@"should not include partial regex matches", ^{
+            NSString *verseString = @"John";
+            [[[VerseParser parseString:verseString] should] beEmpty];
+        });
+
         it(@"returns verse with parsed properties", ^{
             NSString *verseString = @"John 3:16";
 

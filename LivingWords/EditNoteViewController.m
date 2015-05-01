@@ -74,7 +74,7 @@
         self.textTextView.attributedText = [[NSAttributedString alloc] initWithString:self.textTextView.text];
     } else {
         self.navigationItem.rightBarButtonItem.title = @"Edit";
-        [self.textTextView setAttributedText:[VerseParser styleString:self.textTextView.text]];
+        self.textTextView.attributedText = [VerseParser styleString:self.textTextView.text];
     }
 }
 
