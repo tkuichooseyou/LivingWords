@@ -15,6 +15,10 @@
     return parsedVerse;
 }
 
+- (NSString *)bookFileString {
+    return [self.book.lowercaseString stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 - (NSString *)urlString
 {
     return [NSString stringWithFormat:@"%@/%@/%@/%@/%@",

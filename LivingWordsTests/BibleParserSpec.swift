@@ -33,6 +33,21 @@ class BibleParserSpec: QuickSpec {
                     expect(result) == expected
                 }
 
+                it("returns text for verse with space in book name") {
+                    let parsedVerse = ParsedVerse()
+                    parsedVerse.book = "1 Corinthians"
+                    parsedVerse.chapterStart = 1
+                    parsedVerse.numberStart = 2
+                    parsedVerse.chapterEnd = 1
+                    parsedVerse.numberEnd = 2
+                    let expected = "To the church of God that is in Corinth, to those sanctified in Christ Jesus, called to be saints together with all those who in every place call upon the name of our Lord Jesus Christ, both their Lord and ours:"
+
+                    let result = BibleParser.textForParsedVerse(parsedVerse)
+
+                    expect(result) == expected
+                }
+
+
                 it("returns text for first verse in a chapter") {
                     let parsedVerse = ParsedVerse()
                     parsedVerse.book = "Genesis"

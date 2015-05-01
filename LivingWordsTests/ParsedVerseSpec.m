@@ -16,20 +16,38 @@ describe(@"ParsedVerse", ^{
             [[result.chapterEnd should] equal:@3];
             [[result.numberEnd should] equal:@18];
         });
+
+        it(@"creates verse from url string with space in name", ^{
+            ParsedVerse *result = [ParsedVerse createFromUrlString:@"1 Corinthians/3/16/3/18"];
+            [[result.book should] equal:@"1 Corinthians"];
+            [[result.chapterStart should] equal:@3];
+            [[result.numberStart should] equal:@16];
+            [[result.chapterEnd should] equal:@3];
+            [[result.numberEnd should] equal:@18];
+        });
     });
 
     describe(@"urlString:", ^{
         beforeEach(^{
             parsedVerse = [ParsedVerse new];
+        });
+
+        it(@"returns string with properties", ^{
             parsedVerse.book = @"John";
             parsedVerse.chapterStart = @3;
             parsedVerse.numberStart = @16;
             parsedVerse.chapterEnd = @3;
             parsedVerse.numberEnd = @18;
+            [[[parsedVerse urlString] should] equal:@"John/3/16/3/18"];
         });
 
-        it(@"returns string with properties", ^{
-            [[[parsedVerse urlString] should] equal:@"John/3/16/3/18"];
+        it(@"returns string with properties for book with space in name", ^{
+            parsedVerse.book = @"1 Corinthians";
+            parsedVerse.chapterStart = @3;
+            parsedVerse.numberStart = @16;
+            parsedVerse.chapterEnd = @3;
+            parsedVerse.numberEnd = @18;
+            [[[parsedVerse urlString] should] equal:@"1 Corinthians/3/16/3/18"];
         });
     });
 

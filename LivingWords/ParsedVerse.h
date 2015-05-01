@@ -10,5 +10,6 @@
 
 + (instancetype)createFromUrlString:(NSString *)urlString;
 - (NSString *)urlString;
+- (NSString *)bookFileString;
 - (NSString *)displayFormatted;
 @end

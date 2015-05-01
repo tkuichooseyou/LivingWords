@@ -23,7 +23,7 @@ public class BibleParser: NSObject {
             }
         }
 
-        if let bookPath = NSBundle.mainBundle().pathForResource(parsedVerse.book.lowercaseString, ofType: "html", inDirectory: "esv"),
+        if let bookPath = NSBundle.mainBundle().pathForResource(parsedVerse.bookFileString(), ofType: "html", inDirectory: "esv"),
             bookString = NSString(contentsOfFile: bookPath, encoding: NSUTF8StringEncoding, error: &error) as? String {
                 return patterns
                     .map { self.matchesForRegexInText($0, text:bookString).first }
