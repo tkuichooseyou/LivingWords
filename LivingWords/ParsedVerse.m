@@ -6,7 +6,7 @@
 {
     ParsedVerse *parsedVerse = [ParsedVerse new];
     NSArray *components = [urlString componentsSeparatedByString:@"/"];
-    parsedVerse.book = [components firstObject];
+    parsedVerse.book = [[components firstObject] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
     parsedVerse.chapterStart = @([components[1] integerValue]);
     parsedVerse.numberStart = @([components[2] integerValue]);
     parsedVerse.chapterEnd = @([components[3] integerValue]);
@@ -22,7 +22,8 @@
 - (NSString *)urlString
 {
     return [NSString stringWithFormat:@"%@/%@/%@/%@/%@",
-            self.book, self.chapterStart, self.numberStart, self.chapterEnd, self.numberEnd];
+            [self.book stringByReplacingOccurrencesOfString:@" " withString:@"_"],
+            self.chapterStart, self.numberStart, self.chapterEnd, self.numberEnd];
 }
 
 - (NSString *)displayFormatted

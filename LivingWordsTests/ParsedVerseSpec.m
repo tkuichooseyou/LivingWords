@@ -47,7 +47,7 @@ describe(@"ParsedVerse", ^{
             parsedVerse.numberStart = @16;
             parsedVerse.chapterEnd = @3;
             parsedVerse.numberEnd = @18;
-            [[[parsedVerse urlString] should] equal:@"1 Corinthians/3/16/3/18"];
+            [[[parsedVerse urlString] should] equal:@"1_Corinthians/3/16/3/18"];
         });
     });
 
