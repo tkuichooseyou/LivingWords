@@ -11,31 +11,30 @@ public class BibleParser: NSObject {
             return errorMessage
         }
 
-        let verseRange = (verseStart...verseEnd)
+        let chapterStartPattern = "<span (?:id=\"calibre_link-\\d+\" )?class=\"chapter-num\">\\s\(parsedVerse.chapterStart)\\s</span>"
+        let numberEndBound = parsedVerse.numberEnd.integerValue + 1
+        let chapterEndBound = parsedVerse.chapterStart.integerValue + 1
+        let endBoundOne = "(?:<p .+? class=\"heading\".+?<\\/p>.+?<span class=\"book-name\".+?</span><span (?:id=\"calibre_link-\\d+\" )?class=\"chapter-num\">\\s\(chapterEndBound)\\s</span>)"
+        let endBoundTwo = "(?:<span (?:id=\"calibre_link-\\d+\" )?class=\"verse-num\">\(numberEndBound)</span>)"
+        let endBound = "(?:" + endBoundOne + "|" +  endBoundTwo + ")"
+        let normalCaptureGroup = "(<span (?:id=\"calibre_link-\\d+\" )?class=\"verse-num\">\(parsedVerse.numberStart)</span>(?:.*?)?)"
 
-        let patterns = (verseRange).map { verseNum -> String in
-            let verseNumberStartPattern = "\"verse-num\">\(verseNum)</span>(?:\\s?<span>)?(.*?)<"
-            let chapterStartPattern = "\"chapter-num\">\\s\(parsedVerse.chapterStart)\\s</span>"
-            if verseNum == 1 {
-                return chapterStartPattern + "(.*?)<"
-            } else {
-                return chapterStartPattern + "(?:.*?)" + verseNumberStartPattern
-            }
-        }
+        let pattern = parsedVerse.numberStart == 1 ?
+            "(" + chapterStartPattern + ".*?)" + endBound :
+            chapterStartPattern + "(?:.*?)" + normalCaptureGroup + endBound
 
         if let bookPath = NSBundle.mainBundle().pathForResource(parsedVerse.bookFileString(), ofType: "html", inDirectory: "esv"),
             bookString = NSString(contentsOfFile: bookPath, encoding: NSUTF8StringEncoding, error: &error) as? String {
-                return patterns
-                    .map { self.matchesForRegexInText($0, text:bookString).first }
-                    .reduce("", combine: {
-                        if let y = $1 {return $0 + " " + y}
-                        return errorMessage
-                    })
-                    .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        } else {
-            println(error)
-            return errorMessage
+                if let htmlString = matchesForRegexInText(pattern, text: bookString).first,
+                    htmlData = htmlString
+                        .dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+                    let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding] as [NSObject : AnyObject]
+                    return NSAttributedString(data: htmlData, options: options, documentAttributes: nil, error: nil)?.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                        ?? errorMessage
+                }
         }
+        println(error)
+        return errorMessage
     }
 
     class func matchesForRegexInText(regex: String!, text: String!) -> [String] {
