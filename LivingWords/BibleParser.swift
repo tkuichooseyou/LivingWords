@@ -14,7 +14,7 @@ public class BibleParser: NSObject {
         let chapterStartPattern = "<span (?:id=\"calibre_link-\\d+\" )?class=\"chapter-num\">\\s\(parsedVerse.chapterStart)\\s</span>"
         let numberEndBound = parsedVerse.numberEnd.integerValue + 1
         let chapterEndBound = parsedVerse.chapterStart.integerValue + 1
-        let endBoundOne = "(?:<p .+? class=\"heading\".+?<\\/p>.+?<span class=\"book-name\".+?</span><span (?:id=\"calibre_link-\\d+\" )?class=\"chapter-num\">\\s\(chapterEndBound)\\s</span>)"
+        let endBoundOne = "(?:<p (?:id=\"calibre_link-\\d+\" )? class=\"heading\".+?<\\/p>.+?<span class=\"book-name\".+?</span><span (?:id=\"calibre_link-\\d+\" )?class=\"chapter-num\">\\s\(chapterEndBound)\\s</span>)"
         let endBoundTwo = "(?:<span (?:id=\"calibre_link-\\d+\" )?class=\"verse-num\">\(numberEndBound)</span>)"
         let endBound = "(?:" + endBoundOne + "|" +  endBoundTwo + ")"
         let normalCaptureGroup = "(<span (?:id=\"calibre_link-\\d+\" )?class=\"verse-num\">\(parsedVerse.numberStart)</span>(?:.*?)?)"
