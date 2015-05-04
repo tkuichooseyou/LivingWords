@@ -207,7 +207,7 @@
                                                     <outlet property="delegate" destination="L0A-vn-K2B" id="jX1-nH-Yg5"/>
                                                 </connections>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
                                                 <rect key="frame" x="10" y="195" width="580" height="600"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
