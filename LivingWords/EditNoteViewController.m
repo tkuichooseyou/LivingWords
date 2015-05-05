@@ -4,7 +4,7 @@
 #import "Verse.h"
 #import "VerseParser.h"
 #import "ShowVerseViewController.h"
-#import "VerseTextDelegate.h"
+#import "LivingWords-Swift.h"
 
 @interface EditNoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -33,7 +33,6 @@
 
     self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
     [self configureTextViewDelegate];
-
     self.editing = self.textTextView.editable;
 
     RAC(self.note, title) = self.titleTextField.rac_textSignal;
@@ -85,9 +84,9 @@
                                      fromProtocol:@protocol(UITextViewDelegate)]
      subscribeNext:^(RACTuple *arguments) {
          @strongify(self)
-         VerseTextDelegate *textDelegate = [[VerseTextDelegate alloc] initWithTextView:self.textTextView
-                                                                        viewController:self];
-         [textDelegate textView:arguments.first shouldInteractWithURL:arguments.second inRange:NSMakeRange(0, 0)];
+         VerseTextViewDelegate *verseTextViewDelegate = [[VerseTextViewDelegate alloc] initWithTextView:self.textTextView
+                                                                                         viewController:self];
+         [verseTextViewDelegate textView:arguments.first shouldInteractWithURL:arguments.second inRange:NSMakeRange(0, 0)];
      }];
     self.textTextView.delegate = self.textViewDelegate;
 }

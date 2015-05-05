@@ -14,6 +14,10 @@
 
 @implementation NewNoteViewController
 
+- (void)viewDidLoad {
+    self.textTextView.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blueColor] };
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
