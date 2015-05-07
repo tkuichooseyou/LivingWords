@@ -9,7 +9,7 @@
 {
     NSError *error = NULL;
     NSString *bibleBooks = [[Bible books] componentsJoinedByString:@"|"];
-    NSString *regexString = [NSString stringWithFormat:@"(%@)\\.?\\s*(\\d{1,3})[\\p{Pd}\\p{Zs}:]*(\\d{1,3})?[\\p{Pd}\\p{Zs}:]*(\\d{1,3})?",
+    NSString *regexString = [NSString stringWithFormat:@"(%@)\\.?\\s*(\\d{1,3})[\\p{Pd}\\p{Zs}:]*(\\d{1,3})?[\\p{Pd}]?(\\d{1,3})?",
                              bibleBooks];
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern:regexString
