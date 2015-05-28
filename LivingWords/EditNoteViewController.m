@@ -70,7 +70,6 @@
     if (editing) {
         self.navigationItem.rightBarButtonItem.title = @"Save";
         [self.textTextView becomeFirstResponder];
-        self.textTextView.attributedText = [[NSAttributedString alloc] initWithString:self.textTextView.text];
     } else {
         self.navigationItem.rightBarButtonItem.title = @"Edit";
         self.textTextView.attributedText = [VerseParser styleString:self.textTextView.text];
