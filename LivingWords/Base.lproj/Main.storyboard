@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZP-Lf-KD3" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="795"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="229.5"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YeD-qv-yJh">
                                                 <rect key="frame" x="20" y="20" width="560" height="30"/>
@@ -208,8 +208,7 @@
                                                 </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum" translatesAutoresizingMaskIntoConstraints="NO" id="0cp-vj-Ohg">
-                                                <rect key="frame" x="10" y="195" width="580" height="600"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <rect key="frame" x="10" y="195" width="580" height="34.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="330" id="cdX-XR-ijM"/>
                                                 </constraints>
@@ -222,7 +221,6 @@
                                                 </variation>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="pyp-MP-AaD" secondAttribute="trailing" constant="20" id="5hJ-iB-7fQ"/>
                                             <constraint firstItem="YeD-qv-yJh" firstAttribute="top" secondItem="pZP-Lf-KD3" secondAttribute="top" constant="20" id="8Jn-Ix-ffb"/>
@@ -266,6 +264,11 @@
                             <constraint firstItem="cNG-NT-0YF" firstAttribute="top" secondItem="P33-3W-Yo1" secondAttribute="bottom" id="hXY-4H-xFx"/>
                             <constraint firstItem="cNG-NT-0YF" firstAttribute="leading" secondItem="QKA-Ho-ylT" secondAttribute="leadingMargin" constant="-16" id="stB-Dj-AmD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0ob-tu-OC9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SPF-wU-275">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="mBx-dl-o0x">
