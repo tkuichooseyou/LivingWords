@@ -171,7 +171,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="q6G-qf-7Cx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
@@ -185,7 +185,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Njh-ZX-kKe"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
@@ -199,7 +199,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="33V-Vr-YpM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
                                                 </userDefinedRuntimeAttributes>
