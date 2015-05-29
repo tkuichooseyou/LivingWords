@@ -4,6 +4,7 @@
 #import "Verse.h"
 #import "VerseParser.h"
 #import "ShowVerseViewController.h"
+#import "VerseFactory.h"
 #import "LivingWords-Swift.h"
 
 @interface EditNoteViewController ()
@@ -39,6 +40,13 @@
     RAC(self.note, location) = self.locationTextField.rac_textSignal;
     RAC(self.note, speaker) = self.speakerTextField.rac_textSignal;
     RAC(self.note, text) = self.textTextView.rac_textSignal;
+
+    @weakify(self)
+    RAC(self.note, verses) = [self.verseTextField.rac_textSignal map:^id(NSString *value) {
+    @strongify(self)
+        return [VerseFactory createWithText:value
+                       managedObjectContext:self.persistenceController.managedObjectContext];
+    }];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardDidShow:)

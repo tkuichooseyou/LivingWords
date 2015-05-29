@@ -14,8 +14,16 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.selectedNote = [self.fetchedResultsDataSource.fetchedResultsController objectAtIndexPath:indexPath];
+    if (indexPath) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        self.selectedNote = [self.fetchedResultsDataSource.fetchedResultsController objectAtIndexPath:indexPath];
+    } else {
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Note"
+                                                             inManagedObjectContext:self.persistenceController.managedObjectContext];
+        Note *newNote = [[Note alloc] initWithEntity:entityDescription
+                      insertIntoManagedObjectContext:self.persistenceController.managedObjectContext];
+        self.selectedNote = newNote;
+    }
     [self.sceneMediator segueWithIdentifier:segue.identifier segue:segue];
 }
 

@@ -351,7 +351,7 @@
             </objects>
             <point key="canvasLocation" x="2456" y="350"/>
         </scene>
-        <!--Library-->
+        <!--Notes-->
         <scene sceneID="I8y-np-zbI">
             <objects>
                 <viewController id="6dJ-uj-xk2" customClass="NotesViewController" sceneMemberID="viewController">
@@ -488,14 +488,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Library" id="DYF-YW-vey">
+                    <navigationItem key="navigationItem" title="Notes" id="DYF-YW-vey">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9QH-Xq-lgF">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="nav-bar-item"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="NewNoteViewController" id="nBZ-EP-dVx"/>
+                                <segue destination="L0A-vn-K2B" kind="show" id="nAZ-Oi-Ii5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -527,4 +527,7 @@
             <point key="canvasLocation" x="309" y="-399"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nAZ-Oi-Ii5"/>
+    </inferredMetricsTieBreakers>
 </document>
