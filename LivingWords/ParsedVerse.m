@@ -1,4 +1,5 @@
 #import "ParsedVerse.h"
+#import "Verse.h"
 
 @implementation ParsedVerse
 
@@ -12,6 +13,17 @@
     parsedVerse.chapterEnd = @([components[3] integerValue]);
     parsedVerse.numberEnd = @([components[4] integerValue]);
 
+    return parsedVerse;
+}
+
++ (instancetype)createFromVerse:(Verse *)verse
+{
+    ParsedVerse *parsedVerse = [ParsedVerse new];
+    parsedVerse.book = [verse book];
+    parsedVerse.chapterStart = [verse chapterStart];
+    parsedVerse.numberStart = [verse numberStart];
+    parsedVerse.chapterEnd = [verse chapterEnd];
+    parsedVerse.numberEnd = [verse numberEnd];
     return parsedVerse;
 }
 

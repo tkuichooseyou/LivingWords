@@ -132,4 +132,13 @@
     self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
+- (IBAction)swipedLeft:(id)sender {
+    if (self.note.verses.count > 0) {
+        ParsedVerse *parsedVerse = [ParsedVerse createFromVerse:[self.note.verses firstObject]];
+        ShowVerseViewController *showVerseViewController = [ShowVerseViewController createWithStoryboard:self.storyboard
+                                                                                             parsedVerse:parsedVerse];
+        [self.navigationController pushViewController:showVerseViewController animated:YES];
+    }
+}
+
 @end

@@ -256,6 +256,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="0cp-vj-Ohg" secondAttribute="height" id="0ob-tu-OC9"/>
                             <constraint firstItem="jHg-Up-X3S" firstAttribute="top" secondItem="cNG-NT-0YF" secondAttribute="bottom" id="ELr-qx-6Lx"/>
@@ -269,6 +270,9 @@
                                 <exclude reference="0ob-tu-OC9"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BhP-HY-SOg" appends="YES" id="Xg9-lK-KLz"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="SPF-wU-275">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="mBx-dl-o0x">
@@ -287,6 +291,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lN-n2-7YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="BhP-HY-SOg">
+                    <connections>
+                        <action selector="swipedLeft:" destination="L0A-vn-K2B" id="zjO-de-pCP"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1714" y="350"/>
         </scene>
