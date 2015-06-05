@@ -34,8 +34,4 @@
     self.spinner.hidden=YES;
 }
 
-- (IBAction)doneTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 @end

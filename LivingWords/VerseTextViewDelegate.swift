@@ -17,7 +17,7 @@ class VerseTextViewDelegate: NSObject, UITextViewDelegate {
                 parsedVerse:parsedVerse)
 
             if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
-                self.viewController.presentViewController(showVerseVC, animated:true, completion:nil)
+                self.viewController.navigationController?.pushViewController(showVerseVC, animated: true)
             } else {
                 let showVersePopoverController = UIPopoverController(contentViewController: showVerseVC)
                 showVersePopoverController.presentPopoverFromRect(CGRectMake(0, 0, 15, 15),
