@@ -379,7 +379,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/11/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ueg-SG-8tk">
-                                                    <rect key="frame" x="70" y="16" width="87" height="20"/>
+                                                    <rect key="frame" x="8" y="16" width="87" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -388,7 +388,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e58-fg-xeO">
-                                                    <rect key="frame" x="70" y="48" width="33" height="21"/>
+                                                    <rect key="frame" x="8" y="48" width="32.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -398,7 +398,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xv-jl-t9j">
-                                                    <rect key="frame" x="70" y="68" width="43" height="21"/>
+                                                    <rect key="frame" x="8" y="67" width="42.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -407,8 +407,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-label"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Lr-wFK">
-                                                    <rect key="frame" x="170" y="16" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Lr-wFK">
+                                                    <rect key="frame" x="108" y="16" width="353" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -418,7 +418,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywu-FT-k8I">
-                                                    <rect key="frame" x="509" y="16" width="67" height="21"/>
+                                                    <rect key="frame" x="476" y="16" width="100" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="DTK-Hm-nIR"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -431,16 +434,25 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ueg-SG-8tk" firstAttribute="centerY" secondItem="Ywu-FT-k8I" secondAttribute="centerY" id="CfA-HU-eqx"/>
+                                                <constraint firstItem="0Xv-jl-t9j" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="leading" id="HP2-3P-6iW"/>
                                                 <constraint firstItem="e58-fg-xeO" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="JAU-VI-H3d"/>
                                                 <constraint firstItem="0Xv-jl-t9j" firstAttribute="top" secondItem="e58-fg-xeO" secondAttribute="bottom" constant="-1" id="KWg-iL-O76"/>
                                                 <constraint firstItem="Ueg-SG-8tk" firstAttribute="top" secondItem="I3y-5r-CWR" secondAttribute="topMargin" constant="8" id="MKL-Pw-cGL"/>
                                                 <constraint firstItem="Rwh-Lr-wFK" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="trailing" constant="13" id="P7U-v5-0Mb"/>
-                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="PlL-L7-ZSx"/>
+                                                <constraint firstItem="Ueg-SG-8tk" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" id="PlL-L7-ZSx"/>
                                                 <constraint firstItem="e58-fg-xeO" firstAttribute="top" secondItem="Ueg-SG-8tk" secondAttribute="bottom" constant="12" id="Tcc-3j-570"/>
+                                                <constraint firstItem="Ywu-FT-k8I" firstAttribute="leading" secondItem="Rwh-Lr-wFK" secondAttribute="trailing" constant="15" id="VOO-HZ-5Rq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ywu-FT-k8I" secondAttribute="trailing" constant="16" id="XOo-8y-azH"/>
+                                                <constraint firstItem="e58-fg-xeO" firstAttribute="leading" secondItem="Ueg-SG-8tk" secondAttribute="leading" id="mEW-1T-bP0"/>
                                                 <constraint firstItem="0Xv-jl-t9j" firstAttribute="leading" secondItem="I3y-5r-CWR" secondAttribute="leadingMargin" constant="62" id="udj-4C-Frd"/>
                                                 <constraint firstItem="Rwh-Lr-wFK" firstAttribute="centerY" secondItem="Ueg-SG-8tk" secondAttribute="centerY" id="wQj-V0-BLZ"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="JAU-VI-H3d"/>
+                                                    <exclude reference="udj-4C-Frd"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="table-cell"/>
