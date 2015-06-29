@@ -91,6 +91,20 @@ class BibleParserSpec: QuickSpec {
                     expect(result) == expected
                 }
 
+                it("returns text for range in 2 Timothy 3:9-11 verse") {
+                    let parsedVerse = ParsedVerse()
+                    parsedVerse.book = "2 Timothy"
+                    parsedVerse.chapterStart = 3
+                    parsedVerse.numberStart = 9
+                    parsedVerse.chapterEnd = 3
+                    parsedVerse.numberEnd = 11
+                    let expected = "9But they will not get very far, for their folly will be plain to all, as was that of those two men.\n\nAll Scripture Is Breathed Out by God\n10You, however, have followed my teaching, my conduct, my aim in life, my faith, my patience, my love, my steadfastness, 11my persecutions and sufferings that happened to me at Antioch, at Iconium, and at Lystra-which persecutions I endured; yet from them all the Lord rescued me."
+
+                    let result = BibleParser.textForParsedVerse(parsedVerse)
+
+                    expect(result) == expected
+                }
+
                 it("returns text for verse and includes text of random span inside") {
                     let parsedVerse = ParsedVerse()
                     parsedVerse.book = "2 Corinthians"
