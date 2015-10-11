@@ -1,4 +1,6 @@
 #import "PersistenceController.h"
+#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
 
 @interface PersistenceController ()
 
@@ -38,6 +40,7 @@
     self.privateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     self.privateContext.persistentStoreCoordinator = coordinator;
     self.managedObjectContext.parentContext = self.privateContext;
+    [self registerForiCloudNotifications];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSPersistentStoreCoordinator *psc = [self.privateContext persistentStoreCoordinator];
@@ -52,16 +55,43 @@
         NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"LivingWords.sqlite"];
 
         NSError *error = nil;
-        ZAssert([psc addPersistentStoreWithType:NSSQLiteStoreType
-                                  configuration:nil
-                                            URL:storeURL
-                                        options:options error:&error],
-                @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
-        if (![self initCallback]) return;
 
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self initCallback]();
-        });
+        NSMutableDictionary *localOptions = [options mutableCopy];
+        [localOptions addEntriesFromDictionary:[self localStoreOptions]];
+        NSPersistentStore *localPersistenceStore = [psc addPersistentStoreWithType:NSSQLiteStoreType
+                                                                     configuration:nil
+                                                                               URL:storeURL
+                                                                           options:localOptions error:&error];
+
+        [options addEntriesFromDictionary:[self iCloudPersistentStoreOptions]];
+
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [queue addOperationWithBlock:^{
+            NSError *error = nil;
+            if (localPersistenceStore) {
+                NSPersistentStore *iCloudStore = [psc migratePersistentStore:localPersistenceStore
+                                                                       toURL:storeURL
+                                                                     options:options
+                                                                    withType:NSSQLiteStoreType error:&error];
+
+                ZAssert(iCloudStore,
+                        @"Error initializing iCloudStore: %@\n%@", [error localizedDescription], [error userInfo]);
+                [psc removePersistentStore:iCloudStore error:nil];
+            }
+
+            [psc addPersistentStoreWithType:NSSQLiteStoreType
+                              configuration:nil
+                                        URL:storeURL
+                                    options:options
+                                      error:nil];
+
+            NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+            [mainQueue addOperationWithBlock:^{
+
+                if (![self initCallback]) return;
+                [self initCallback]();
+            }];
+        }];
     });
 }
 
@@ -85,6 +115,68 @@
                     [privateError userInfo]);
         }];
     }];
+}
+
+#pragma mark - Notification Observers
+- (void)registerForiCloudNotifications {
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+
+    [notificationCenter addObserver:self
+                           selector:@selector(storesWillChange:)
+                               name:NSPersistentStoreCoordinatorStoresWillChangeNotification
+                             object:self.privateContext.persistentStoreCoordinator];
+
+    [notificationCenter addObserver:self
+                           selector:@selector(storesDidChange:)
+                               name:NSPersistentStoreCoordinatorStoresDidChangeNotification
+                             object:self.privateContext.persistentStoreCoordinator];
+
+    [notificationCenter addObserver:self
+                           selector:@selector(persistentStoreDidImportUbiquitousContentChanges:)
+                               name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+                             object:self.privateContext.persistentStoreCoordinator];
+}
+
+# pragma mark - iCloud Support
+
+- (NSDictionary *)localStoreOptions {
+    return @{NSReadOnlyPersistentStoreOption: @YES};
+}
+
+- (NSDictionary *)iCloudPersistentStoreOptions {
+    return @{NSPersistentStoreUbiquitousContentNameKey: @"livingwordsStore"};
+}
+
+- (void) persistentStoreDidImportUbiquitousContentChanges:(NSNotification *)changeNotification {
+    NSManagedObjectContext *context = self.managedObjectContext;
+
+    [context performBlock:^{
+        [context mergeChangesFromContextDidSaveNotification:changeNotification];
+    }];
+}
+
+- (void)storesWillChange:(NSNotification *)notification {
+    NSManagedObjectContext *context = self.managedObjectContext;
+
+    [context performBlockAndWait:^{
+        NSError *error;
+
+        if ([context hasChanges]) {
+            BOOL success = [context save:&error];
+
+            if (!success && error) {
+                NSLog(@"%@",[error localizedDescription]);
+            }
+        }
+
+        [context reset];
+    }];
+
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] refreshNotesTableView];
+}
+
+- (void)storesDidChange:(NSNotification *)notification {
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] refreshNotesTableView];
 }
 
 @end

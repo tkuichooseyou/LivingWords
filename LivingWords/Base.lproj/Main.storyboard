@@ -1,138 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K4B-My-7Fq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--New Note View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewNoteViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-nn-6TR">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="New Note" id="7XW-Ip-g7S">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="icu-xx-rJn">
-                                            <connections>
-                                                <action selector="cancel:" destination="BYZ-38-t0r" id="Z3u-RD-ESL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UN2-xI-4Xw">
-                                            <connections>
-                                                <action selector="save:" destination="BYZ-38-t0r" id="9CG-Vi-zmW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-GJ-Z9d">
-                                <rect key="frame" x="16" y="74" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-T9-tnE">
-                                <rect key="frame" x="16" y="112" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speaker" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-kk-x0f">
-                                <rect key="frame" x="16" y="150" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGU-Pg-6bc">
-                                <rect key="frame" x="16" y="188" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleClass" value="text-field"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="vie-dF-cNn">
-                                <rect key="frame" x="16" y="226" width="568" height="374"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bkl-64-3DR"/>
-                                </connections>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type a note with verses, like John 3:16!" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-eU-b9D">
-                                <rect key="frame" x="16" y="226" width="568" height="18"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="top" secondItem="h5a-T9-tnE" secondAttribute="bottom" constant="8" id="4Lo-0L-ZQM"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="692-nU-1kQ"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6pj-k0-3zR"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="top" secondItem="Qgl-nn-6TR" secondAttribute="bottom" constant="10" id="A3r-o2-E3l"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A7w-id-ybf"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gx3-5M-kDn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qgl-nn-6TR" secondAttribute="trailing" constant="-16" id="HpL-KP-U8X"/>
-                            <constraint firstItem="xjA-eU-b9D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JER-yo-q26"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xjA-eU-b9D" secondAttribute="trailing" id="R6g-Tw-n0j"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rg5-i5-BcI"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="top" secondItem="dQc-kk-x0f" secondAttribute="bottom" constant="8" id="UA6-fY-kvy"/>
-                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wcg-hY-uD4"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bo0-lm-dVJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vie-dF-cNn" secondAttribute="trailing" id="e3F-fY-SH4"/>
-                            <constraint firstItem="wGU-Pg-6bc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gCs-kU-Fjs"/>
-                            <constraint firstItem="dQc-kk-x0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gbd-0W-Vq2"/>
-                            <constraint firstItem="T4t-GJ-Z9d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gu9-um-l7e"/>
-                            <constraint firstItem="h5a-T9-tnE" firstAttribute="top" secondItem="T4t-GJ-Z9d" secondAttribute="bottom" constant="8" id="hbM-fz-5jC"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="pTv-jY-lpf"/>
-                            <constraint firstItem="Qgl-nn-6TR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="pvJ-Pv-xhX"/>
-                            <constraint firstItem="vie-dF-cNn" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="rXQ-8l-7Hj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vie-dF-cNn" secondAttribute="bottom" id="wlv-dM-JBL"/>
-                            <constraint firstItem="xjA-eU-b9D" firstAttribute="top" secondItem="wGU-Pg-6bc" secondAttribute="bottom" constant="8" id="zr3-2X-mGW"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="pTv-jY-lpf"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="defaultLabel" destination="xjA-eU-b9D" id="I0A-T2-Svq"/>
-                        <outlet property="locationTextField" destination="h5a-T9-tnE" id="a1M-Vi-Znn"/>
-                        <outlet property="speakerTextField" destination="dQc-kk-x0f" id="SWL-P4-6vt"/>
-                        <outlet property="textTextView" destination="vie-dF-cNn" id="Og4-zC-JxC"/>
-                        <outlet property="titleTextField" destination="T4t-GJ-Z9d" id="J2A-ga-NuH"/>
-                        <outlet property="verseTextField" destination="wGU-Pg-6bc" id="R9O-zg-pyc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1714" y="-399"/>
-        </scene>
         <!--Edit Note View Controller-->
         <scene sceneID="l46-qp-141">
             <objects>
@@ -530,6 +403,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nAZ-Oi-Ii5"/>
+        <segue reference="moF-Ee-vLv"/>
     </inferredMetricsTieBreakers>
 </document>

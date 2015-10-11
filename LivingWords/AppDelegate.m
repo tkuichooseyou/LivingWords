@@ -1,7 +1,6 @@
 #import "AppDelegate.h"
 #import "SceneMediator.h"
 #import "NotesViewController.h"
-#import "FetchedResultsDataSource.h"
 
 @interface AppDelegate ()
 @property (strong, readwrite) PersistenceController *persistenceController;
@@ -40,6 +39,13 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     NotesViewController *controller = (NotesViewController *)navigationController.topViewController;
     controller.sceneMediator = self.sceneMediator;
+    controller.persistenceController = self.persistenceController;
+}
+
+- (void)refreshNotesTableView
+{
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    NotesViewController *controller = (NotesViewController *)navigationController.topViewController;
     controller.persistenceController = self.persistenceController;
 }
 
