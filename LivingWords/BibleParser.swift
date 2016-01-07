@@ -4,7 +4,6 @@ public class BibleParser: NSObject {
     static let errorMessage = "Verse not found"
 
     public class func textForParsedVerse(parsedVerse:ParsedVerse) -> String {
-        var error: NSError?
         let verseStart = parsedVerse.numberStart.integerValue
         let verseEnd = parsedVerse.numberEnd.integerValue
         if verseEnd < verseStart {
@@ -24,29 +23,23 @@ public class BibleParser: NSObject {
             chapterStartPattern + "(?:.*?)" + normalCaptureGroup + endBound
 
         if let bookPath = NSBundle.mainBundle().pathForResource(parsedVerse.bookFileString(), ofType: "html", inDirectory: "esv"),
-            bookString = NSString(contentsOfFile: bookPath, encoding: NSUTF8StringEncoding, error: &error) as? String {
+            bookString = try? NSString(contentsOfFile: bookPath, encoding: NSUTF8StringEncoding) as String {
                 if let htmlString = matchesForRegexInText(pattern, text: bookString).first,
                     htmlData = htmlString
                         .dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-                    let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding] as [NSObject : AnyObject]
-                    return NSAttributedString(data: htmlData, options: options, documentAttributes: nil, error: nil)?.string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-                        ?? errorMessage
+                            let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSUTF8StringEncoding] as [String : AnyObject]
+                            return try! NSAttributedString(data: htmlData, options: options, documentAttributes: nil).string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                                ?? errorMessage
                 }
         }
-        println(error)
         return errorMessage
     }
 
     class func matchesForRegexInText(regex: String!, text: String!) -> [String] {
-        var error: NSError?
-        let regex = NSRegularExpression(
-            pattern: regex,
-            options: NSRegularExpressionOptions.DotMatchesLineSeparators,
-            error: &error)!
+        let regex = try! NSRegularExpression(pattern: regex, options: .DotMatchesLineSeparators)
         let nsString = text as NSString
         let results = regex.matchesInString(text,
-            options: nil, range: NSMakeRange(0, nsString.length))
-            as! [NSTextCheckingResult]
-        return map(results) { nsString.substringWithRange($0.rangeAtIndex(1))}
+            options: .ReportProgress, range: NSMakeRange(0, nsString.length))
+        return results.map { nsString.substringWithRange($0.rangeAtIndex(1))}
     }
 }

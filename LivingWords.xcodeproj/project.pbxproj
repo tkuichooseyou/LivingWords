@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70272EC09A5C7E7018628239 /* Pods_LivingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		8CD4A9593497A57F5611EE20 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC3A57C72DDBC818746B799 /* libPods.a */; };
+		70272EC09A5C7E7018628239 /* Pods_LivingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */; };
 		8E09B15F1ACDC0AB00688218 /* scss in Resources */ = {isa = PBXBuildFile; fileRef = 8E09B15E1ACDC0AB00688218 /* scss */; };
 		8E09B1691ACF215500688218 /* CoreDataScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B1681ACF215500688218 /* CoreDataScheduler.m */; };
 		8E09B16C1ACF258800688218 /* PersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E09B16B1ACF258800688218 /* PersistenceController.m */; };
@@ -43,6 +42,7 @@
 		8EC534861AD42A2F0058A5FD /* ParsedVerse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534851AD42A2F0058A5FD /* ParsedVerse.m */; };
 		8EC534891AD4325D0058A5FD /* Bible.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC534881AD4325D0058A5FD /* Bible.m */; };
 		8EFA2EA01ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */; };
+		DFBB9D7C9888F34EB54F5D1E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504BF65910FDA211548BE2FA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EC3A57C72DDBC818746B799 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EFDCB04C1439A930F233389 /* Pods-LivingWordsQuickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsQuickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsQuickTests/Pods-LivingWordsQuickTests.debug.xcconfig"; sourceTree = "<group>"; };
 		298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38D6F4EFBEEEA2545F6E4630 /* Pods-LivingWordsQuickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsQuickTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsQuickTests/Pods-LivingWordsQuickTests.release.xcconfig"; sourceTree = "<group>"; };
-		5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		76D10096C678A28C20C98B96 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2DC95F535358CA30C318E44F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		504BF65910FDA211548BE2FA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5485632849C9904EA7FE1298 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		85290361B8209BE6C93199E9 /* Pods-LivingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E09B15E1ACDC0AB00688218 /* scss */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scss; sourceTree = "<group>"; };
 		8E09B1671ACF215500688218 /* CoreDataScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataScheduler.h; sourceTree = "<group>"; };
 		8E09B1681ACF215500688218 /* CoreDataScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataScheduler.m; sourceTree = "<group>"; };
@@ -119,9 +118,8 @@
 		8EEB26BC1AE742FF0007AD69 /* LivingWordsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LivingWordsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EFA2E9E1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FetchedResultsController+DelegateForTableView.h"; sourceTree = "<group>"; };
 		8EFA2E9F1ADC42A800245AE3 /* FetchedResultsController+DelegateForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FetchedResultsController+DelegateForTableView.m"; sourceTree = "<group>"; };
-		8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E6ABE7823CC519BDC1FF9D /* Pods_LivingWordsQuickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingWordsQuickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingWordsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests.release.xcconfig"; sourceTree = "<group>"; };
+		D1F225DC0F4C494542697BA1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CD4A9593497A57F5611EE20 /* libPods.a in Frameworks */,
+				DFBB9D7C9888F34EB54F5D1E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,12 +145,10 @@
 		88E98653137D61943E5EB263 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */,
-				76D10096C678A28C20C98B96 /* Pods.release.xcconfig */,
-				8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */,
-				CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */,
-				0EFDCB04C1439A930F233389 /* Pods-LivingWordsQuickTests.debug.xcconfig */,
-				38D6F4EFBEEEA2545F6E4630 /* Pods-LivingWordsQuickTests.release.xcconfig */,
+				D1F225DC0F4C494542697BA1 /* Pods.debug.xcconfig */,
+				2DC95F535358CA30C318E44F /* Pods.release.xcconfig */,
+				5485632849C9904EA7FE1298 /* Pods-LivingWordsTests.debug.xcconfig */,
+				85290361B8209BE6C93199E9 /* Pods-LivingWordsTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -363,7 +359,7 @@
 			children = (
 				C5E6ABE7823CC519BDC1FF9D /* Pods_LivingWordsQuickTests.framework */,
 				298E29DAD6660579BAB13B77 /* Pods_LivingWordsTests.framework */,
-				0EC3A57C72DDBC818746B799 /* libPods.a */,
+				504BF65910FDA211548BE2FA /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,6 +377,7 @@
 				8E888E691ACD934C00DFC8ED /* Resources */,
 				36DDE9E5CEEA528F620985F9 /* Copy Pods Resources */,
 				8E09B1601ACDC0CD00688218 /* Run Script - pixate */,
+				823A5C51ACA539A8532AB03B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,7 +415,8 @@
 		8E888E631ACD934C00DFC8ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Teddy Ku";
 				TargetAttributes = {
 					8E888E6A1ACD934C00DFC8ED = {
@@ -530,6 +528,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivingWordsTests/Pods-LivingWordsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		823A5C51ACA539A8532AB03B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E09B1601ACDC0CD00688218 /* Run Script - pixate */ = {
@@ -658,6 +671,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -721,7 +735,7 @@
 		};
 		8E888E921ACD934C00DFC8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BD33C29BBA65792D1C2ADD1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D1F225DC0F4C494542697BA1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -729,6 +743,7 @@
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddyku.$(PRODUCT_NAME:rfc1034identifier:lower)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -737,7 +752,7 @@
 		};
 		8E888E931ACD934C00DFC8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76D10096C678A28C20C98B96 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2DC95F535358CA30C318E44F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -745,6 +760,7 @@
 				INFOPLIST_FILE = LivingWords/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddyku.$(PRODUCT_NAME:rfc1034identifier:lower)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWords/LivingWords-Bridging-Header.h";
 			};
@@ -752,7 +768,7 @@
 		};
 		8E888E951ACD934C00DFC8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F82DA344532A138EFD80C71 /* Pods-LivingWordsTests.debug.xcconfig */;
+			baseConfigurationReference = 5485632849C9904EA7FE1298 /* Pods-LivingWordsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -766,6 +782,7 @@
 				);
 				INFOPLIST_FILE = LivingWordsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddyku.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWordsTests/LivingWordsTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -775,7 +792,7 @@
 		};
 		8E888E961ACD934C00DFC8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEF080B99495E9C5433CFF12 /* Pods-LivingWordsTests.release.xcconfig */;
+			baseConfigurationReference = 85290361B8209BE6C93199E9 /* Pods-LivingWordsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -785,6 +802,7 @@
 				);
 				INFOPLIST_FILE = LivingWordsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddyku.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LivingWordsTests/LivingWordsTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LivingWords.app/LivingWords";
